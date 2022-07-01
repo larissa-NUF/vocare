@@ -1,0 +1,11 @@
+@import '../../styles/tema';
+
+.card{
+    max-width: 360px;
+    padding: $spacing_normal;
+    margin: auto;
+    display: flex;
+    margin-top: 50%;
+    left: 50%;
+  
+}
