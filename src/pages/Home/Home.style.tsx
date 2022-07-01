@@ -1,8 +1,9 @@
-import { CardHeader, FormControl, styled, TextField } from "@material-ui/core";
+import { styled, TextField } from "@material-ui/core";
 import { theme } from "../../styles/theme";
 
 
 export const FormInput = styled(TextField)({
+    marginBottom: theme.spacing(0.3),
     '& label.Mui-focused': {
       color: theme.palette.primary.main,
     },

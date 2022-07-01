@@ -1,13 +1,13 @@
-import { Card } from "@material-ui/core";
-import styles from './styles.module.scss';
+import { BsCard } from "./BasicCard.style";
+
 
 
 const BasicCard = ({ children }: {children: React.ReactNode }) => {
 
   return (<div>
-    <Card className={styles.card}>
+    <BsCard>
       {children}
-    </Card>
+    </BsCard>
   </div>);
 }
 export default BasicCard;
