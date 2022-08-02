@@ -84,12 +84,13 @@ export const theme = createTheme({
             light: "#F7F7F7",
             contrastText: "#34a85350",
             main: "#469ED6",
-            dark: "#349253",
+            dark: "#424A4F",
         },
         secondary: {
             light: "#F4F4F4",
             main: "#37689B",
             dark: "#9F9F9F",
+            contrastText: "#8E969B",
         },
         error: {
             main: "#f53434",
