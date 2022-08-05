@@ -92,6 +92,9 @@ export const theme = createTheme({
             dark: "#9F9F9F",
             contrastText: "#8E969B",
         },
+        background: {
+            default: "#5A6973"
+        },
         error: {
             main: "#f53434",
         },
