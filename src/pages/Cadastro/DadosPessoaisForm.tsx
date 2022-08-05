@@ -13,7 +13,7 @@ import * as Styled from './Cadastro.styled';
 const DadosPessoais: React.FC = () => {
   return (
     <div>
-      <Styled.TituloCard variant="h5">Dados pessoais</Styled.TituloCard>
+      <Styled.TituloCard variant="h5">Dados Pessoais</Styled.TituloCard>
       <BasicCard>
         <FormControl fullWidth>
           <Styled.Label variant="body1">Nome</Styled.Label>
@@ -25,6 +25,7 @@ const DadosPessoais: React.FC = () => {
           <br />
           <Styled.Label variant="body1">Email</Styled.Label>
           <Styled.FormInput
+            type="email"
             id="custom-css-outlined-input"
             variant="outlined"
             size="small"
@@ -32,6 +33,7 @@ const DadosPessoais: React.FC = () => {
           <br />
           <Styled.Label variant="body1">Senha</Styled.Label>
           <Styled.FormInput
+            type="password"
             id="custom-css-outlined-input"
             variant="outlined"
             size="small"
@@ -39,6 +41,7 @@ const DadosPessoais: React.FC = () => {
           <br />
           <Styled.Label variant="body1">Confirmar senha</Styled.Label>
           <Styled.FormInput
+            type="password"
             id="custom-css-outlined-input"
             variant="outlined"
             size="small"
