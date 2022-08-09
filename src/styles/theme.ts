@@ -35,7 +35,7 @@ declare module "@mui/material/Typography" {
 
 export const theme = createTheme({
     typography: {
-        fontFamily: "Montserrat",
+        fontFamily: "Poppins",
         button: { textTransform: "none" },
         h1: {
             fontSize: "1.5rem",
@@ -93,7 +93,8 @@ export const theme = createTheme({
             contrastText: "#8E969B",
         },
         background: {
-            default: "#5A6973"
+            default: "#5A6973",
+            paper: "#8EB9D4"
         },
         error: {
             main: "#f53434",
