@@ -1,7 +1,7 @@
 import { Grid, styled, Typography } from "@material-ui/core";
 
 export const HeaderContainer = styled(Grid)(({ theme }) => ({
-    backgroundColor: "#5A6973",
+    backgroundColor: theme.palette.background.default,
     height: "100vh",
     width: "20vw",
     padding: "10px 0 10px 0"
@@ -25,5 +25,15 @@ export const NomeUsuario = styled(Typography)(() => ({
 export const Linha = styled("div")(({ theme }) => ({
     width: "100%",
     height: "2px",
-    backgroundColor: "#8EB9D4"
+    backgroundColor: "#8EB9D4",
+    marginBottom: "40px"
+}));
+
+export const GridActionsColumn = styled(Grid)(() => ({
+    marginBottom: "10px"
+}));
+
+export const Action = styled(Grid)(() => ({
+    dispaly: "flex",
+    justifyContent: "space-around"
 }));

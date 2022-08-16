@@ -5,10 +5,10 @@ import { api } from '../services/axios';
 
 export const useGetAll = () => {
     return useQuery<Array<Usuario>, CustomError>(
-        ["usuario-get-all"],
+        ["teste"],
         async () => {
-            const { data } = await api.get(`/usuario`);
+            const { data } = await api.get(`/usuario/teste`);
             return data;
         }
     )
-}
+};
