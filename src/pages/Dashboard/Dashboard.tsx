@@ -3,8 +3,10 @@ import logoBranco from "./../../assets/img/logo-branco.png";
 import * as Styled from "./Dashboard.styled";
 import { RiPencilFill } from "react-icons/ri";
 import { SiGoogleanalytics } from "react-icons/si";
+import { useGetAll } from "../../api/controllers/usuario";
 
 export const Dashboard: React.FC = () => {
+    const { data } = useGetAll();
     return (
         <>
             <Styled.HeaderContainer>
