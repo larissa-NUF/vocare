@@ -14,11 +14,13 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <BrowserRouter>
+    <ThemeProvider theme={theme}>
       <QueryClientProvider client={queryClient}>
         <React.StrictMode>
           <App />
         </React.StrictMode>
       </QueryClientProvider>
+    </ThemeProvider>
   </BrowserRouter>
 );
 

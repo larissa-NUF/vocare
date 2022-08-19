@@ -16,14 +16,14 @@ const DadosPessoais: React.FC = () => {
       <Styled.TituloCard variant="h5">Dados Pessoais</Styled.TituloCard>
       <BasicCard>
         <FormControl fullWidth>
-          <Styled.Label variant="body1">Nome</Styled.Label>
+          <Styled.Label variant="body1">Nome:</Styled.Label>
           <Styled.FormInput
             id="custom-css-outlined-input"
             variant="outlined"
             size="small"
           />
           <br />
-          <Styled.Label variant="body1">Email</Styled.Label>
+          <Styled.Label variant="body1">Email:</Styled.Label>
           <Styled.FormInput
             type="email"
             id="custom-css-outlined-input"
@@ -31,7 +31,7 @@ const DadosPessoais: React.FC = () => {
             size="small"
           />
           <br />
-          <Styled.Label variant="body1">Senha</Styled.Label>
+          <Styled.Label variant="body1">Senha:</Styled.Label>
           <Styled.FormInput
             type="password"
             id="custom-css-outlined-input"
@@ -39,7 +39,7 @@ const DadosPessoais: React.FC = () => {
             size="small"
           />
           <br />
-          <Styled.Label variant="body1">Confirmar senha</Styled.Label>
+          <Styled.Label variant="body1">Confirmar senha:</Styled.Label>
           <Styled.FormInput
             type="password"
             id="custom-css-outlined-input"
