@@ -1,8 +1,9 @@
 import React from "react";
-import DadosPessoais from "./DadosPessoaisForm";
+import PlanosForm from "./PlanosForm";
 import * as Styled from "./Cadastro.styled";
 import logo from '../../assets/img/logo.png';
 import { Typography } from "@material-ui/core";
+
 
 
 const Cadastro: React.FC = () => {
@@ -11,7 +12,7 @@ const Cadastro: React.FC = () => {
         <Styled.Fundo>
             <Styled.LogoVocale src={logo}/>
             <Styled.EtapaTitulo variant="h4">Etapa 2/4</Styled.EtapaTitulo>
-            <DadosPessoais/>
+            <PlanosForm/>
         </Styled.Fundo>
     );
 };
