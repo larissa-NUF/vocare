@@ -1,5 +1,6 @@
 import { Grid, styled, TextField, Typography } from "@material-ui/core";
 import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
+import BasicCard from "../../components/BasicCard";
 import { SecundaryButton } from "../../components/SecundaryButton";
 
 import { theme } from "../../styles/theme";
@@ -72,3 +73,32 @@ export const TituloCard = styled(Typography)({
  marginBottom:theme.spacing(0.7),
  fontSize:theme.spacing(1.625),
 });
+export const CardPlanos = styled(BasicCard)({
+  height:theme.spacing(60.625),
+  color: "white",
+  backgroundColor: "#f000",
+  width: "100%"
+
+
+  
+
+});
+
+
+export const DivBeneficio = styled("div") ({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center"
+  
+
+}
+
+);
+export const FundoGratis = styled("div")({
+  backgroundColor: theme.palette.primary.main,
+  width: "100%"
+  
+  
+
+});
+
