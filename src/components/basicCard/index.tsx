@@ -1,11 +1,12 @@
-import { BsCard } from "./BasicCard.style";
+import { CardProps } from "@material-ui/core";
+import * as Styled from "./BasicCard.style";
 
-const BasicCard = ({ children }: {children: React.ReactNode }) => {
+const BasicCard = ({ children, ...rest }: CardProps) => {
 
   return (<div>
-    <BsCard>
+    <Styled.BsCard {...rest}>
       {children}
-    </BsCard>
+    </Styled.BsCard>
   </div>);
 }
 export default BasicCard;
