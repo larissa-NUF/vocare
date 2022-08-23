@@ -1,4 +1,4 @@
-import { Grid, styled, TextField, Typography } from "@material-ui/core";
+import { Grid, Link, styled, TextField, Typography } from "@material-ui/core";
 import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
 import BasicCard from "../../components/BasicCard";
 import { SecundaryButton } from "../../components/SecundaryButton";
@@ -97,8 +97,20 @@ export const DivBeneficio = styled("div") ({
 export const FundoGratis = styled("div")({
   backgroundColor: theme.palette.primary.main,
   width: "100%"
-  
-  
 
 });
 
+export const TxtCadastro = styled(Typography)({
+  textAlign: "left",
+  fontSize: theme.spacing(0.8),
+  paddingTop: theme.spacing(0.7),
+  marginBottom: "none",
+});
+
+export const CorLinkCad = styled(Link)({
+  color: theme.palette.primary.main,
+  textDecoration: "underline",
+  "&:hover":{
+    color: theme.palette.secondary.main,
+},
+});

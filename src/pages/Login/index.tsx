@@ -1,7 +1,7 @@
 import { Grid } from "@material-ui/core";
 import * as Styled from "./Login.styled";
 import React from "react";
-import Logo from "../../assets/img/logo.svg";
+import Logo from "../../assets/img/logo-completo.png";
 import LoginForm from "./LoginForm";
 
 

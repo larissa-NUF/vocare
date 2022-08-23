@@ -1,11 +1,14 @@
 import {
+  Checkbox,
   FormControl,
   Grid
 } from "@material-ui/core";
 import * as React from "react";
+import { Link } from "react-router-dom";
 import BasicCard from '../../components/BasicCard';
 import { MainButton } from "../../components/MainButton";
 import { SecundaryButton } from "../../components/SecundaryButton";
+import { theme } from "../../styles/theme";
 import * as Styled from './Cadastro.styled';
 
 
@@ -46,7 +49,8 @@ const DadosPessoais: React.FC = () => {
             variant="outlined"
             size="small"
           />
-          <br />
+
+          <Styled.TxtCadastro><Checkbox defaultChecked size="small" color='primary' />Concordo com os <Styled.CorLinkCad href="https://www.etecmcm.com.br" target="_blank">Termos de Serviço</Styled.CorLinkCad></Styled.TxtCadastro>
 
         </FormControl >
       </BasicCard>
@@ -56,11 +60,10 @@ const DadosPessoais: React.FC = () => {
             <Styled.ArrowLeft/>
             Voltar
           </SecundaryButton>
-
         </Grid>
-        <Grid item >
+
+        <Grid item>
           <MainButton>
-            
             Continuar
             <Styled.ArrowRight/>
           </MainButton>

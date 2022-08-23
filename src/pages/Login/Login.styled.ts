@@ -29,8 +29,9 @@ export const GridLogo = styled(Grid)({
 
 export const TituloCard = styled(Typography)({
     marginBottom:theme.spacing(1),
-    fontSize:theme.spacing(1.625),
-    textAlign: "center"
+    marginTop: theme.spacing(0.8),
+    fontSize:theme.spacing(1.65),
+    textAlign: "center",
 });
 
 export const FormInput = styled(TextField)({
@@ -69,15 +70,15 @@ export const CardLogin = styled(BasicCard)({
 
 export const Txt = styled(Typography)({
   textAlign: "center",
-  fontSize: theme.spacing(1),
+  fontSize: theme.spacing(0.8),
   paddingTop: theme.spacing(1.3),
   paddingBottom: "0px",
 });
 
 export const CorLink = styled(Link)({
   color: theme.palette.primary.main,
+  textDecoration: "underline",
   "&:hover":{
     color: theme.palette.secondary.main,
-    textDecoration: "none",
 },
 });
