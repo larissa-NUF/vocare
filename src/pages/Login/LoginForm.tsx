@@ -1,7 +1,4 @@
-import {
-    FormControl,
-    Grid
-} from "@material-ui/core";
+import { FormControl, Grid, Link } from "@material-ui/core";
 import * as React from "react";
 import BasicCard from '../../components/BasicCard';
 import { MainButton } from "../../components/MainButton";
@@ -13,7 +10,7 @@ import * as Styled from './Login.styled';
 const LoginForm: React.FC = () => {
     return (
         <div>
-            <BasicCard>
+            <Styled.CardLogin>
                 <Styled.TituloCard variant="h5">Login</Styled.TituloCard>
                 <FormControl fullWidth>
                     <Styled.Label variant="body1">Email:</Styled.Label>
@@ -38,8 +35,10 @@ const LoginForm: React.FC = () => {
                             Entrar
                         </Styled.Btn>
                     </Styled.DivBtn>
+
+                    <Styled.Txt>Não possui conta? <Styled.CorLink href="/cadastro">Cadastre-se!</Styled.CorLink></Styled.Txt>
                 </FormControl>
-            </BasicCard>
+            </Styled.CardLogin>
         </div>
     )
 }

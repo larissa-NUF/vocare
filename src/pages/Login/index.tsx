@@ -15,7 +15,9 @@ const Login: React.FC = () => {
                 </Styled.GridLogo>
                 <Grid item xs={7}>
                     <Styled.FundoAzul>
+                        <Styled.GridLogo>
                         <LoginForm />
+                        </Styled.GridLogo>
                     </Styled.FundoAzul>
                 </Grid>
             </Grid>

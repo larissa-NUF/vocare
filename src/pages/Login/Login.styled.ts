@@ -1,12 +1,20 @@
-import { Grid, styled, TextField, Typography } from "@material-ui/core";
+import { Card, Grid, Link, styled, TextField, Typography } from "@material-ui/core";
 import { autocompleteClasses } from "@mui/material";
+import BasicCard from "../../components/BasicCard";
 import { MainButton } from "../../components/MainButton";
 import { theme } from "../../styles/theme";
 
 export const FundoAzul = styled("div")({
     width: "100%",
     backgroundColor: theme.palette.secondary.main,
-    height: "100vh"
+    height: "100vh",
+    marginTop: "auto",
+    marginBottom: "auto",
+    display: "flex",
+    alignItems: 'center',
+    flexDirection: 'column'
+    
+    
     });
 
 export const Logo = styled("img")({
@@ -51,4 +59,25 @@ export const Btn = styled(MainButton)({
 
 export const DivBtn = styled("div")({
     textAlign: "center"
+});
+
+export const CardLogin = styled(BasicCard)({
+  display: '-ms-flexbox',
+  
+
+});
+
+export const Txt = styled(Typography)({
+  textAlign: "center",
+  fontSize: theme.spacing(1),
+  paddingTop: theme.spacing(1.3),
+  paddingBottom: "0px",
+});
+
+export const CorLink = styled(Link)({
+  color: theme.palette.primary.main,
+  "&:hover":{
+    color: theme.palette.secondary.main,
+    textDecoration: "none",
+},
 });
