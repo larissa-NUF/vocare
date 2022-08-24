@@ -78,22 +78,15 @@ export const CardPlanos = styled(BasicCard)({
   color: "white",
   backgroundColor: "#f000",
   width: "100%"
-
-
-  
-
 });
-
 
 export const DivBeneficio = styled("div") ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center"
   
+});
 
-}
-
-);
 export const FundoGratis = styled("div")({
   backgroundColor: theme.palette.primary.main,
   width: "100%"
@@ -105,6 +98,7 @@ export const TxtCadastro = styled(Typography)({
   fontSize: theme.spacing(0.8),
   paddingTop: theme.spacing(0.7),
   marginBottom: "none",
+
 });
 
 export const CorLinkCad = styled(Link)({
@@ -113,4 +107,8 @@ export const CorLinkCad = styled(Link)({
   "&:hover":{
     color: theme.palette.secondary.main,
 },
+});
+
+export const DivCadastro = styled("div")({
+  marginLeft: "-10px"
 });
