@@ -112,3 +112,14 @@ export const CorLinkCad = styled(Link)({
 export const DivCadastro = styled("div")({
   marginLeft: "-10px"
 });
+
+export const TxtBtn = styled("p")({
+  padding: "none",
+  fontSize: "0.9em",
+  margin: "none"
+});
+
+export const TxtBtnVoltar = styled("p")({
+  fontSize: "1em",
+  margin: "3px"
+});

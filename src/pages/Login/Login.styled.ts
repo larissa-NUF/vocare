@@ -64,9 +64,7 @@ export const DivBtn = styled("div")({
 
 export const CardLogin = styled(BasicCard)({
   display: '-ms-flexbox',
-  
-
-});
+  });
 
 export const Txt = styled(Typography)({
   textAlign: "center",
