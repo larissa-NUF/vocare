@@ -1,6 +1,6 @@
 import { ThemeProvider } from '@mui/material';
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import { QueryClientProvider } from 'react-query';
 import { BrowserRouter } from 'react-router-dom';
 import { queryClient } from './api/services/queryClient';
@@ -9,10 +9,7 @@ import reportWebVitals from './reportWebVitals';
 import "./styles/index.scss";
 import { theme } from './styles/theme';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
+ReactDOM.render(
   <BrowserRouter>
     <ThemeProvider theme={theme}>
       <QueryClientProvider client={queryClient}>
@@ -21,7 +18,8 @@ root.render(
         </React.StrictMode>
       </QueryClientProvider>
     </ThemeProvider>
-  </BrowserRouter>
+  </BrowserRouter>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
