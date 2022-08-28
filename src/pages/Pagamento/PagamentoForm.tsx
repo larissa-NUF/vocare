@@ -13,11 +13,59 @@ const PagamentoForm: React.FC = () => {
             <form>
                 <Styled.TituloPag variant="h5">Dados de Pagamento</Styled.TituloPag>
                 <BasicCard>
-                    <FormControl>
-                        <Styled.Label>Nome:</Styled.Label>
-                        
+                    <FormControl fullWidth>
+                        <Styled.Label>Títular:</Styled.Label>
+                        <Styled.FormInput
+                            type="text"
+                            variant="outlined"
+                            size="small"
+                            id="titular"
+                        />
+                        <br />
+                        <Styled.Label variant="body1">N° do Cartão:</Styled.Label>
+                        <Styled.FormInput
+                            type="number"
+                            variant="outlined"
+                            size="small"
+                            id="numeroCartao"
+                        />
+                        <br />
+                        <Grid>
+                            <Styled.GridItem item>
+                                <Styled.Label variant="body1">Vencimento:</Styled.Label>
+                                <Styled.FormInput
+                                    type="date"
+                                    variant="outlined"
+                                    size="small"
+                                    id="vencimento"
+                                />
+                                <Styled.Label variant="body1">CVV:</Styled.Label>
+                                <Styled.FormInput
+                                    type="number"
+                                    variant="outlined"
+                                    size="small"
+                                    id="cvv"
+                                />
+                            </Styled.GridItem>
+                        </Grid>
                     </FormControl>
                 </BasicCard>
+
+                <Styled.Btn container alignItems="center" justifyContent="center" spacing={2}>
+                    <Grid item>
+                        <SecundaryButton>
+                            <Styled.ArrowLeft />
+                            Voltar
+                        </SecundaryButton>
+                    </Grid>
+
+                    <Grid item>
+                        <MainButton type="submit">
+                            Continuar
+                            <Styled.ArrowRight />
+                        </MainButton>
+                    </Grid>
+                </Styled.Btn>
             </form>
         </div>
     )
