@@ -1,5 +1,6 @@
 import { Grid } from "@material-ui/core"
 import { useState } from "react"
+import { Dashboard } from "../../pages/Dashboard"
 import { SideBar } from "../SideBar"
 import { LayoutProps } from "./Layout.types"
 
@@ -14,7 +15,7 @@ export const Layout = ({ children }: LayoutProps) => {
                         <SideBar />
                     </Grid>
                     <Grid xs={9}>
-                        {children}
+                        <Dashboard/>
                     </Grid>
                 </Grid>
             }
