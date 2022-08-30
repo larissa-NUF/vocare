@@ -31,22 +31,26 @@ const PagamentoForm: React.FC = () => {
                         />
                         <br />
                         <Grid>
-                            <Styled.GridItem item>
-                                <Styled.Label variant="body1">Vencimento:</Styled.Label>
-                                <Styled.FormInput
-                                    type="date"
-                                    variant="outlined"
-                                    size="small"
-                                    id="vencimento"
-                                />
-                                <Styled.Label variant="body1">CVV:</Styled.Label>
-                                <Styled.FormInput
-                                    type="number"
-                                    variant="outlined"
-                                    size="small"
-                                    id="cvv"
-                                />
-                            </Styled.GridItem>
+                            <Grid container>
+                                <Styled.GridItem item xs={6}>
+                                    <Styled.Label variant="body1">Vencimento:</Styled.Label>
+                                    <Styled.FormPag
+                                        type="date"
+                                        variant="outlined"
+                                        size="small"
+                                        id="vencimento"
+                                    />
+                                </Styled.GridItem>
+                                <Styled.GridItem item xs={6}>
+                                    <Styled.Label variant="body1">CVV:</Styled.Label>
+                                    <Styled.FormPag
+                                        type="number"
+                                        variant="outlined"
+                                        size="small"
+                                        id="cvv"
+                                    />
+                                </Styled.GridItem>
+                            </Grid>
                         </Grid>
                     </FormControl>
                 </BasicCard>

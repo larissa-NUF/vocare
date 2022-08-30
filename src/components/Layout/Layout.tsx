@@ -4,7 +4,7 @@ import { SideBar } from "../SideBar"
 import { LayoutProps } from "./Layout.types"
 
 export const Layout = ({ children }: LayoutProps) => {
-    const [usuario, setUsuario] = useState("aluno");
+    const [usuario, setUsuario] = useState("deslogado");
 
     return (
         <>

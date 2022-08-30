@@ -7,7 +7,7 @@ const Pagamento: React.FC = () => {
 
     return (
         <Styled.Fundo>
-            <Styled.LogoVocale src={logo}/>
+            <Styled.LogoVocare src={logo}/>
             <Styled.EtapaTitulo variant="h4">Etapa 3/4</Styled.EtapaTitulo>
             <PagamentoForm />
         </Styled.Fundo>

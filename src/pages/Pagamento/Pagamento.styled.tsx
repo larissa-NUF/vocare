@@ -15,7 +15,7 @@ export const Fundo = styled("div")({
     flexDirection: 'column',
 });
 
-export const LogoVocale = styled("img")({
+export const LogoVocare = styled("img")({
     width: theme.spacing(14.188),
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(0.6)
@@ -69,6 +69,22 @@ export const ArrowRight = styled(BsArrowRightShort)({
 });
 
 export const GridItem = styled(Grid)({
-    flexDirection: "row",
     display: "flex",
+    flexDirection: "column"
+});
+
+export const FormPag = styled(TextField)({
+    width: "80%",
+    '& label.Mui-focused': {
+        color: theme.palette.primary.main,
+    },
+    '& .MuiInput-underline:after': {
+        borderBottomColor: theme.palette.primary.main,
+    },
+    '& .MuiOutlinedInput-root': {
+
+        '&.Mui-focused fieldset': {
+            borderColor: theme.palette.primary.main,
+        },
+    },
 });
