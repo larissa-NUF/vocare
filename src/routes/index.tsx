@@ -9,7 +9,7 @@ export function Routes() {
         <RoutesWrapper>
             <Route path="/cadastro" element={<Cadastro />}></Route>
             <Route path="/login" element={<Login />}></Route>
-            <Route path="/dashboard" element={<Dashboard />}></Route>
+            <Route path="/" element={<Dashboard />}></Route>
             <Route path="/pagamento" element={<Pagamento />}></Route>
         </RoutesWrapper>
     );
