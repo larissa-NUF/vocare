@@ -31,8 +31,8 @@ const PagamentoForm: React.FC = () => {
                         />
                         <br />
                         <Grid>
-                            <Grid container>
-                                <Styled.GridItem item xs={6}>
+                            <Grid style={{justifyContent:"space-between"}} container>
+                                <Styled.GridItem item xs={5}>
                                     <Styled.Label variant="body1">Vencimento:</Styled.Label>
                                     <Styled.FormPag
                                         type="date"
@@ -41,7 +41,7 @@ const PagamentoForm: React.FC = () => {
                                         id="vencimento"
                                     />
                                 </Styled.GridItem>
-                                <Styled.GridItem item xs={6}>
+                                <Styled.GridItem item xs={5}>
                                     <Styled.Label variant="body1">CVV:</Styled.Label>
                                     <Styled.FormPag
                                         type="number"

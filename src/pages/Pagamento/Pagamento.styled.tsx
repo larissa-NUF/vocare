@@ -70,11 +70,11 @@ export const ArrowRight = styled(BsArrowRightShort)({
 
 export const GridItem = styled(Grid)({
     display: "flex",
-    flexDirection: "column"
+    flexDirection: "column",
 });
 
 export const FormPag = styled(TextField)({
-    width: "80%",
+    width: "100%",
     '& label.Mui-focused': {
         color: theme.palette.primary.main,
     },
