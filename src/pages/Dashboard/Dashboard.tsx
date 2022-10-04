@@ -5,6 +5,7 @@ import { Grid } from "@material-ui/core";
 import BasicCard from "../../components/BasicCard";
 import React, { PureComponent } from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { CardDashboard } from "./CardDashboard";
 
 const data = [
     {
@@ -58,7 +59,7 @@ export const Dashboard: React.FC = () => {
                 <Titulo><VscGraph /> Dashboard</Titulo>
                 <Grid container>
                     <Grid item>
-                        <BasicCard>
+                        <CardDashboard>
                            
                                 <BarChart
                                     width={500}
@@ -80,7 +81,7 @@ export const Dashboard: React.FC = () => {
                                     <Bar dataKey="uv" fill="#82ca9d" />
                                 </BarChart>
                             
-                        </BasicCard>
+                        </CardDashboard>
                     </Grid>
                 </Grid>
             </Container>
