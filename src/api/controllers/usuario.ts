@@ -5,7 +5,7 @@ import { api } from '../services/axios';
 
 export const useGetAll = () => {
     return useQuery<Array<Usuario>, CustomError>(
-        ["teste"],
+        ["usuario"],
         async () => {
             const { data } = await api.get(`/usuario`);
             return data;
