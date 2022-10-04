@@ -1,13 +1,20 @@
 import { FormControl, Grid, Link } from "@material-ui/core";
 import * as React from "react";
-import BasicCard from '../../components/BasicCard';
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import BasicCard from '../../components/basicCard';
 import { MainButton } from "../../components/MainButton";
 import { SecundaryButton } from "../../components/SecundaryButton";
 import * as Styled from './Pagamento.styled';
 
-
-
 const PagamentoForm: React.FC = () => {
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        navigate("/");
+    })
+
     return (
         <div>
             <form>
@@ -64,7 +71,7 @@ const PagamentoForm: React.FC = () => {
                     </Grid>
 
                     <Grid item>
-                        <MainButton type="submit">
+                        <MainButton>
                             Continuar
                             <Styled.ArrowRight />
                         </MainButton>
