@@ -2,7 +2,7 @@ import { Container } from "../../components/Container";
 import { Titulo } from "../../components/Titulo";
 import { VscGraph } from "react-icons/vsc";
 import { Grid } from "@material-ui/core";
-import BasicCard from "../../components/BasicCard";
+import BasicCard from "../../components/basicCard";
 import React, { PureComponent } from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { CardDashboard } from "./CardDashboard";

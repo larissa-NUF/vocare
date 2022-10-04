@@ -1,6 +1,6 @@
 import { FormControl, Typography } from "@material-ui/core";
 import * as Styled from "./Cadastro.styled";
-import BasicCard from "../../components/BasicCard";
+import BasicCard from "../../components/basicCard";
 import { SecundaryButton } from "../../components/SecundaryButton";
 import { IoMdClose } from "react-icons/io";
 import { IoMdCheckmark } from "react-icons/io";
