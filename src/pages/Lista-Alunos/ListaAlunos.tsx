@@ -46,10 +46,6 @@ const columns: GridColDef[] = [
     },
 ];
 
-const rows = [
-    // { id: 1, nome: 'Kaio Mesquita', email: 'exemplo@gmail.com', dataCadastro: '26/08/2022', testeRealizado: false },
-];
-
 export const ListaAlunos: React.FC = () => {
     const { data } = useGetAll();
     return (
@@ -66,14 +62,16 @@ export const ListaAlunos: React.FC = () => {
                         textDecoration: "bold",
                     },
                 }}>
+                    {data && 
                     <DataGrid
-                        rows={data}
-                        columns={columns}
-                        pageSize={8}
-                        rowsPerPageOptions={[8]}
-                        disableSelectionOnClick
-                        experimentalFeatures={{ newEditingApi: true }}
-                    />
+                    rows={data}
+                    columns={columns}
+                    pageSize={8}
+                    rowsPerPageOptions={[8]}
+                    disableSelectionOnClick
+                    experimentalFeatures={{ newEditingApi: true }}
+                    />}
+                    
                 </Box>
             </Styled.Container>
         </div>

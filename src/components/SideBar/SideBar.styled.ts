@@ -11,8 +11,19 @@ export const SideBar = styled(Grid)({
 export const MenuItem = styled(Grid)({
     display: "flex",
     alignItems: "center",
-    justifyContent: "space-around",
+    justifyContent: "left",
     color: "white",
     fontSize: "18px",
-    width: "30%"
+    gap: "16px"
+});
+
+export const Itens = styled(Grid)({
+    display: "flex",
+    justifyContent: "center",
+    paddingLeft: "28px",
+    marginBottom: "28px"
+});
+
+export const Layout = styled(Grid)({
+    justifyContent: "left",
 });
