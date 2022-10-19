@@ -1,5 +1,6 @@
 import { Grid, styled } from "@material-ui/core";
 import { theme } from "../../styles/theme";
+import { MainButton } from "../MainButton";
 
 export const SideBar = styled(Grid)({
     width: "100%",
@@ -26,4 +27,14 @@ export const Itens = styled(Grid)({
 
 export const Layout = styled(Grid)({
     justifyContent: "left",
+});
+
+export const BotaoSair = styled(MainButton)({
+    justifyContent: "center",
+    textAlign: "center",
+    display: "flex",
+    marginLeft: "auto",
+    marginRight: "auto",
+    marginTop: "auto",
+    backgroundColor: "#BE1106"
 });

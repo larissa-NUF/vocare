@@ -5,7 +5,10 @@ import { SiGoogleanalytics } from "react-icons/si";
 import { IoAnalytics } from "react-icons/io5";
 import { FaUserGraduate, FaUserAlt } from "react-icons/fa";
 import { BiHelpCircle } from "react-icons/bi"
+import { MdModeEditOutline } from 'react-icons/md';
+import { RiLogoutBoxLine } from 'react-icons/ri'
 import { useNavigate } from 'react-router-dom';
+import { theme } from '../../styles/theme';
 
 export const SideBar: React.FC = () => {
     const navigate = useNavigate()
@@ -36,19 +39,29 @@ export const SideBar: React.FC = () => {
                             </Styled.MenuItem>
                         </Styled.Itens>
                         <Styled.Itens xs={12} onClick={() => navigate("/lista-alunos")}>
-                            <Styled.MenuItem container>
+                            <Styled.MenuItem container style={{textDecoration: "bold"}}>
                                 <FaUserAlt color="white" />
                                 Alunos       
                             </Styled.MenuItem>
                         </Styled.Itens>
-                        <Styled.Itens xs={12} onClick={() => navigate("/")}>
-                            <Styled.MenuItem container style={{textDecoration: "bold"}}>
+                        <Styled.Itens xs={12} onClick={() => navigate("/")} style={{borderBottom:"1px solid #8EB9D4", paddingBottom:"25px"}}>
+                            <Styled.MenuItem container>
                                 <BiHelpCircle color="white" />
                                 Ajuda       
                             </Styled.MenuItem>
                         </Styled.Itens>
+                        <Styled.Itens xs={12} onClick={() => navigate("/lista-alunos")}>
+                            <Styled.MenuItem container style={{fontSize:"20px",fontWeight:"700",gap: theme.spacing(2.188)}}>
+                                Larissa Nunes       
+                                <MdModeEditOutline color="white" />
+                            </Styled.MenuItem>
+                        </Styled.Itens>
                     </Grid>
                 </Styled.Layout>
+            <Styled.BotaoSair>
+                <RiLogoutBoxLine />
+                Sair
+            </Styled.BotaoSair>
             </Styled.SideBar>
         </>
     )
