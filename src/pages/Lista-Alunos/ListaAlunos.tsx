@@ -54,7 +54,7 @@ export const ListaAlunos: React.FC = () => {
             <Styled.Container>
                 <Styled.Titulo><Styled.Icon />Alunos</Styled.Titulo>
                 <Box sx={{
-                    height: 526.3, 
+                    height: 440,
                     width: '100%', 
                     '& .super-app-theme--header': {
                         backgroundColor: theme.palette.primary.main,
@@ -66,8 +66,8 @@ export const ListaAlunos: React.FC = () => {
                     <DataGrid
                     rows={data}
                     columns={columns}
-                    pageSize={8}
-                    rowsPerPageOptions={[8]}
+                    pageSize={5}
+                    rowsPerPageOptions={[5]}
                     disableSelectionOnClick
                     experimentalFeatures={{ newEditingApi: true }}
                     />}

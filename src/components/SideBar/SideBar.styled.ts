@@ -6,7 +6,6 @@ export const SideBar = styled(Grid)({
     width: "100%",
     height: "100vh",
     background: theme.palette.background.default,
-    paddin: "10px",
 });
 
 export const MenuItem = styled(Grid)({
@@ -36,5 +35,8 @@ export const BotaoSair = styled(MainButton)({
     marginLeft: "auto",
     marginRight: "auto",
     marginTop: "auto",
-    backgroundColor: "#BE1106"
+    backgroundColor: "#BE1106",
+    "&:hover":{
+        backgroundColor: "#a71309",
+    },
 });
