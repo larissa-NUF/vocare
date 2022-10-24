@@ -1,50 +1,11 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import * as Styled from "./Faculdades.styled"
-import { DataGrid, GridColDef } from '@mui/x-data-grid';
-import { boolean } from 'yup';
 import { theme } from '../../styles/theme';
-import { FaUserAlt as Fa } from 'react-icons/fa';
+import { Grid } from '@mui/material';
+import { FaUserGraduate as Fa } from 'react-icons/fa';
 import { useGetAll } from '../../api/controllers/usuario';
-
-const columns: GridColDef[] = [
-    {
-        field: 'id',
-        headerClassName: 'super-app-theme--header',
-        headerName: 'ID',
-        width: 90,
-    },
-    {
-        field: 'nome',
-        headerClassName: 'super-app-theme--header',
-        headerName: 'Nome Completo',
-        width: 200,
-        editable: false,
-    },
-    {
-        field: 'email',
-        headerClassName: 'super-app-theme--header',
-        headerName: 'Email',
-        type: 'email',
-        width: 200,
-        editable: false,
-    },
-    {
-        field: 'dataCadastro',
-        headerClassName: 'super-app-theme--header',
-        headerName: 'Data Cadastro',
-        type: 'date',
-        width: 200,
-        editable: false,
-    },
-    {
-        field: 'testeRealizado',
-        headerClassName: 'super-app-theme--header',
-        headerName: 'Teste Realizado',
-        type: 'boolean',
-        width: 200,
-    },
-];
+import { Card } from '@mui/material';
+import Logo from "../../assets/img/logo-branco.png";
 
 export const Faculdades: React.FC = () => {
     const { data } = useGetAll();
@@ -52,27 +13,25 @@ export const Faculdades: React.FC = () => {
         <div>
             <Styled.Fundo></Styled.Fundo>
             <Styled.Container>
-                <Styled.Titulo><Styled.Icon />Alunos</Styled.Titulo>
-                <Box sx={{
-                    height: 440,
-                    width: '100%', 
-                    '& .super-app-theme--header': {
-                        backgroundColor: theme.palette.primary.main,
-                        color: "#FFF",
-                        textDecoration: "bold",
-                    },
-                }}>
-                    {data && 
-                    <DataGrid
-                    rows={data}
-                    columns={columns}
-                    pageSize={5}
-                    rowsPerPageOptions={[5]}
-                    disableSelectionOnClick
-                    experimentalFeatures={{ newEditingApi: true }}
-                    />}
-                    
-                </Box>
+                <Styled.Titulo><Styled.Icon />Faculdades</Styled.Titulo>
+                <Styled.GridFaculdades xs={12}>
+                    <Styled.Conteudo xs={8}>
+                            <div>
+                                <div style={{ height: "105px", width: "105px", backgroundColor: "#D9D9D9", border: "1px solid #ededed" }}></div>
+                            </div>
+                            <div>
+                                <Styled.Legenda>Uniasselvi</Styled.Legenda>
+                                <p style={{ fontSize: "14px", fontWeight: "bold", lineHeight: "21px" }}>Nota iMEC: 3.1</p>
+                                <p style={{ fontSize: "14px", lineHeight: "21px", marginTop: "22px" }}>R. Platina, 556 - Tatuape, São Paulo - SP, 03308-010</p>
+                            </div>
+                    </Styled.Conteudo>
+                    <Grid xs={4}>
+                        <Card style={{ backgroundColor: "#FFF", alignItems: "center", display: "flex", padding: "30px" }}>
+                            <div style={{ height: "224px", width: "224px", backgroundColor: "#D9D9D9", border: "1px solid #ededed", marginLeft: "auto", marginRight:"auto" }}></div>
+                        </Card>
+                    </Grid>
+                </Styled.GridFaculdades>
+                
             </Styled.Container>
         </div>
     )

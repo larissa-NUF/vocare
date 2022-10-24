@@ -59,7 +59,7 @@ export const ListaAlunos: React.FC = () => {
                     '& .super-app-theme--header': {
                         backgroundColor: theme.palette.primary.main,
                         color: "#FFF",
-                        textDecoration: "bold",
+                        fontWeight: "bold",
                     },
                 }}>
                     {data && 

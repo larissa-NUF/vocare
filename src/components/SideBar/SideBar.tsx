@@ -32,7 +32,7 @@ export const SideBar: React.FC = () => {
                                 Setores
                             </Styled.MenuItem>
                         </Styled.Itens>
-                        <Styled.Itens xs={12} onClick={() => navigate("/")}>
+                        <Styled.Itens xs={12} onClick={() => navigate("/faculdades")}>
                             <Styled.MenuItem container>
                                 <FaUserGraduate color="white" />
                                 Faculdades
