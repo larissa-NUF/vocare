@@ -44,7 +44,7 @@ export const SideBar: React.FC = () => {
                                 Alunos       
                             </Styled.MenuItem>
                         </Styled.Itens>
-                        <Styled.Itens xs={12} onClick={() => navigate("/")} style={{borderBottom:"1px solid #CCC", paddingBottom:"25px"}}>
+                        <Styled.Itens xs={12} onClick={() => navigate("/")} style={{borderBottom:"1px solid #8EB9D4", paddingBottom:"25px"}}>
                             <Styled.MenuItem container>
                                 <BiHelpCircle color="white" />
                                 Ajuda       
