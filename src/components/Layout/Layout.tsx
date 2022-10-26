@@ -8,7 +8,7 @@ export const Layout = ({ children }: LayoutProps) => {
     const [usuario, setUsuario] = useState("aluno");
 
     return (
-        <>
+        <div style={{ height:"100vh" }}>
             {usuario === "aluno" && 
                 <Grid container>
                     <Grid xs={2}>
@@ -25,6 +25,6 @@ export const Layout = ({ children }: LayoutProps) => {
                     {children}
                 </Grid>
             }
-        </>
+        </div>
     )
 }

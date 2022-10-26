@@ -58,12 +58,12 @@ export const SideBar: React.FC = () => {
                         </Styled.Itens>
                     </Grid>
                 </Styled.Layout>
-                <Grid xs={12} style={{display: "flex", paddingBottom: "0", height: "25%", width:"100%"}}>
+                <Styled.GridBotao xs={12}>
                     <Styled.BotaoSair size='medium'>
-                        <RiLogoutBoxLine />
-                        Sair
+                        <RiLogoutBoxLine size={16} />
+                        <p>Sair</p>
                     </Styled.BotaoSair>
-                </Grid>
+                </Styled.GridBotao>
             </Styled.SideBar>
         </>
     )

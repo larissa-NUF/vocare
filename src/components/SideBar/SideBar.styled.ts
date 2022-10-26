@@ -32,11 +32,19 @@ export const BotaoSair = styled(MainButton)({
     justifyContent: "center",
     textAlign: "center",
     display: "flex",
-    marginLeft: "auto",
-    marginRight: "auto",
-    marginTop: "auto",
+    margin: "auto",
     backgroundColor: "#BE1106",
+    gap: "12px",
     "&:hover":{
         backgroundColor: "#a71309",
     },
+});
+
+export const GridBotao = styled(Grid)({
+    display: "flex", 
+    marginBottom: 0, 
+    height:"100%",
+    marginTop: "auto",
+    width:"100%",
+    alignItems: "normal"
 });
