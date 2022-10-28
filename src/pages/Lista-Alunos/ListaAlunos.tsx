@@ -6,6 +6,7 @@ import { boolean } from 'yup';
 import { theme } from '../../styles/theme';
 import { FaUserAlt as Fa } from 'react-icons/fa';
 import { useGetAll } from '../../api/controllers/usuario';
+import { BiSearchAlt } from 'react-icons/bi';
 
 const columns: GridColDef[] = [
     {
@@ -49,10 +50,12 @@ const columns: GridColDef[] = [
 export const ListaAlunos: React.FC = () => {
     const { data } = useGetAll();
     return (
-        <div>
+        <div style={{ backgroundColor: "#F7F7F7" }}>
             <Styled.Fundo></Styled.Fundo>
             <Styled.Container>
                 <Styled.Titulo><Styled.Icon />Alunos</Styled.Titulo>
+                <Styled.Pesquisa><BiSearchAlt />Pesquisar</Styled.Pesquisa>
+                
                 <Box sx={{
                     height: 440,
                     width: '100%', 

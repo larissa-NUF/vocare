@@ -12,7 +12,7 @@ import { BiSearchAlt } from 'react-icons/bi';
 
 export const Faculdades: React.FC = () => {
     return (
-        <div>
+        <div style={{ backgroundColor: "#F7F7F7" }}>
             <Styled.Fundo></Styled.Fundo>
             <Styled.Container>
                 <Styled.Titulo><Styled.Icon />Faculdades</Styled.Titulo>
@@ -20,10 +20,10 @@ export const Faculdades: React.FC = () => {
                 <Styled.GridFaculdades xs={12}>
                     <Styled.Conteudo xs={8} >  
                         <div style={{ display:"flex", borderBottom:"1px #8EB9D4 solid", paddingBottom: "16px" }}>
-                            <Grid xs={2}>
+                            <Grid xs={3}>
                                 <div style={{ height: "105px", width: "105px", backgroundColor: "#D9D9D9", border: "1px solid #ededed", position: "relative" }}></div>
                             </Grid>
-                            <Grid xs={10}>
+                            <Grid xs={9}>
                                 <Styled.Legenda>Uniasselvi</Styled.Legenda>
                                 <p style={{ fontSize: "14px", fontWeight: "bold", lineHeight: "21px" }}>Nota iMEC: 3.1</p>
                                 <p style={{ fontSize: "14px", lineHeight: "21px", marginTop: "22px" }}>R. Platina, 556 - Tatuape, São Paulo - SP, 03308-010</p>
@@ -31,10 +31,10 @@ export const Faculdades: React.FC = () => {
                         </div>
 
                         <div style={{ display:"flex", borderBottom:"1px #8EB9D4 solid", paddingBottom: "16px" }}>
-                            <Grid xs={2}>
+                            <Grid xs={3}>
                                 <div style={{ height: "105px", width: "105px", backgroundColor: "#D9D9D9", border: "1px solid #ededed", position: "relative" }}></div>
                             </Grid>
-                            <Grid xs={10}>
+                            <Grid xs={9}>
                                 <Styled.Legenda>Uniasselvi</Styled.Legenda>
                                 <p style={{ fontSize: "14px", fontWeight: "bold", lineHeight: "21px" }}>Nota iMEC: 3.1</p>
                                 <p style={{ fontSize: "14px", lineHeight: "21px", marginTop: "22px" }}>R. Platina, 556 - Tatuape, São Paulo - SP, 03308-010</p>
@@ -42,10 +42,10 @@ export const Faculdades: React.FC = () => {
                         </div>
 
                         <div style={{ display:"flex", borderBottom:"1px #8EB9D4 solid", paddingBottom: "16px" }}>
-                            <Grid xs={2}>
+                            <Grid xs={3}>
                                 <div style={{ height: "105px", width: "105px", backgroundColor: "#D9D9D9", border: "1px solid #ededed", position: "relative" }}></div>
                             </Grid>
-                            <Grid xs={10}>
+                            <Grid xs={9}>
                                 <Styled.Legenda>Uniasselvi</Styled.Legenda>
                                 <p style={{ fontSize: "14px", fontWeight: "bold", lineHeight: "21px" }}>Nota iMEC: 3.1</p>
                                 <p style={{ fontSize: "14px", lineHeight: "21px", marginTop: "22px" }}>R. Platina, 556 - Tatuape, São Paulo - SP, 03308-010</p>
@@ -53,10 +53,10 @@ export const Faculdades: React.FC = () => {
                         </div>
 
                         <div style={{ display:"flex", borderBottom:"1px #8EB9D4 solid", paddingBottom: "16px" }}>
-                            <Grid xs={2}>
+                            <Grid xs={3}>
                                 <div style={{ height: "105px", width: "105px", backgroundColor: "#D9D9D9", border: "1px solid #ededed", position: "relative" }}></div>
                             </Grid>
-                            <Grid xs={10}>
+                            <Grid xs={9}>
                                 <Styled.Legenda>Uniasselvi</Styled.Legenda>
                                 <p style={{ fontSize: "14px", fontWeight: "bold", lineHeight: "21px" }}>Nota iMEC: 3.1</p>
                                 <p style={{ fontSize: "14px", lineHeight: "21px", marginTop: "22px" }}>R. Platina, 556 - Tatuape, São Paulo - SP, 03308-010</p>
@@ -64,10 +64,10 @@ export const Faculdades: React.FC = () => {
                         </div>
 
                         <div style={{ display:"flex", borderBottom:"1px #8EB9D4 solid", paddingBottom: "16px" }}>
-                            <Grid xs={2}>
+                            <Grid xs={3}>
                                 <div style={{ height: "105px", width: "105px", backgroundColor: "#D9D9D9", border: "1px solid #ededed", position: "relative" }}></div>
                             </Grid>
-                            <Grid xs={10}>
+                            <Grid xs={9}>
                                 <Styled.Legenda>Uniasselvi</Styled.Legenda>
                                 <p style={{ fontSize: "14px", fontWeight: "bold", lineHeight: "21px" }}>Nota iMEC: 3.1</p>
                                 <p style={{ fontSize: "14px", lineHeight: "21px", marginTop: "22px" }}>R. Platina, 556 - Tatuape, São Paulo - SP, 03308-010</p>
@@ -75,10 +75,10 @@ export const Faculdades: React.FC = () => {
                         </div>
 
                         <div style={{ display:"flex", borderBottom:"1px #8EB9D4 solid", paddingBottom: "16px" }}>
-                            <Grid xs={2}>
+                            <Grid xs={3}>
                                 <div style={{ height: "105px", width: "105px", backgroundColor: "#D9D9D9", border: "1px solid #ededed", position: "relative" }}></div>
                             </Grid>
-                            <Grid xs={10}>
+                            <Grid xs={9}>
                                 <Styled.Legenda>Uniasselvi</Styled.Legenda>
                                 <p style={{ fontSize: "14px", fontWeight: "bold", lineHeight: "21px" }}>Nota iMEC: 3.1</p>
                                 <p style={{ fontSize: "14px", lineHeight: "21px", marginTop: "22px" }}>R. Platina, 556 - Tatuape, São Paulo - SP, 03308-010</p>
@@ -109,7 +109,7 @@ export const Faculdades: React.FC = () => {
                                 <BsFillTelephoneFill style={{ fill: theme.palette.primary.main, height: "16px", width:"16px" }} /><Styled.TxtCard>011994003551</Styled.TxtCard>
                             </Styled.ItensCard>
                             <Styled.ItensCard>
-                                <AiOutlineLink style={{ fill: theme.palette.primary.main, height: "16px", width:"16px" }} /><Styled.TxtCard><a href='https://uniasselvi.business'>https://uniasselvi.business</a></Styled.TxtCard>
+                                <AiOutlineLink style={{ fill: theme.palette.primary.main, height: "16px", width:"16px" }} /><Styled.TxtCard><a href='https://portal.uniasselvi.com.br'>https://portal.uniasselvi.com.br</a></Styled.TxtCard>
                             </Styled.ItensCard>
                         </Grid>
                     </Styled.Card>

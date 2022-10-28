@@ -24,7 +24,7 @@ export const Icon = styled(FaUserGraduate)({
 
 export const Fundo = styled("div")({
     width: "100%",
-    height: theme.spacing(3.438),
+    height: "5vh",
     backgroundColor: "#ededed",
     zIndex: 0,
     border: "solid 2px #d8d7d7"
@@ -33,7 +33,7 @@ export const Fundo = styled("div")({
 export const GridFaculdades = styled(Grid)({
     display: "flex",
     gap: "44px",
-    backgroundColor: "#FFF"
+    backgroundColor: "#F7F7F7"
 });
 
 export const Conteudo = styled(Grid)({
@@ -59,7 +59,8 @@ export const Card = styled(Grid)({
     borderRadius: "5",
     backgroundColor: "#FFF", 
     display: "flex",
-    padding: "28px"
+    padding: "28px",
+    height: "auto"
 });
 
 export const ItensCard = styled("div")({
