@@ -1,5 +1,6 @@
 import { Route, Routes as RoutesWrapper } from "react-router-dom";
 import Cadastro from '../pages/Cadastro';
+import { Consulta } from "../pages/Consulta";
 import { Dashboard } from "../pages/Dashboard";
 import { Faculdades } from "../pages/Faculdades";
 import { ListaAlunos } from "../pages/Lista-Alunos";
@@ -15,6 +16,7 @@ export function Routes() {
             <Route path="/pagamento" element={<Pagamento />}></Route>
             <Route path="/lista-alunos" element={<ListaAlunos />}></Route>
             <Route path="/faculdades" element={<Faculdades />}></Route>
+            <Route path="/consulta" element={<Consulta />}></Route>
         </RoutesWrapper>
     );
 }
