@@ -10,7 +10,33 @@ import { BsFillTelephoneFill } from 'react-icons/bs';
 import { AiOutlineLink } from 'react-icons/ai';
 import { BiSearchAlt } from 'react-icons/bi';
 
+let map: google.maps.Map;
+let service: google.maps.places.PlacesService;
+let infowindow: google.maps.InfoWindow;
+
 export const Faculdades: React.FC = () => {
+    const sydney = new google.maps.LatLng(0.0, 0.0);
+  
+    infowindow = new google.maps.InfoWindow();
+  
+    map = new google.maps.Map(document.getElementById("map") as HTMLElement, {
+      center: sydney,
+      zoom: 15
+    });
+  
+    var request2 = {
+      query: "rio de janeiro"
+    };
+  
+    service = new google.maps.places.PlacesService(map);
+    service.textSearch(request2, (results, status) => {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        console.log("----------", results);
+      }
+    });
+   
+  
+
     return (
         <div>
             <Styled.Fundo></Styled.Fundo>
