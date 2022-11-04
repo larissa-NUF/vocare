@@ -6,7 +6,7 @@ import { theme } from "../../styles/theme";
 
 export const FundoAzul = styled("div")({
     width: "100%",
-    backgroundColor: theme.palette.secondary.main,
+    background: 'linear-gradient(to left, #071844, #37689B)',
     height: "100vh",
     marginTop: "auto",
     marginBottom: "auto",

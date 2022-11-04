@@ -119,9 +119,20 @@ const DadosPessoais: React.FC = () => {
 
           <Styled.DivCadastro>
             <Styled.TxtCadastro>
-              <Checkbox value={values.checkbox} size="small" style={{ color: theme.palette.primary.main }} name="checkbox" id="checkbox" onChange={handleChange} onBlur={handleBlur} />Concordo com os <Styled.CorLinkCad href="https://www.etecmcm.com.br" target="_blank">Termos de Serviço</Styled.CorLinkCad>
-              </Styled.TxtCadastro>
-              {touched.checkbox && errors.checkbox}
+              <Checkbox 
+                value={values.checkbox} 
+                size="small" 
+                style={{ color: theme.palette.primary.main }} 
+                name="checkbox" 
+                id="checkbox" 
+                onChange={handleChange} 
+                onBlur={handleBlur} 
+              />
+              Concordo com os <Styled.CorLinkCad href="https://www.etecmcm.com.br" target="_blank">Termos de Serviço</Styled.CorLinkCad>
+            </Styled.TxtCadastro>
+            {touched.checkbox && errors.checkbox}
+            
+            <Styled.Txt>Já possui uma conta? <Styled.CorLink href="/login">Faça Login!</Styled.CorLink></Styled.Txt>
           </Styled.DivCadastro>
 
         </FormControl >

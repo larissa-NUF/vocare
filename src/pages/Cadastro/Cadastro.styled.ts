@@ -39,7 +39,7 @@ export const Titulo= styled("div")({
 
 export const LogoVocale = styled("img")({
   width: theme.spacing(14.188),
-  marginTop: theme.spacing(2),
+  marginTop: theme.spacing(1),
   marginBottom: theme.spacing(0.6)
 });
 
@@ -122,4 +122,19 @@ export const TxtBtn = styled("p")({
 export const TxtBtnVoltar = styled("p")({
   fontSize: "1em",
   margin: "3px"
+});
+
+export const Txt = styled(Typography)({
+  textAlign: "center",
+  fontSize: theme.spacing(0.8),
+  paddingTop: theme.spacing(0.5),
+  paddingBottom: "0px",
+});
+
+export const CorLink = styled(Link)({
+  color: theme.palette.primary.main,
+  textDecoration: "underline",
+  "&:hover":{
+    color: theme.palette.secondary.main,
+},
 });
