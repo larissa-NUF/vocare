@@ -32,7 +32,7 @@ export default function Video(props: any) {
         users.map((user: any) => {
           if (user.videoTrack) {
             return (
-              <Grid item xs={gridSpacing} >
+              <Grid item xs={6} >
                 <Styled.CameraDemais
                   videoTrack={user.videoTrack}
                   key={user.uid}
