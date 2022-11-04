@@ -69,7 +69,7 @@ export default function VideoCall(props: any) {
   return (
     <Grid container direction="column" style={{ height: "100%" }}>
       
-      <Grid item style={{ height: "90%" }}>
+      <Grid item style={{ height: "90%", width: '100%'}}>
         {start && tracks && <Video tracks={tracks} users={users} />}
       </Grid>
       <Grid item alignItems="center">

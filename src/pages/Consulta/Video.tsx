@@ -22,12 +22,12 @@ export default function Video(props: any) {
 
   return (
     <Styled.GridUsers container style={{ paddingRight: alturaSpacing + 'em', paddingLeft: alturaSpacing + 'em'}}>
-      {/* <Grid item xs={2}>
+      <Grid item xs={4}>
         <AgoraVideoPlayer
           videoTrack={tracks[1]}
-          style={{ height: "90%", width: "90%" }}
+          style={{ height: "100%", width: "90%" }}
         />
-      </Grid> */}
+      </Grid> 
       {users.length > 0 &&
         users.map((user: any) => {
           if (user.videoTrack) {
