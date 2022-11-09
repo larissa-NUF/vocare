@@ -26,7 +26,7 @@ export const Header: React.FC = () => {
                     <Toolbar style={{ display: "flex", justifyContent: "space-between" }}>
 
                         <Styled.GridNavItens>
-                            <Styled.LogoNav src={Logo} alt="Logo Vocare azul" />
+                            <Styled.LogoNav src={Logo} alt="Logo Vocare azul" onClick={() => navigate("/")} />
 
                             <Styled.NavItem>Início</Styled.NavItem>
                             <Styled.NavItem>Sobre</Styled.NavItem>
@@ -45,8 +45,8 @@ export const Header: React.FC = () => {
                 </AppBar>
 
                 {/* Conteúdo Header */}
-                <Styled.GridConteudoHeader>
-                    <Grid xs={8} style={{ paddingTop: theme.spacing(6), flexDirection: "column", zIndex: 2 }}>
+                <Styled.ConteudoHeader>
+                    <Grid xs={7} style={{ paddingTop: theme.spacing(6), flexDirection: "column", zIndex: 2 }}>
                         <Styled.TituloHeader>
                             <Typical 
                                 loop={1}
@@ -55,25 +55,25 @@ export const Header: React.FC = () => {
                                     1000,
                                     'Descubra sua vocação e decole no mercado de trabalho! 😇',
                                     1000,
-                                    'Descubra sua vocação e decole sua carreira! 😎',
+                                    'Descubra sua vocação e alavanque sua carreira! 😎',
                                     1000,
                                 ]}
                             />
                         </Styled.TituloHeader>
 
                         <Grid xs={12} style={{width: "70%"}}>
-                            <h4 style={{ color: "#fff", fontWeight: "200", marginTop: theme.spacing(1) }}>
+                            <h3 style={{ color: "#fff", fontWeight: "200", marginTop: theme.spacing(1.5) }}>
                                 Por meio da orientação vocacional, obtenha atendimento particular com psicólogos certificados e resultados acessíveis!
-                            </h4>
+                            </h3>
                         </Grid>
                     </Grid>
-                    <Grid xs={4} style={{justifyContent:"center", display:"flex", zIndex: 0}}>
+                    <Grid xs={5} style={{justifyContent:"center", display:"flex", zIndex: 0}}>
                         <Styled.ImgHeader src={Fundo} alt="" />
                     </Grid>
-                </Styled.GridConteudoHeader>
+                </Styled.ConteudoHeader>
 
             </Styled.GridContainer>
-            <img src={Triangulo} style={{ height: "40px", display: "block", marginLeft: "auto", marginRight: "auto", transform: "translateY(-50%)" }} />
+            <img src={Triangulo} style={{ height: "40px", display: "block", marginLeft: "auto", marginRight: "auto", transform: "translateY(-50%)" }} alt="psicóloga" />
         </>
     );
 }

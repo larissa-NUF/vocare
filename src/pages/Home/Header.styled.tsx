@@ -11,8 +11,8 @@ export const GridContainer = styled(Grid)({
 });
 
 export const LogoNav = styled("img")({
-    height: "60px",
-    padding: "5px",
+    height: theme.spacing(3.75),
+    padding: theme.spacing(0.5),
     cursor: "pointer",
     "&:hover":{
         transform: "scale(1.1)",
@@ -23,14 +23,14 @@ export const LogoNav = styled("img")({
 export const GridNavItens = styled(Grid)({
     display: "flex",
     flexDirection: "row",
-    gap: "24px",
+    gap: theme.spacing(1.5),
     justifyContent: "center"
 });
 
 export const NavItem = styled("p")({
     color: "#fff",
-    fontSize: "16px",
-    paddingTop: "18px",
+    fontSize: theme.spacing(1),
+    paddingTop: theme.spacing(1.5),
     cursor: "pointer",
     "&:hover": {
         color: "#8EB9D4",
@@ -41,7 +41,7 @@ export const NavItem = styled("p")({
 
 export const NavDireita = styled("div")({
     display: "flex",
-    gap: "8px",
+    gap: theme.spacing(0.5),
     justifyContent: "center",
     cursor: "pointer",
     "&:hover": {
@@ -52,20 +52,23 @@ export const NavDireita = styled("div")({
     }
 });
 
-export const GridConteudoHeader = styled(Grid)({
+export const ConteudoHeader = styled(Grid)({
     width: "78%", 
     display: "flex", 
     marginLeft: "auto", 
     marginRight: "auto",
-    marginTop: theme.spacing(2),
-    height: "60vh"
+    marginTop: theme.spacing(3),
+    height: "60vh",
+    flexDirection: "row",
+    justifyContent: "center"
 });
 
 export const TituloHeader = styled("span")({
     backgroundColor: theme.palette.primary.main, 
-    fontSize: "40px", 
+    fontSize: theme.spacing(3), 
     color: "#c9e2fd", 
-    justifyContent: "start",
+    justifyContent: "center",
+    paddingTop: theme.spacing(2)
 });
 
 export const ImgHeader = styled("img")({
