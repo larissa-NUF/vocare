@@ -4,11 +4,11 @@ import Logo from '../../assets/img/logo.png';
 import Fundo from '../../assets/img/doc.png';
 import Triangulo from '../../assets/img/divider.png';
 import { Button, Grid } from "@material-ui/core";
-import { theme } from "../../styles/theme";
+import { theme } from "../../../styles/theme";
 import { FaUserAlt as Fa } from "react-icons/fa";
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import { SecundaryButton } from "../../components/SecundaryButton";
+import { SecundaryButton } from "../../../components/SecundaryButton";
 import { useNavigate } from "react-router-dom";
 import Typical from 'react-typical';
 
@@ -61,7 +61,7 @@ export const Header: React.FC = () => {
                             />
                         </Styled.TituloHeader>
 
-                        <Grid xs={12} style={{width: "70%"}}>
+                        <Grid xs={10} style={{width: "70%"}}>
                             <h3 style={{ color: "#fff", fontWeight: "200", marginTop: theme.spacing(1.5) }}>
                                 Por meio da orientação vocacional, obtenha atendimento particular com psicólogos certificados e resultados acessíveis!
                             </h3>

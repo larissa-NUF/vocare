@@ -1,7 +1,7 @@
 import { Button, Grid, styled } from "@material-ui/core";
-import { theme } from "../../styles/theme";
+import { theme } from "../../../styles/theme";
 import Logo from '../../assets/img/logo.png';
-import { SecundaryButton } from "../../components/SecundaryButton";
+import { SecundaryButton } from "../../../components/SecundaryButton";
 
 
 export const GridContainer = styled(Grid)({
@@ -64,11 +64,12 @@ export const ConteudoHeader = styled(Grid)({
 });
 
 export const TituloHeader = styled("span")({
-    backgroundColor: theme.palette.primary.main, 
+    // backgroundColor: theme.palette.primary.main, 
     fontSize: theme.spacing(3), 
     color: "#c9e2fd", 
     justifyContent: "center",
-    paddingTop: theme.spacing(2)
+    display: "flex",
+    margin: "16px 0 32px 0"
 });
 
 export const ImgHeader = styled("img")({
