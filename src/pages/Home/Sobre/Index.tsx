@@ -1,1 +1,0 @@
-export { Sobre } from "./Sobre";
