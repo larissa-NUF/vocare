@@ -1,0 +1,1 @@
+export { Faculdades } from "./Faculdades";

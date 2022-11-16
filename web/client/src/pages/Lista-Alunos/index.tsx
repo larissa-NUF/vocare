@@ -1,0 +1,1 @@
+export { ListaAlunos } from "./ListaAlunos";

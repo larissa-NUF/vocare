@@ -1,0 +1,1 @@
+export { Consulta } from "./Consulta";
