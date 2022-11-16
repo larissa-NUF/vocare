@@ -1,8 +1,8 @@
 import React from "react";
 import * as Styled from "./Header.styled";
-import Logo from '../../../assets/img/logo.png';
-import Fundo from '../../../assets/img/doc.png';
-import Triangulo from '../../../assets/img/divider.png';
+import Logo from '../../assets/img/logo.png';
+import Fundo from '../../assets/img/doc.png';
+import Triangulo from '../../assets/img/divider.png';
 import { Button, Grid } from "@material-ui/core";
 import { theme } from "../../../styles/theme";
 import { FaUserAlt as Fa } from "react-icons/fa";
@@ -34,7 +34,7 @@ export const Header: React.FC = () => {
                         </Styled.GridNavItens>
 
                         <Grid style={{ display: "flex", justifyContent: "center", gap: "8px" }}>
-                            <SecundaryButton href="login">
+                            <SecundaryButton>
                                 <Styled.NavDireita onClick={() => navigate("/login")}>
                                     <Fa color="white" />
                                     <p style={{ fontSize: "16px", color: "#fff", }}>Login</p>
@@ -49,7 +49,7 @@ export const Header: React.FC = () => {
                     <Grid xs={7} style={{ paddingTop: theme.spacing(6), flexDirection: "column", zIndex: 2 }}>
                         <Styled.TituloHeader>
                             <Typical 
-                                loop={Infinity}
+                                loop={1}
                                 steps={[
                                     'Descubra sua vocação e decole profissionalmente! 😱',
                                     1000,
@@ -62,9 +62,6 @@ export const Header: React.FC = () => {
                         </Styled.TituloHeader>
 
                         <Grid xs={10} style={{width: "70%"}}>
-                            <h3 style={{ color: "#fff", fontWeight: "200", marginTop: theme.spacing(1.5) }}>
-                                Tem dúvida sobre sua carreira profissional ou não sabe qual área seguir? Conheça-nos!
-                            </h3>
                             <h3 style={{ color: "#fff", fontWeight: "200", marginTop: theme.spacing(1.5) }}>
                                 Por meio da orientação vocacional, obtenha atendimento particular com psicólogos certificados e resultados acessíveis!
                             </h3>
