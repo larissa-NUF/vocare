@@ -6,7 +6,6 @@ export const Home: React.FC = () => {
     return (
         <>
             <Header />
-            <Sobre />
         </>
     )
 }

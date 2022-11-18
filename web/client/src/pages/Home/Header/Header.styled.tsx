@@ -2,11 +2,12 @@ import { Button, Grid, styled } from "@material-ui/core";
 import { theme } from "../../../styles/theme";
 import Logo from '../../assets/img/logo.png';
 import { SecundaryButton } from "../../../components/SecundaryButton";
+import "./animation.css";
 
 
 export const GridContainer = styled(Grid)({
     background: 'linear-gradient(to right, #071844, #37689B)',
-    height: "90vh",
+    height: "85vh",
     zIndex: -1
 });
 

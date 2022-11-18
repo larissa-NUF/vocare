@@ -1,11 +1,13 @@
 import React from "react";
 import * as Styled from "./Header.styled";
+import "./animation.css";
 import Logo from '../../../assets/img/logo.png';
 import Fundo from '../../../assets/img/doc.png';
 import Triangulo from '../../../assets/img/divider.png';
 import { Button, Grid } from "@material-ui/core";
 import { theme } from "../../../styles/theme";
 import { FaUserAlt as Fa } from "react-icons/fa";
+import { FiActivity } from "react-icons/fi";
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import { SecundaryButton } from "../../../components/SecundaryButton";
@@ -49,13 +51,13 @@ export const Header: React.FC = () => {
                     <Grid xs={7} style={{ paddingTop: theme.spacing(6), flexDirection: "column", zIndex: 2 }}>
                         <Styled.TituloHeader>
                             <Typical 
-                                loop={Infinity}
+                                loop={1}
                                 steps={[
                                     'Descubra sua vocação e decole profissionalmente! 😱',
                                     1000,
                                     'Descubra sua vocação e decole no mercado de trabalho! 😇',
                                     1000,
-                                    'Descubra sua vocação e alavanque sua carreira! 😎',
+                                    'Descubra sua vocação e decole sua carreira! 😎',
                                     1000,
                                 ]}
                             />
@@ -71,12 +73,65 @@ export const Header: React.FC = () => {
                         </Grid>
                     </Grid>
                     <Grid xs={5} style={{justifyContent:"center", display:"flex", zIndex: 0}}>
-                        <Styled.ImgHeader src={Fundo} alt="" />
+                        <Styled.ImgHeader src={Fundo} alt="psicóloga de exemplo" className="imagem-header" />
                     </Grid>
                 </Styled.ConteudoHeader>
 
             </Styled.GridContainer>
             <img src={Triangulo} style={{ height: "40px", display: "block", marginLeft: "auto", marginRight: "auto", transform: "translateY(-50%)" }} alt="psicóloga" />
+
+
+
+            <Grid xs={12} style={{ width: "78%", display: "flex", flexDirection: "row", marginLeft: "auto", marginRight: "auto", paddingTop: theme.spacing(1.5), gap: theme.spacing(1) }}>
+                <Grid xs={3} style={{ height: theme.spacing(12.5), width: theme.spacing(12.5), border: "1px solid #ccc", padding: theme.spacing(1.5) }}>
+                    <div style={{ justifyContent: "left" }}>
+                        <FiActivity fill={theme.palette.primary.main} />
+                        
+                        <div>
+                            <h3>Título Legal</h3>
+                        </div>
+
+                        <p style={{ fontSize: theme.spacing(0.75) }}>TextoTexto TextoTextoTexto Texto Texto
+                        TextoTexto Texto</p>
+                    </div>
+                </Grid>
+                <Grid xs={3} style={{ height: theme.spacing(12.5), width: theme.spacing(12.5), border: "1px solid #ccc", padding: theme.spacing(1.5) }}>
+                    <div style={{ justifyContent: "left" }}>
+                        (icone)
+                        
+                        <div>
+                            <h3>Título Legal</h3>
+                        </div>
+
+                        <p style={{ fontSize: theme.spacing(0.75) }}>TextoTexto TextoTextoTexto Texto Texto
+                        TextoTexto Texto</p>
+                    </div>
+                </Grid>
+                <Grid xs={3} style={{ height: theme.spacing(12.5), width: theme.spacing(12.5), border: "1px solid #ccc", padding: theme.spacing(1.5) }}>
+                    <div style={{ justifyContent: "left" }}>
+                        (icone)
+                        
+                        <div>
+                            <h3>Título Legal</h3>
+                        </div>
+
+                        <p style={{ fontSize: theme.spacing(0.75) }}>TextoTexto TextoTextoTexto Texto Texto
+                        TextoTexto Texto</p>
+                    </div>
+                </Grid>
+                <Grid xs={3} style={{ height: theme.spacing(12.5), width: theme.spacing(12.5), border: "1px solid #ccc", padding: theme.spacing(1.5) }}>
+                    <div style={{ justifyContent: "left" }}>
+                        (icone)
+                        
+                        <div>
+                            <h3>Título Legal</h3>
+                        </div>
+
+                        <p style={{ fontSize: theme.spacing(0.75) }}>TextoTexto TextoTextoTexto Texto Texto
+                        TextoTexto Texto</p>
+                    </div>
+                </Grid>
+            </Grid>
         </>
     );
 }
