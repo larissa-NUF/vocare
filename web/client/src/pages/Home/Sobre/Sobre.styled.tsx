@@ -1,19 +1,21 @@
 import { Grid, styled } from "@material-ui/core";
 import { theme } from "../../../styles/theme";
-import './estilo.css';
+import '../estilo.css';
 
 
 export const ContainerSobre = styled(Grid)({
     display: "flex", 
-    maxWidth: "78%", 
+    width: "78%", 
     flexDirection: "column",
     marginLeft: "auto",
-    marginRight: "auto"
+    marginRight: "auto",
+    marginTop: theme.spacing(2)
 });
 
 export const TituloSobre = styled("h2")({
-    fontSize: theme.spacing(2),
+    fontSize: theme.spacing(2.75),
     textAlign: "center",
+    fontWeight: 200
 });
 
 export const Divider = styled("div")({
@@ -23,7 +25,7 @@ export const Divider = styled("div")({
     width: "20%",
     marginLeft: "auto",
     marginRight: "auto",
-    marginTop: theme.spacing(1),
+    marginTop: theme.spacing(2),
     display: "flex"
 });
 

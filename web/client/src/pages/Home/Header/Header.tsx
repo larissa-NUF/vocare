@@ -1,17 +1,19 @@
 import React from "react";
 import * as Styled from "./Header.styled";
-import "./animation.css";
+import "../estilo.css";
 import Logo from '../../../assets/img/logo.png';
 import Fundo from '../../../assets/img/doc.png';
 import Triangulo from '../../../assets/img/divider.png';
 import { Button, Grid } from "@material-ui/core";
 import { theme } from "../../../styles/theme";
 import { FaUserAlt as Fa } from "react-icons/fa";
-import { FiActivity } from "react-icons/fi";
+import { MdOutlineComputer } from "react-icons/md";
+import { BsPhone, BsClipboardData, BsPersonBadge } from "react-icons/bs";
+import { MdOutlinePsychology as Md } from "react-icons/md";
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import { SecundaryButton } from "../../../components/SecundaryButton";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Typical from 'react-typical';
 
 export const Header: React.FC = () => {
@@ -20,7 +22,7 @@ export const Header: React.FC = () => {
     return (
         <>
             <Styled.GridContainer>
-                {/* Navbar component */}
+                {/* Navbar */}
                 <AppBar 
                     component="nav" 
                     style={{ background: 'transparent', boxShadow: 'none', padding: "0 100px 0 100px", justifyContent: "center", position: "relative" }}
@@ -36,34 +38,36 @@ export const Header: React.FC = () => {
                         </Styled.GridNavItens>
 
                         <Grid style={{ display: "flex", justifyContent: "center", gap: "8px" }}>
-                            <SecundaryButton href="login">
-                                <Styled.NavDireita onClick={() => navigate("/login")}>
-                                    <Fa color="white" />
-                                    <p style={{ fontSize: "16px", color: "#fff", }}>Login</p>
-                                </Styled.NavDireita>
-                            </SecundaryButton>
+                            <Link to="/login">
+                                <SecundaryButton>
+                                    <Styled.NavDireita>
+                                        <Fa color="white" />
+                                        <p style={{ fontSize: "16px", color: "#fff", }}>Login</p>
+                                    </Styled.NavDireita>
+                                </SecundaryButton>
+                            </Link>
                         </Grid>
                     </Toolbar>
                 </AppBar>
 
-                {/* Conteúdo Header */}
+            {/* Header */}
                 <Styled.ConteudoHeader>
-                    <Grid xs={7} style={{ paddingTop: theme.spacing(6), flexDirection: "column", zIndex: 2 }}>
+                    <Grid xs={7} style={{ paddingTop: theme.spacing(6), flexDirection: "column", zIndex: 2 }} className="titulo">
                         <Styled.TituloHeader>
                             <Typical 
                                 loop={1}
                                 steps={[
                                     'Descubra sua vocação e decole profissionalmente! 😱',
-                                    1000,
+                                    1500,
                                     'Descubra sua vocação e decole no mercado de trabalho! 😇',
-                                    1000,
+                                    1500,
                                     'Descubra sua vocação e decole sua carreira! 😎',
                                     1000,
                                 ]}
                             />
                         </Styled.TituloHeader>
 
-                        <Grid xs={10} style={{width: "70%"}}>
+                        <Grid style={{width: "80%", display: "block"}} className="subtitulo">
                             <h3 style={{ color: "#fff", fontWeight: "200", marginTop: theme.spacing(1.5) }}>
                                 Tem dúvida sobre sua carreira profissional ou não sabe qual área seguir? Conheça-nos!
                             </h3>
@@ -78,60 +82,40 @@ export const Header: React.FC = () => {
                 </Styled.ConteudoHeader>
 
             </Styled.GridContainer>
-            <img src={Triangulo} style={{ height: "40px", display: "block", marginLeft: "auto", marginRight: "auto", transform: "translateY(-50%)" }} alt="psicóloga" />
+            <img src={Triangulo} style={{ height: "40px", display: "block", marginLeft: "auto", marginRight: "auto", padding: "0", transform: "translateY(-50%)" }} />
 
 
+            {/* Brands */}
+            <Styled.Brands xs={12}>
+                <Styled.BrandItem xs={3} className="item">
 
-            <Grid xs={12} style={{ width: "78%", display: "flex", flexDirection: "row", marginLeft: "auto", marginRight: "auto", paddingTop: theme.spacing(1.5), gap: theme.spacing(1) }}>
-                <Grid xs={3} style={{ height: theme.spacing(12.5), width: theme.spacing(12.5), border: "1px solid #ccc", padding: theme.spacing(1.5) }}>
-                    <div style={{ justifyContent: "left" }}>
-                        <FiActivity fill={theme.palette.primary.main} />
-                        
-                        <div>
-                            <h3>Título Legal</h3>
-                        </div>
+                    <MdOutlineComputer color={theme.palette.primary.main} size={theme.spacing(2.5)} style={{marginBottom: theme.spacing(0.75)}} />
 
-                        <p style={{ fontSize: theme.spacing(0.75) }}>TextoTexto TextoTextoTexto Texto Texto
-                        TextoTexto Texto</p>
-                    </div>
-                </Grid>
-                <Grid xs={3} style={{ height: theme.spacing(12.5), width: theme.spacing(12.5), border: "1px solid #ccc", padding: theme.spacing(1.5) }}>
-                    <div style={{ justifyContent: "left" }}>
-                        (icone)
-                        
-                        <div>
-                            <h3>Título Legal</h3>
-                        </div>
+                    <h3 style={{ fontSize: theme.spacing(1.25), fontWeight: "bold" }}>Consulta com Psicólogos</h3>
 
-                        <p style={{ fontSize: theme.spacing(0.75) }}>TextoTexto TextoTextoTexto Texto Texto
-                        TextoTexto Texto</p>
-                    </div>
-                </Grid>
-                <Grid xs={3} style={{ height: theme.spacing(12.5), width: theme.spacing(12.5), border: "1px solid #ccc", padding: theme.spacing(1.5) }}>
-                    <div style={{ justifyContent: "left" }}>
-                        (icone)
-                        
-                        <div>
-                            <h3>Título Legal</h3>
-                        </div>
+                </Styled.BrandItem>
+                <Styled.BrandItem xs={3} className="item">
 
-                        <p style={{ fontSize: theme.spacing(0.75) }}>TextoTexto TextoTextoTexto Texto Texto
-                        TextoTexto Texto</p>
-                    </div>
-                </Grid>
-                <Grid xs={3} style={{ height: theme.spacing(12.5), width: theme.spacing(12.5), border: "1px solid #ccc", padding: theme.spacing(1.5) }}>
-                    <div style={{ justifyContent: "left" }}>
-                        (icone)
-                        
-                        <div>
-                            <h3>Título Legal</h3>
-                        </div>
+                    <BsPhone color={theme.palette.primary.main} size={theme.spacing(2.5)} style={{marginBottom: theme.spacing(0.75)}} />
 
-                        <p style={{ fontSize: theme.spacing(0.75) }}>TextoTexto TextoTextoTexto Texto Texto
-                        TextoTexto Texto</p>
-                    </div>
-                </Grid>
-            </Grid>
+                    <h3 style={{ fontSize: theme.spacing(1.25), fontWeight: "bold" }}>Chamadas de Vídeo</h3>
+
+                </Styled.BrandItem>
+                <Styled.BrandItem xs={3} className="item">
+
+                    <Md color={theme.palette.primary.main} size={theme.spacing(2.5)} style={{marginBottom: theme.spacing(0.75)}} />
+
+                    <h3 style={{ fontSize: theme.spacing(1.25), fontWeight: "bold" }}>Orientação Vocacional</h3>
+
+                </Styled.BrandItem>
+                <Styled.BrandItem xs={3} className="item">
+
+                    <BsPersonBadge color={theme.palette.primary.main} size={theme.spacing(2.5)} style={{marginBottom: theme.spacing(0.75)}} />
+
+                    <h3 style={{ fontSize: theme.spacing(1.25), fontWeight: "bold" }}>Resultados Acessíveis</h3>
+
+                </Styled.BrandItem>
+            </Styled.Brands>
         </>
     );
 }

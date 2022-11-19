@@ -2,7 +2,7 @@ import { Button, Grid, styled } from "@material-ui/core";
 import { theme } from "../../../styles/theme";
 import Logo from '../../assets/img/logo.png';
 import { SecundaryButton } from "../../../components/SecundaryButton";
-import "./animation.css";
+import "../estilo.css";
 
 
 export const GridContainer = styled(Grid)({
@@ -25,13 +25,13 @@ export const GridNavItens = styled(Grid)({
     display: "flex",
     flexDirection: "row",
     gap: theme.spacing(1.5),
-    justifyContent: "center"
+    justifyContent: "center",
+    alignItems: "center"
 });
 
 export const NavItem = styled("p")({
     color: "#fff",
     fontSize: theme.spacing(1),
-    paddingTop: theme.spacing(1.5),
     cursor: "pointer",
     "&:hover": {
         color: "#8EB9D4",
@@ -77,5 +77,36 @@ export const ImgHeader = styled("img")({
     "&:hover":{
         transform: "scale(1.1)",
         transition: "0.2s"
+    }
+});
+
+export const Brands = styled(Grid)({
+    width: "78%", 
+    display: "flex", 
+    flexDirection: "row", 
+    marginLeft: "auto", 
+    marginRight: "auto", 
+    paddingTop: theme.spacing(1.5), 
+    gap: theme.spacing(1)
+});
+
+export const BrandItem = styled(Grid)({
+    height: theme.spacing(12.5), 
+    width: theme.spacing(12.5), 
+    border: "1px solid transparent",
+    display: "flex",
+    flexDirection: "column",
+    backgroundColor: "#fff",
+    padding: theme.spacing(1.5), 
+    borderRadius: "10px",
+    textAlign: "center",
+    alignItems: "center",
+    justifyContent: "center",
+    position: "initial",
+    "&:hover": {
+        backgroundColor: "#eceeef",
+        transform: "translateY(-10%)",
+        transition: "0.25s ease-in-out",
+        // boxShadow: "2px 2px 2px 1px #469ED6"
     }
 });
