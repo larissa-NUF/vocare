@@ -2,7 +2,7 @@ import React from "react";
 import * as Styled from "./Header.styled";
 import "../estilo.css";
 import Logo from '../../../assets/img/logo.png';
-import Fundo from '../../../assets/img/doc.png';
+import Fundo from '../../../assets/img/resultados.png';
 import Triangulo from '../../../assets/img/divider.png';
 import { Button, Grid } from "@material-ui/core";
 import { theme } from "../../../styles/theme";
@@ -57,9 +57,9 @@ export const Header: React.FC = () => {
                             <Typical 
                                 loop={1}
                                 steps={[
-                                    'Descubra sua vocação e decole profissionalmente! 😱',
+                                    'Descubra sua vocação e decole profissionalmente!😱',
                                     1500,
-                                    'Descubra sua vocação e decole no mercado de trabalho! 😇',
+                                    'Descubra sua vocação e decole no mercado de trabalho!😇',
                                     1500,
                                     'Descubra sua vocação e decole sua carreira! 😎',
                                     1000,
@@ -67,7 +67,7 @@ export const Header: React.FC = () => {
                             />
                         </Styled.TituloHeader>
 
-                        <Grid style={{width: "80%", display: "block"}} className="subtitulo">
+                        <Grid style={{width: "80%", display: "block", gap: theme.spacing(-2)}} className="subtitulo">
                             <h3 style={{ color: "#fff", fontWeight: "200", marginTop: theme.spacing(1.5) }}>
                                 Tem dúvida sobre sua carreira profissional ou não sabe qual área seguir? Conheça-nos!
                             </h3>
@@ -91,28 +91,28 @@ export const Header: React.FC = () => {
 
                     <MdOutlineComputer color={theme.palette.primary.main} size={theme.spacing(2.5)} style={{marginBottom: theme.spacing(0.75)}} />
 
-                    <h3 style={{ fontSize: theme.spacing(1.25), fontWeight: "bold" }}>Consulta com Psicólogos</h3>
-
-                </Styled.BrandItem>
-                <Styled.BrandItem xs={3} className="item">
-
-                    <BsPhone color={theme.palette.primary.main} size={theme.spacing(2.5)} style={{marginBottom: theme.spacing(0.75)}} />
-
-                    <h3 style={{ fontSize: theme.spacing(1.25), fontWeight: "bold" }}>Chamadas de Vídeo</h3>
-
-                </Styled.BrandItem>
-                <Styled.BrandItem xs={3} className="item">
-
-                    <Md color={theme.palette.primary.main} size={theme.spacing(2.5)} style={{marginBottom: theme.spacing(0.75)}} />
-
-                    <h3 style={{ fontSize: theme.spacing(1.25), fontWeight: "bold" }}>Orientação Vocacional</h3>
+                    <h3 style={{ fontSize: theme.spacing(1.25), fontWeight: "bold", cursor: "default" }}>Consulta com Psicólogos</h3>
 
                 </Styled.BrandItem>
                 <Styled.BrandItem xs={3} className="item">
 
                     <BsPersonBadge color={theme.palette.primary.main} size={theme.spacing(2.5)} style={{marginBottom: theme.spacing(0.75)}} />
 
-                    <h3 style={{ fontSize: theme.spacing(1.25), fontWeight: "bold" }}>Resultados Acessíveis</h3>
+                    <h3 style={{ fontSize: theme.spacing(1.25), fontWeight: "bold", cursor: "default" }}>Chamadas de Vídeo</h3>
+
+                </Styled.BrandItem>
+                <Styled.BrandItem xs={3} className="item">
+
+                    <Md color={theme.palette.primary.main} size={theme.spacing(2.5)} style={{marginBottom: theme.spacing(0.75)}} />
+
+                    <h3 style={{ fontSize: theme.spacing(1.25), fontWeight: "bold", cursor: "default" }}>Orientação Vocacional</h3>
+
+                </Styled.BrandItem>
+                <Styled.BrandItem xs={3} className="item">
+
+                    <BsClipboardData color={theme.palette.primary.main} size={theme.spacing(2.5)} style={{marginBottom: theme.spacing(0.75)}} />
+
+                    <h3 style={{ fontSize: theme.spacing(1.25), fontWeight: "bold", cursor: "default" }}>Resultados Acessíveis</h3>
 
                 </Styled.BrandItem>
             </Styled.Brands>

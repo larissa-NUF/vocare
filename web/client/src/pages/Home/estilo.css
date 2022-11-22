@@ -31,9 +31,14 @@
 	}
 }
 
-.imagem-header{
+.imagem-header, .imagem-sobre{
     animation: float 5s ease-in-out infinite;
 }
+
+.item:hover{
+  color: #37689B
+}
+
 
 
 @media only screen and (max-width: 1360px) {
@@ -46,8 +51,10 @@
   .titulo span{
     font-size: 40px
   }
-}
-
-.item:hover{
-  color: #37689B
+  .imagem-header{
+    max-height: 420px
+  }
+  .imagem-sobre{
+    max-width: 350px
+  }
 }

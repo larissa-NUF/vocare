@@ -61,13 +61,12 @@ export const ConteudoHeader = styled(Grid)({
     marginTop: theme.spacing(3),
     height: "60vh",
     flexDirection: "row",
-    justifyContent: "center"
+    justifyContent: "center",
 });
 
 export const TituloHeader = styled("span")({
-    // backgroundColor: theme.palette.primary.main, 
-    fontSize: theme.spacing(3), 
-    color: "#c9e2fd", 
+    fontSize: theme.spacing(3),
+    color: "#c9e2fd",
     justifyContent: "start",
     display: "flex",
     margin: "16px 0 32px 0"
