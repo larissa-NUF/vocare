@@ -4,11 +4,11 @@ import "../estilo.css";
 import Logo from '../../../assets/img/logo.png';
 import Fundo from '../../../assets/img/resultados.png';
 import Triangulo from '../../../assets/img/divider.png';
-import { Button, Grid } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import { theme } from "../../../styles/theme";
 import { FaUserAlt as Fa } from "react-icons/fa";
 import { MdOutlineComputer } from "react-icons/md";
-import { BsPhone, BsClipboardData, BsPersonBadge } from "react-icons/bs";
+import { BsClipboardData, BsPersonBadge } from "react-icons/bs";
 import { MdOutlinePsychology as Md } from "react-icons/md";
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -36,7 +36,7 @@ export const Header: React.FC = () => {
 
                             <Styled.NavItem>Início</Styled.NavItem>
                             <Styled.NavItem>Sobre</Styled.NavItem>
-                            <Styled.NavItem>Time</Styled.NavItem>
+                            <Styled.NavItem>Equipe</Styled.NavItem>
                             <Styled.NavItem>Contato</Styled.NavItem>
                         </Styled.GridNavItens>
 
