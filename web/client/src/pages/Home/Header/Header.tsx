@@ -25,15 +25,18 @@ export const Header: React.FC = () => {
                 {/* Navbar */}
                 <AppBar 
                     component="nav" 
-                    style={{ background: 'transparent', boxShadow: 'none', padding: "0 100px 0 100px", justifyContent: "center", position: "relative" }}
+                    style={{ background: 'transparent', boxShadow: 'none', padding: "0 100px 0 100px", justifyContent: "center", position: "relative", paddingTop: theme.spacing(0.5) }}
                 >
                     <Toolbar style={{ display: "flex", justifyContent: "space-between" }}>
 
                         <Styled.GridNavItens>
-                            <Styled.LogoNav src={Logo} alt="Logo Vocare azul" onClick={() => navigate("/")} />
+                            <div style={{marginRight: theme.spacing(0.5)}}>
+                                <Styled.LogoNav src={Logo} alt="Logo Vocare azul" onClick={() => navigate("/")} />
+                            </div>
 
                             <Styled.NavItem>Início</Styled.NavItem>
                             <Styled.NavItem>Sobre</Styled.NavItem>
+                            <Styled.NavItem>Time</Styled.NavItem>
                             <Styled.NavItem>Contato</Styled.NavItem>
                         </Styled.GridNavItens>
 
@@ -57,9 +60,7 @@ export const Header: React.FC = () => {
                             <Typical 
                                 loop={1}
                                 steps={[
-                                    'Descubra sua vocação e decole profissionalmente!😱',
-                                    1500,
-                                    'Descubra sua vocação e decole no mercado de trabalho!😇',
+                                    'Descubra sua vocação e decole profissionalmente!😇',
                                     1500,
                                     'Descubra sua vocação e decole sua carreira! 😎',
                                     1000,
@@ -67,11 +68,11 @@ export const Header: React.FC = () => {
                             />
                         </Styled.TituloHeader>
 
-                        <Grid style={{width: "80%", display: "block", gap: theme.spacing(-2)}} className="subtitulo">
+                        <Grid style={{width: "80%", display: "block", gap: theme.spacing(0.5)}} className="subtitulo">
                             <h3 style={{ color: "#fff", fontWeight: "200", marginTop: theme.spacing(1.5) }}>
                                 Tem dúvida sobre sua carreira profissional ou não sabe qual área seguir? Conheça-nos!
                             </h3>
-                            <h3 style={{ color: "#fff", fontWeight: "200", marginTop: theme.spacing(1.5) }}>
+                            <h3 style={{ color: "#fff", fontWeight: "200", marginTop: theme.spacing(1) }}>
                                 Por meio da orientação vocacional, obtenha atendimento particular com psicólogos certificados e resultados acessíveis!
                             </h3>
                         </Grid>

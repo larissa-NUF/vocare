@@ -13,7 +13,7 @@ export const GridContainer = styled(Grid)({
 
 export const LogoNav = styled("img")({
     height: theme.spacing(3.75),
-    padding: theme.spacing(0.5),
+    padding: theme.spacing(0.25),
     cursor: "pointer",
     "&:hover":{
         transform: "scale(1.1)",
@@ -24,7 +24,7 @@ export const LogoNav = styled("img")({
 export const GridNavItens = styled(Grid)({
     display: "flex",
     flexDirection: "row",
-    gap: theme.spacing(1.5),
+    gap: theme.spacing(1),
     justifyContent: "center",
     alignItems: "center"
 });

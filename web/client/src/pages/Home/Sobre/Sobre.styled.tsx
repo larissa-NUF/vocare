@@ -9,7 +9,8 @@ export const ContainerSobre = styled(Grid)({
     flexDirection: "column",
     marginLeft: "auto",
     marginRight: "auto",
-    marginTop: theme.spacing(2)
+    marginTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2.5)
 });
 
 export const DivTitulo = styled("div")({
@@ -65,10 +66,12 @@ export const BgSobre = styled(Grid)({
 });
 
 export const ConteudoSobre = styled("h4")({
-    fontSize: theme.spacing(1.5), 
+    fontSize: theme.spacing(1.75), 
     fontWeight: "lighter",
-    textDecoration: "underline",
-    textDecorationColor: theme.palette.primary.main,
-    textDecorationThickness: "2px",
-    textDecorationSkipInk: "auto",
+    "&:hover":{
+        textDecoration: "underline",
+        textDecorationColor: theme.palette.primary.main,
+        textDecorationThickness: "2px",
+        textDecorationSkipInk: "auto",
+    }
 });

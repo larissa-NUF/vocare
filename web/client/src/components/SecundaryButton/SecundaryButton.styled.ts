@@ -15,6 +15,7 @@ export const SecundaryButton = styled(ButtonBase)(
         "&:hover":{
             backgroundColor: theme.palette.primary.main,
             color: theme.palette.grey[100],
+            transition: "0.4s all ease-in-out"
         },
     }
 );
