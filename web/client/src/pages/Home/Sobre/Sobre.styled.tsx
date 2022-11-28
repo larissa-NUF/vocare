@@ -9,7 +9,6 @@ export const ContainerSobre = styled(Grid)({
     flexDirection: "column",
     marginLeft: "auto",
     marginRight: "auto",
-    marginTop: theme.spacing(2),
     paddingBottom: theme.spacing(2.5)
 });
 

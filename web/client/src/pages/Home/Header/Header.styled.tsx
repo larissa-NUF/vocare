@@ -7,7 +7,7 @@ import "../estilo.css";
 
 export const GridContainer = styled(Grid)({
     background: 'linear-gradient(to right, #071844, #37689B)',
-    height: "85vh",
+    height: "98vh",
     zIndex: -1
 });
 
@@ -44,6 +44,7 @@ export const NavDireita = styled("div")({
     display: "flex",
     gap: theme.spacing(0.5),
     justifyContent: "center",
+    alignItems: "center",
     cursor: "pointer",
     "&:hover": {
         color: "#8EB9D4",
@@ -69,14 +70,11 @@ export const TituloHeader = styled("span")({
     color: "#c9e2fd",
     justifyContent: "start",
     display: "flex",
-    margin: "16px 0 32px 0"
+    margin: "0 0 32px 0"
 });
 
 export const ImgHeader = styled("img")({
-    "&:hover":{
-        transform: "scale(1.1)",
-        transition: "0.2s"
-    }
+    zIndex: 1000,
 });
 
 export const Brands = styled(Grid)({
@@ -85,7 +83,7 @@ export const Brands = styled(Grid)({
     flexDirection: "row", 
     marginLeft: "auto", 
     marginRight: "auto", 
-    paddingTop: theme.spacing(1.5), 
+    transform: "translateY(-25%)",
     gap: theme.spacing(1)
 });
 

@@ -39,7 +39,68 @@
   color: #37689B
 }
 
-
+.wave-animation {
+  position: relative;
+  width: 100%;
+  height: 143px;
+  background-size: cover;
+  transform: translatey(-100%)
+}
+.wave-animation .wave {
+  position: absolute;
+  width: 100%;
+  height: 143px;/*PNG*/
+  top:0;
+  left:0;
+  background-image: url('https://vitalflow.com.ar/img/anim-onda.png');
+  animation: anim 8s linear infinite;
+  
+}
+.wave-animation .wave:before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 143px;
+  top:0;
+  left:0;
+  background-image: url('https://vitalflow.com.ar/img/anim-onda.png');
+  opacity: 0.4;
+  animation: anim-rev 10s linear infinite;
+  
+}
+.wave-animation .wave:after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 143px;
+  top:0;
+  left:0;
+  background-image: url('https://vitalflow.com.ar/img/anim-onda.png');
+  opacity: 0.6;
+  animation-delay: -5s;
+  animation: anim 20s linear infinite;
+  
+}
+@keyframes anim {
+  0%
+  {
+    background-position: 0;
+  }
+  100%
+  {
+    background-position: 1360px;
+  }
+}
+@keyframes anim-rev {
+  0%
+  {
+    background-position: 1360px;
+  }
+  100%
+  {
+    background-position: 0px;
+  }
+}
 
 @media only screen and (max-width: 1360px) {
   .subtitulo h3{

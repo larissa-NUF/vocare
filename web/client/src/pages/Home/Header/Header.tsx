@@ -45,7 +45,7 @@ export const Header: React.FC = () => {
                                 <SecundaryButton>
                                     <Styled.NavDireita>
                                         <Fa color="white" />
-                                        <p style={{ fontSize: "16px", color: "#fff", }}>Login</p>
+                                        <p style={{ fontSize: "14px", color: "#fff", fontFamily: "Poppins" }}>Login</p>
                                     </Styled.NavDireita>
                                 </SecundaryButton>
                             </Link>
@@ -53,7 +53,7 @@ export const Header: React.FC = () => {
                     </Toolbar>
                 </AppBar>
 
-            {/* Header */}
+                {/* Header */}
                 <Styled.ConteudoHeader>
                     <Grid xs={7} style={{ paddingTop: theme.spacing(6), flexDirection: "column", zIndex: 2 }} className="titulo">
                         <Styled.TituloHeader>
@@ -78,40 +78,42 @@ export const Header: React.FC = () => {
                         </Grid>
                     </Grid>
                     <Grid xs={5} style={{justifyContent:"center", display:"flex", zIndex: 0}}>
-                        <Styled.ImgHeader src={Fundo} alt="psicóloga de exemplo" className="imagem-header" />
+                        <Styled.ImgHeader src={Fundo} alt="Mulher analisando dados em seu celular" className="imagem-header" />
                     </Grid>
                 </Styled.ConteudoHeader>
 
             </Styled.GridContainer>
-            <img src={Triangulo} style={{ height: "40px", display: "block", marginLeft: "auto", marginRight: "auto", padding: "0", transform: "translateY(-50%)" }} />
 
+            <div className="wave-animation"> 
+                <div className="wave"></div>
+            </div>
 
             {/* Brands */}
             <Styled.Brands xs={12}>
                 <Styled.BrandItem xs={3} className="item">
 
-                    <MdOutlineComputer color={theme.palette.primary.main} size={theme.spacing(2.5)} style={{marginBottom: theme.spacing(0.75)}} />
+                    <MdOutlineComputer color={theme.palette.primary.main} size={theme.spacing(3)} style={{marginBottom: theme.spacing(0.75)}} />
 
                     <h3 style={{ fontSize: theme.spacing(1.25), fontWeight: "bold", cursor: "default" }}>Consulta com Psicólogos</h3>
 
                 </Styled.BrandItem>
                 <Styled.BrandItem xs={3} className="item">
 
-                    <BsPersonBadge color={theme.palette.primary.main} size={theme.spacing(2.5)} style={{marginBottom: theme.spacing(0.75)}} />
+                    <BsPersonBadge color={theme.palette.primary.main} size={theme.spacing(3)} style={{marginBottom: theme.spacing(0.75)}} />
 
                     <h3 style={{ fontSize: theme.spacing(1.25), fontWeight: "bold", cursor: "default" }}>Chamadas de Vídeo</h3>
 
                 </Styled.BrandItem>
                 <Styled.BrandItem xs={3} className="item">
 
-                    <Md color={theme.palette.primary.main} size={theme.spacing(2.5)} style={{marginBottom: theme.spacing(0.75)}} />
+                    <Md color={theme.palette.primary.main} size={theme.spacing(3)} style={{marginBottom: theme.spacing(0.75)}} />
 
                     <h3 style={{ fontSize: theme.spacing(1.25), fontWeight: "bold", cursor: "default" }}>Orientação Vocacional</h3>
 
                 </Styled.BrandItem>
                 <Styled.BrandItem xs={3} className="item">
 
-                    <BsClipboardData color={theme.palette.primary.main} size={theme.spacing(2.5)} style={{marginBottom: theme.spacing(0.75)}} />
+                    <BsClipboardData color={theme.palette.primary.main} size={theme.spacing(3)} style={{marginBottom: theme.spacing(0.75)}} />
 
                     <h3 style={{ fontSize: theme.spacing(1.25), fontWeight: "bold", cursor: "default" }}>Resultados Acessíveis</h3>
 

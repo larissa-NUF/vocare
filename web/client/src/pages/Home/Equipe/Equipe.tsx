@@ -4,17 +4,9 @@ import "../estilo.css";
 import { Grid } from "@material-ui/core";
 import { theme } from "../../../styles/theme";
 import Time1 from "../../../assets/img/resultados.png";
+import { AiFillGithub, AiOutlineLinkedin } from "react-icons/ai";
 
 export const Equipe: React.FC = () => {
-    const teste = [{
-        nome: "Lucas",
-        bio: "blalablablabla",
-    },
-    {
-        nome: "Kaio",
-        bio: "lashkhjksj"
-    }]
-
     return (
         <>
             <Styled.EquipeContainer>
@@ -30,22 +22,54 @@ export const Equipe: React.FC = () => {
                     <Styled.Simbolo />
                 </Styled.Divider>
 
+                {/* Conteúdo */}
+                <Styled.GridCards xs={12}>
+                    <Styled.CardEquipe xs={4}>
 
-                <Grid xs={12} style={{ display: "flex", flexDirection: "row", marginBottom: theme.spacing(2), marginLeft: "auto", marginRight: "auto", gap: theme.spacing(2), marginTop: theme.spacing(2) }}>
-                    <Styled.CardEquipe xs={4}>
-                        {teste.map((item) => 
-                            <div>{item.nome}</div>
-                        )}
-                    </Styled.CardEquipe>
-                    <Styled.CardEquipe xs={4}>
+                        <div style={{padding: "0", margin: "0", overflow: "hidden",}}>
+                            <img src={Time1} style={{height: "250px"}} alt="" />
+                        </div>
                         
-                    </Styled.CardEquipe>
-                    <Styled.CardEquipe xs={4}>
-                        
-                    </Styled.CardEquipe>
-                </Grid>
+                        <div style={{ padding: "30px 15px", textAlign: "center",margin: "-50px 20px 0 20px", position: "relative",borderRadius: "8px", background: "#fff" }}>
+                            <Styled.Social>
+                                <Styled.LinkContato href="https://github.com/lucas-alves1" target="_blank">
+                                    <i>
+                                        <AiFillGithub fill="#fff" style={{fontSize: theme.spacing(1)}} />
+                                    </i>
+                                </Styled.LinkContato>
+                                <Styled.LinkContato href="https://github.com/lucas-alves1" target="_blank">
+                                    <i>
+                                        <AiOutlineLinkedin fill="#fff" style={{fontSize: theme.spacing(1)}} />
+                                    </i>
+                                </Styled.LinkContato>
+                            </Styled.Social>
+                            <h4 style={{fontWeight: 400, marginBottom: "5px", fontSize: "24px" }}>
+                                Lucas Alves
+                            </h4>
+                            <span style={{ display: "block", fontSize: "16px",fontWeight: 400, color: "#2b2b2b71" }}>
+                                lucas.lago.cont@gmail.com
+                            </span>
+                        </div>
 
-                <Grid xs={12} style={{ display: "flex", flexDirection: "row", marginBottom: theme.spacing(2), marginLeft: "auto", marginRight: "auto", gap: theme.spacing(2) }}>
+
+                    </Styled.CardEquipe>
+                    <Styled.CardEquipe xs={4}>
+                        
+                        <div style={{padding: "0", margin: "0"}}>
+                            <img src={Time1} style={{height: "250px"}} alt="" />
+                        </div>
+                        
+                    </Styled.CardEquipe>
+                    <Styled.CardEquipe xs={4}>
+                        
+                        <div style={{padding: "0", margin: "0"}}>
+                            <img src={Time1} style={{height: "250px"}} alt="" />
+                        </div>
+                        
+                    </Styled.CardEquipe>
+                </Styled.GridCards>
+
+                <Styled.GridCards>
                     <Styled.CardEquipe xs={4}>
                         
                     </Styled.CardEquipe>
@@ -55,7 +79,7 @@ export const Equipe: React.FC = () => {
                     <Styled.CardEquipe xs={4}>
                         
                     </Styled.CardEquipe>
-                </Grid>
+                </Styled.GridCards>
             </Styled.EquipeContainer>
         </>
     )
