@@ -1,4 +1,5 @@
-import { CardProps } from "@material-ui/core";
+
+import { CardProps } from "@mui/material";
 import * as Styled from "./BasicCard.style";
 
 const BasicCard = ({ children, ...rest }: CardProps) => {

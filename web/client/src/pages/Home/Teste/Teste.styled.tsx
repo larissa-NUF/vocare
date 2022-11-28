@@ -1,4 +1,4 @@
-import { Grid, styled } from "@material-ui/core";
+import { Grid, styled } from "@mui/material";
 import { theme } from "../../../styles/theme";
 import Fundo from "../../../assets/img/bg-sobre.jpg";
 import '../estilo.css';

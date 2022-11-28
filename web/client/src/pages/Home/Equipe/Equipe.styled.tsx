@@ -1,4 +1,4 @@
-import { Button, Grid, styled } from "@material-ui/core";
+import { Grid, styled } from "@mui/material";
 import { theme } from "../../../styles/theme";
 import "../estilo.css";
 

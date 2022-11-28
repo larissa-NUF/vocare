@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from 'react-query';
+import { useMutation, useQuery } from '@tanstack/react-query';
 import { CustomError } from '../models/customError';
 import { Usuario } from '../models/usuario';
 import { api } from '../services/axios';

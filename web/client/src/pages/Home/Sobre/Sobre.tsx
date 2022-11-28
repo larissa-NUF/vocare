@@ -1,12 +1,10 @@
 import React from 'react';
-import { Grid } from '@material-ui/core';
+import { Grid } from '@mui/material';
 import * as Styled from "./Sobre.styled";
 import '../estilo.css';
-import Vocare from '../../../assets/img/favicon.png';
 import SobreImg from '../../../assets/img/pessoas-2.png';
 import { MdCircle } from 'react-icons/md';
 import { theme } from '../../../styles/theme';
-import { MainButton } from '../../../components/MainButton';
 
 export const Sobre: React.FC = () => {
     return (
