@@ -1,4 +1,4 @@
-import { Grid } from "@material-ui/core";
+import { Grid } from "@mui/material";
 import * as Styled from "./Login.styled";
 import React from "react";
 import Logo from "../../assets/img/logo-completo.png";

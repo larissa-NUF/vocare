@@ -1,5 +1,5 @@
 
-import { ButtonBase, styled } from "@material-ui/core";
+import { ButtonBase, styled } from "@mui/material";
 import { theme } from "../../styles/theme";
 
 export const SecundaryButton = styled(ButtonBase)(

@@ -1,4 +1,4 @@
-import { FormControl, Typography } from "@material-ui/core";
+import { FormControl, Typography } from "@mui/material";
 import * as Styled from "./Cadastro.styled";
 import BasicCard from "../../components/basicCard";
 import { SecundaryButton } from "../../components/SecundaryButton";

@@ -1,7 +1,5 @@
-import { Button, Grid, styled } from "@material-ui/core";
+import { Grid, styled } from "@mui/material";
 import { theme } from "../../../styles/theme";
-import Logo from '../../assets/img/logo.png';
-import { SecundaryButton } from "../../../components/SecundaryButton";
 import "../estilo.css";
 
 

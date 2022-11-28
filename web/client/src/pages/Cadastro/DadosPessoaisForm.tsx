@@ -2,16 +2,16 @@ import {
   Checkbox,
   FormControl,
   Grid
-} from "@material-ui/core";
+} from "@mui/material";
 import * as React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import BasicCard from '../../components/basicCard';
 import { MainButton } from "../../components/MainButton";
 import { SecundaryButton } from "../../components/SecundaryButton";
 import { theme } from "../../styles/theme";
 import * as Styled from './Cadastro.styled';
-import * as Yup from 'yup'; //lib de validação
-import { Formik, useFormik, validateYupSchema } from "formik";
+import * as Yup from 'yup';
+import { useFormik } from "formik";
 import { useCadastro } from "../../api/controllers/usuario";
 import { useEffect } from "react";
 

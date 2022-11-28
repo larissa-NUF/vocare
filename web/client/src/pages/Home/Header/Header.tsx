@@ -4,7 +4,7 @@ import "../estilo.css";
 import Logo from '../../../assets/img/logo.png';
 import Fundo from '../../../assets/img/resultados.png';
 import Triangulo from '../../../assets/img/divider.png';
-import { Grid } from "@material-ui/core";
+import { Grid } from "@mui/material";
 import { theme } from "../../../styles/theme";
 import { FaUserAlt as Fa } from "react-icons/fa";
 import { MdOutlineComputer } from "react-icons/md";
@@ -14,7 +14,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import { SecundaryButton } from "../../../components/SecundaryButton";
 import { Link, useNavigate } from "react-router-dom";
-import Typical from 'react-typical';
+import Typewriter from "typewriter-effect";
 
 export const Header: React.FC = () => {
     const navigate = useNavigate()
@@ -57,15 +57,16 @@ export const Header: React.FC = () => {
                 <Styled.ConteudoHeader>
                     <Grid xs={7} style={{ paddingTop: theme.spacing(6), flexDirection: "column", zIndex: 2 }} className="titulo">
                         <Styled.TituloHeader>
-                            <Typical 
-                                loop={1}
-                                steps={[
+                            <Typewriter options={{
+                                autoStart: true,
+                                loop: true,
+                                delay: 50,
+                                strings: [
                                     'Descubra sua vocação e decole profissionalmente!😇',
-                                    1500,
                                     'Descubra sua vocação e decole sua carreira! 😎',
-                                    1000,
-                                ]}
-                            />
+                                ]
+                            }}/>
+                          
                         </Styled.TituloHeader>
 
                         <Grid style={{width: "80%", display: "block", gap: theme.spacing(0.5)}} className="subtitulo">

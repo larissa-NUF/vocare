@@ -1,5 +1,4 @@
-import { Box, Grid, styled } from "@material-ui/core";
-import { DataGrid } from "@mui/x-data-grid";
+import { Box, Grid, styled } from "@mui/material";
 import { theme } from "../../styles/theme";
 import { FaUserAlt as Fa } from 'react-icons/fa';
 

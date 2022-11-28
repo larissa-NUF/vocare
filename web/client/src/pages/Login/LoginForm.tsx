@@ -1,10 +1,8 @@
-import { FormControl, Grid, Link } from "@material-ui/core";
+import { FormControl } from "@mui/material";
 import { useFormik } from "formik";
 import * as React from "react";
 import { useLogin } from "../../api/controllers/autenticacao";
-import BasicCard from '../../components/basicCard';
 import { MainButton } from "../../components/MainButton";
-import { SecundaryButton } from "../../components/SecundaryButton";
 import * as Styled from './Login.styled';
 import * as Yup from 'yup'; //lib de validação
 

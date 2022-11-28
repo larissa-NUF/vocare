@@ -1,7 +1,7 @@
 import React from "react";
 import * as Styled from "./Equipe.styled";
 import "../estilo.css";
-import { Grid } from "@material-ui/core";
+import { Grid } from "@mui/material";
 import { theme } from "../../../styles/theme";
 import Time1 from "../../../assets/img/resultados.png";
 import { AiFillGithub, AiOutlineLinkedin } from "react-icons/ai";
