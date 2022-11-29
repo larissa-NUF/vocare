@@ -10,6 +10,7 @@ export const Teste: React.FC = () => {
     return(
         <>
             <Styled.ContainerTeste>
+                <img src={Triangulo} style={{ height: "40px", display: "block", marginLeft: "auto", marginRight: "auto", padding: "0", transform: "translateY(-50%) rotate(180deg)", position: "relative" }} />
                 {/* Título */}
                 <Styled.TituloTeste>
                     Orientação Vocacional

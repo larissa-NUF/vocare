@@ -57,15 +57,17 @@ export const Header: React.FC = () => {
                 <Styled.ConteudoHeader>
                     <Grid xs={7} style={{ paddingTop: theme.spacing(6), flexDirection: "column", zIndex: 2 }} className="titulo">
                         <Styled.TituloHeader>
-                            <Typewriter options={{
+
+                            Descubra sua vocação e decole sua carreira! 😎
+                            {/* <Typewriter options={{
                                 autoStart: true,
                                 loop: true,
                                 delay: 50,
                                 strings: [
-                                    'Descubra sua vocação e decole profissionalmente!😇',
+                                    'Descubra sua vocação e decole profissionalmente! 😇',
                                     'Descubra sua vocação e decole sua carreira! 😎',
-                                ]
-                            }}/>
+                                ],
+                            }}/> */}
                           
                         </Styled.TituloHeader>
 

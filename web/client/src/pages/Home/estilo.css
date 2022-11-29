@@ -39,6 +39,10 @@
   color: #37689B
 }
 
+.team .team-member:hover .social {
+  opacity: 1;
+}
+
 .wave-animation {
   position: relative;
   width: 100%;

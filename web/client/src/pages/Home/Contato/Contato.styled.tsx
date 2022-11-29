@@ -1,15 +1,29 @@
 import { Grid, styled } from "@mui/material";
 import { theme } from "../../../styles/theme";
-import '../estilo.css';
+import "../estilo.css";
 
 
-export const ContainerSobre = styled(Grid)({
+export const ContatoContainer = styled(Grid)({
+    width: "100%", 
+    backgroundColor: "#eceeef", 
+    height: "auto", 
+    paddingTop: theme.spacing(1.5),
+    paddingBottom: theme.spacing(2),
+    marginTop: theme.spacing(1),
+    display: "flex",
+    flexDirection: "column"
+});
+
+export const FormContainer = styled(Grid)({
+    width: "78%", 
+    height: "auto",
+    marginLeft: "auto", 
+    marginRight: "auto", 
     display: "flex", 
-    width: "80%", 
-    flexDirection: "column",
-    marginLeft: "auto",
-    marginRight: "auto",
-    paddingBottom: theme.spacing(2.5)
+    flexDirection: "row",
+    border: "1px solid #ccc", 
+    borderRadius: "8px", 
+    marginTop: theme.spacing(1), 
 });
 
 export const DivTitulo = styled("div")({
@@ -54,25 +68,4 @@ export const Simbolo = styled("div")({
     borderRadius: "4px",
     alignItems: "center",
     transform: "translateY(-25%)"
-});
-
-export const BgSobre = styled(Grid)({
-    borderRadius: "10px", 
-    backgroundColor: "#eceeef",
-    padding: "48px 32px 48px 32px", 
-    marginTop: theme.spacing(2.5), 
-    display: "flex", 
-    flexDirection: "row",
-    gap: theme.spacing(1)
-});
-
-export const ConteudoSobre = styled("h4")({
-    fontSize: theme.spacing(1.75), 
-    fontWeight: "lighter",
-    "&:hover":{
-        textDecoration: "underline",
-        textDecorationColor: theme.palette.primary.main,
-        textDecorationThickness: "2px",
-        textDecorationSkipInk: "auto",
-    }
 });

@@ -63,12 +63,12 @@ export const ConteudoHeader = styled(Grid)({
     justifyContent: "center",
 });
 
-export const TituloHeader = styled("span")({
-    fontSize: theme.spacing(3),
+export const TituloHeader = styled("h1")({
+    fontSize: theme.spacing(2.75),
     color: "#c9e2fd",
     justifyContent: "start",
-    display: "flex",
-    margin: "0 0 32px 0"
+    margin: "0 0 32px 0",
+    fontWeight: 400
 });
 
 export const ImgHeader = styled("img")({
@@ -80,14 +80,14 @@ export const Brands = styled(Grid)({
     display: "flex", 
     flexDirection: "row", 
     marginLeft: "auto", 
-    marginRight: "auto", 
+    marginRight: "auto",
+    justifyContent: "space-between",
     transform: "translateY(-25%)",
-    gap: theme.spacing(1)
 });
 
 export const BrandItem = styled(Grid)({
     height: theme.spacing(12.5), 
-    width: theme.spacing(12.5), 
+    width: theme.spacing(13.5), 
     border: "1px solid transparent",
     display: "flex",
     flexDirection: "column",
@@ -97,7 +97,7 @@ export const BrandItem = styled(Grid)({
     textAlign: "center",
     alignItems: "center",
     justifyContent: "center",
-    position: "initial",
+    transition: "transform .5s ease-out",
     "&:hover": {
         backgroundColor: "#eceeef",
         transform: "translateY(-10%)",
