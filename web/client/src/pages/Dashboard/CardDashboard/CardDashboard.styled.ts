@@ -1,4 +1,4 @@
-import { Card, styled, Typography } from "@material-ui/core";
+import { Card, styled, Typography } from "@mui/material";
 import { theme } from "../../../styles/theme";
 
 export const BsCard = styled(Card)({

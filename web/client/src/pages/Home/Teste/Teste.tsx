@@ -1,17 +1,16 @@
 import React from "react";
 import * as Styled from "./Teste.styled";
-import Fundo from "../../../assets/img/bg-sobre.jpg";
-import { Grid } from "@material-ui/core";
 import '../estilo.css';
+import Triangulo from '../../../assets/img/divider.png';
 import { theme } from "../../../styles/theme";
 import { SecundaryButton } from "../../../components/SecundaryButton";
-import { RiHome3Line } from "react-icons/ri";
 
 
 export const Teste: React.FC = () => {
     return(
         <>
             <Styled.ContainerTeste>
+                <img src={Triangulo} style={{ height: "40px", display: "block", marginLeft: "auto", marginRight: "auto", padding: "0", transform: "translateY(-50%) rotate(180deg)", position: "relative" }} />
                 {/* Título */}
                 <Styled.TituloTeste>
                     Orientação Vocacional
@@ -40,6 +39,7 @@ export const Teste: React.FC = () => {
                 </Styled.ConteudoTeste>
 
             </Styled.ContainerTeste>
+            <img src={Triangulo} style={{ height: "40px", display: "block", marginLeft: "auto", marginRight: "auto", padding: "0", transform: "translateY(-50%)" }} />
         </>
     )
 }

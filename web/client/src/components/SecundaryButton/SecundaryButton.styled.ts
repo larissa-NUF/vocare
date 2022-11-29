@@ -1,5 +1,5 @@
 
-import { ButtonBase, styled } from "@material-ui/core";
+import { ButtonBase, styled } from "@mui/material";
 import { theme } from "../../styles/theme";
 
 export const SecundaryButton = styled(ButtonBase)(
@@ -11,6 +11,7 @@ export const SecundaryButton = styled(ButtonBase)(
         color: theme.palette.primary.main,
         outline: `2px solid ${theme.palette.primary.main}`,  
         outlineOffset: "-2px",
+        transition: "0.5s ease-out",
 
         "&:hover":{
             backgroundColor: theme.palette.primary.main,

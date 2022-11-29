@@ -1,8 +1,6 @@
-import { Grid, Link, styled, TextField, Typography } from "@material-ui/core";
+import { Grid, Link, styled, TextField, Typography } from "@mui/material";
 import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
 import BasicCard from "../../components/basicCard";
-import { SecundaryButton } from "../../components/SecundaryButton";
-
 import { theme } from "../../styles/theme";
 
 

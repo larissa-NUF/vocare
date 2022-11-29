@@ -1,4 +1,4 @@
-import { Grid, styled } from "@material-ui/core";
+import { Grid, styled } from "@mui/material";
 import { theme } from "../../../styles/theme";
 import Fundo from "../../../assets/img/bg-sobre.jpg";
 import '../estilo.css';
@@ -9,7 +9,7 @@ export const ContainerTeste = styled(Grid)({
     width: "100%",
     height: "100%",
     marginTop: theme.spacing(2),
-    padding: "40px 100px 40px 100px",
+    padding: "0px 100px 40px 100px",
     backgroundColor: "#0a2028",
     "&::before": {
         content: `''`,

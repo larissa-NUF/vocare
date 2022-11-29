@@ -1,13 +1,11 @@
-import { Button, Grid, styled } from "@material-ui/core";
+import { Grid, styled } from "@mui/material";
 import { theme } from "../../../styles/theme";
-import Logo from '../../assets/img/logo.png';
-import { SecundaryButton } from "../../../components/SecundaryButton";
 import "../estilo.css";
 
 
 export const GridContainer = styled(Grid)({
     background: 'linear-gradient(to right, #071844, #37689B)',
-    height: "85vh",
+    height: "98vh",
     zIndex: -1
 });
 
@@ -44,6 +42,7 @@ export const NavDireita = styled("div")({
     display: "flex",
     gap: theme.spacing(0.5),
     justifyContent: "center",
+    alignItems: "center",
     cursor: "pointer",
     "&:hover": {
         color: "#8EB9D4",
@@ -64,19 +63,16 @@ export const ConteudoHeader = styled(Grid)({
     justifyContent: "center",
 });
 
-export const TituloHeader = styled("span")({
-    fontSize: theme.spacing(3),
+export const TituloHeader = styled("h1")({
+    fontSize: theme.spacing(2.75),
     color: "#c9e2fd",
     justifyContent: "start",
-    display: "flex",
-    margin: "16px 0 32px 0"
+    margin: "0 0 32px 0",
+    fontWeight: 400
 });
 
 export const ImgHeader = styled("img")({
-    "&:hover":{
-        transform: "scale(1.1)",
-        transition: "0.2s"
-    }
+    zIndex: 1000,
 });
 
 export const Brands = styled(Grid)({
@@ -84,14 +80,14 @@ export const Brands = styled(Grid)({
     display: "flex", 
     flexDirection: "row", 
     marginLeft: "auto", 
-    marginRight: "auto", 
-    paddingTop: theme.spacing(1.5), 
-    gap: theme.spacing(1)
+    marginRight: "auto",
+    justifyContent: "space-between",
+    transform: "translateY(-25%)",
 });
 
 export const BrandItem = styled(Grid)({
     height: theme.spacing(12.5), 
-    width: theme.spacing(12.5), 
+    width: theme.spacing(13.5), 
     border: "1px solid transparent",
     display: "flex",
     flexDirection: "column",
@@ -101,7 +97,7 @@ export const BrandItem = styled(Grid)({
     textAlign: "center",
     alignItems: "center",
     justifyContent: "center",
-    position: "initial",
+    transition: "transform .5s ease-out",
     "&:hover": {
         backgroundColor: "#eceeef",
         transform: "translateY(-10%)",

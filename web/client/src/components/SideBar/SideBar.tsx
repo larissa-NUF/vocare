@@ -1,6 +1,6 @@
 import * as Styled from './SideBar.styled';
-import imagem from "./../../assets/img/logo-branco.png";
-import { Grid } from '@material-ui/core';
+import imagem from './../../assets/img/logo-branco.png';
+import { Grid } from '@mui/material';
 import { SiGoogleanalytics } from "react-icons/si";
 import { IoAnalytics } from "react-icons/io5";
 import { FaUserGraduate, FaUserAlt } from "react-icons/fa";

@@ -1,8 +1,9 @@
-import { Card, styled } from "@material-ui/core";
+import { Card, styled } from "@mui/material";
 import { theme } from "../../styles/theme";
 
 export const BsCard = styled(Card)({
     color:theme.palette.primary.dark,
+    backgroundColor: "#fcfcfc",
     width:'360px',
     height: '100%',
     padding: theme.spacing(1.2),

@@ -1,4 +1,4 @@
-import { ButtonProps } from "@material-ui/core";
+import { ButtonProps } from "@mui/material";
 import * as Styled from "./SecundaryButton.styled";
 
 

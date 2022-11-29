@@ -1,4 +1,3 @@
-import { Typography } from "@material-ui/core";
 import * as Styled from "./CardDashboard.styled";
 import { CardDashboardProps } from "./CardDashboard.types";
 

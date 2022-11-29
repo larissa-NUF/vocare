@@ -1,23 +1,22 @@
-import { ThemeProvider } from '@mui/material';
+import { StyledEngineProvider, ThemeProvider } from "@mui/material";
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { QueryClientProvider } from 'react-query';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from "react-router-dom";
+import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from './api/services/queryClient';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-import "./styles/index.scss";
 import { theme } from './styles/theme';
+import "./styles/index.scss";
 
 ReactDOM.render(
   <BrowserRouter>
-    <ThemeProvider theme={theme}>
-      <QueryClientProvider client={queryClient}>
-        <React.StrictMode>
+    <QueryClientProvider client={queryClient}>
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={theme}>
           <App />
-        </React.StrictMode>
-      </QueryClientProvider>
-    </ThemeProvider>
+        </ThemeProvider>
+      </StyledEngineProvider>
+    </QueryClientProvider>
   </BrowserRouter>,
   document.getElementById("root")
 );
@@ -25,4 +24,3 @@ ReactDOM.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

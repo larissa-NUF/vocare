@@ -2,9 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import * as Styled from "./ListaAlunos.styled"
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
-import { boolean } from 'yup';
 import { theme } from '../../styles/theme';
-import { FaUserAlt as Fa } from 'react-icons/fa';
 import { useGetAll } from '../../api/controllers/usuario';
 import { BiSearchAlt } from 'react-icons/bi';
 
