@@ -92,7 +92,7 @@ export const Header: React.FC = () => {
             </div>
 
             {/* Brands */}
-            <Styled.Brands xs={12}>
+            <Styled.Brands xs={12} container>
                 <Styled.BrandItem xs={3} className="item">
 
                     <MdOutlineComputer color={theme.palette.primary.main} size={theme.spacing(3)} style={{marginBottom: theme.spacing(0.75)}} />
