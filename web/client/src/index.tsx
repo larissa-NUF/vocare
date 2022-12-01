@@ -7,13 +7,17 @@ import { queryClient } from './api/services/queryClient';
 import App from './App';
 import { theme } from './styles/theme';
 import "./styles/index.scss";
+import { Provider } from "react-redux";
+import { store } from "./reducers";
 
 ReactDOM.render(
   <BrowserRouter>
     <QueryClientProvider client={queryClient}>
       <StyledEngineProvider injectFirst>
         <ThemeProvider theme={theme}>
-          <App />
+          <Provider store={store}>
+            <App />
+          </Provider>
         </ThemeProvider>
       </StyledEngineProvider>
     </QueryClientProvider>
