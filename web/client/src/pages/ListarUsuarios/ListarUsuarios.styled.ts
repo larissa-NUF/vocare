@@ -3,6 +3,11 @@ import { theme } from "../../styles/theme";
 import { FaUserAlt as Fa } from 'react-icons/fa';
 
 export const Container = styled(Grid)({
+    height: "100vh",
+    backgroundColor: theme.palette.primary.light
+});
+
+export const TabelaContainer = styled("div")({
     width: "88%",
     marginLeft: "auto",
     marginRight: "auto",

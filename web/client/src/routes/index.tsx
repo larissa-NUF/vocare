@@ -16,8 +16,14 @@ export function Routes() {
     if (usuario === "Admin") return <AdminRoute />;
 
     return (
-        <RoutesDOM>
-            <Route path="*" element={<Home />} />
-        </RoutesDOM>
+        <RoutesWrapper>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/cadastro" element={<Cadastro />}></Route>
+            <Route path="/login" element={<Login />}></Route>
+            <Route path="/dashboard" element={<Dashboard />}></Route>
+            <Route path="/pagamento" element={<Pagamento />}></Route>
+            <Route path="/clientes" element={<ListarUsuarios />}></Route>
+            <Route path="/consulta" element={<Consulta />}></Route>
+        </RoutesWrapper>
     );
 }

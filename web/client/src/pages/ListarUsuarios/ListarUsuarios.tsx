@@ -1,56 +1,77 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import * as Styled from "./ListaAlunos.styled"
-import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import * as Styled from "./ListarUsuarios.styled"
+import { DataGrid, GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
 import { theme } from '../../styles/theme';
 import { useGetAll } from '../../api/controllers/usuario';
 import { BiSearchAlt } from 'react-icons/bi';
+import { RiEyeFill } from "react-icons/ri";
 
 const columns: GridColDef[] = [
     {
         field: 'id',
         headerClassName: 'super-app-theme--header',
         headerName: 'ID',
-        width: 90,
+        flex: 1
     },
     {
         field: 'nome',
         headerClassName: 'super-app-theme--header',
         headerName: 'Nome Completo',
-        width: 200,
         editable: false,
+        flex: 1
     },
     {
         field: 'email',
         headerClassName: 'super-app-theme--header',
         headerName: 'Email',
         type: 'email',
-        width: 200,
         editable: false,
+        flex: 1
     },
     {
         field: 'dataCadastro',
         headerClassName: 'super-app-theme--header',
         headerName: 'Data Cadastro',
         type: 'date',
-        width: 200,
         editable: false,
+        flex: 1
     },
     {
-        field: 'testeRealizado',
+        field: 'avaliacao',
         headerClassName: 'super-app-theme--header',
-        headerName: 'Teste Realizado',
+        headerName: 'Avaliação',
         type: 'boolean',
-        width: 200,
+        flex: 1
     },
+    {
+        field: 'consulta',
+        headerClassName: 'super-app-theme--header',
+        headerName: 'Consulta',
+        type: 'boolean',
+        flex: 1
+    },
+    {
+        type: "acessar",
+        headerClassName: 'super-app-theme--header',
+        field: "acessar",
+        headerName: "",
+        flex: 0.2,
+        renderCell: (params: GridRenderCellParams<number>) => (
+            <RiEyeFill color='#469ed6' cursor='pointer' size={20} onClick={() => console.log(params.row.id)} />
+        ),
+    },
+    
+
 ];
 
-export const ListaAlunos: React.FC = () => {
+export const ListarUsuarios: React.FC = () => {
     const { data } = useGetAll();
     return (
-        <div style={{ backgroundColor: "#F7F7F7" }}>
+   
+        <Styled.Container>
             <Styled.Fundo></Styled.Fundo>
-            <Styled.Container>
+                <Styled.TabelaContainer>
                 <Styled.Titulo><Styled.Icon />Alunos</Styled.Titulo>
                 <Styled.Pesquisa><BiSearchAlt />Pesquisar</Styled.Pesquisa>
                 
@@ -74,7 +95,8 @@ export const ListaAlunos: React.FC = () => {
                     />}
                     
                 </Box>
-            </Styled.Container>
-        </div>
+                </Styled.TabelaContainer>
+        </Styled.Container>
+   
     )
 }
