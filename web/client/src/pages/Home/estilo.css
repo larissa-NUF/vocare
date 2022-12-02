@@ -43,6 +43,16 @@
   opacity: 1;
 }
 
+.card:hover .div-icon{
+  background-color: #fff;
+  transition: .3s ease-in
+}
+
+.card:hover .icon{
+  fill: #1f5fa3;
+  transition: .3s ease-in
+}
+
 .wave-animation {
   position: relative;
   width: 100%;
@@ -57,7 +67,7 @@
   top:0;
   left:0;
   background-image: url('https://vitalflow.com.ar/img/anim-onda.png');
-  animation: anim 8s linear infinite;
+  animation: anim 10s linear infinite;
   
 }
 .wave-animation .wave:before{
@@ -83,8 +93,28 @@
   opacity: 0.6;
   animation-delay: -5s;
   animation: anim 20s linear infinite;
-  
 }
+
+.custom-shape-divider-top-1669950573 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1669950573 svg {
+  position: relative;
+  display: block;
+  width: calc(112% + 1.3px);
+  height: 79px;
+}
+
+.custom-shape-divider-top-1669950573 .shape-fill {
+  fill: #ECEEEF;
+}
+
 @keyframes anim {
   0%
   {

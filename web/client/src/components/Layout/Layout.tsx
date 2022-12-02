@@ -1,4 +1,4 @@
-import { Grid } from "@material-ui/core"
+import { Grid } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { Dashboard } from "../../pages/Dashboard"
 import { perfil, setPerfil } from "../../reducers/authentication";

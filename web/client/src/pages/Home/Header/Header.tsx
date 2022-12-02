@@ -104,7 +104,7 @@ export const Header: React.FC = () => {
 
                     <BsPersonBadge color={theme.palette.primary.main} size={theme.spacing(3)} style={{marginBottom: theme.spacing(0.75)}} />
 
-                    <h3 style={{ fontSize: theme.spacing(1.25), fontWeight: "bold", cursor: "default" }}>Chamadas de Vídeo</h3>
+                    <h3 style={{ fontSize: theme.spacing(1.25), fontWeight: "bold", cursor: "default" }}>Chamadas Simultâneas</h3>
 
                 </Styled.BrandItem>
                 <Styled.BrandItem xs={3} className="item">

@@ -6,12 +6,9 @@ import "../estilo.css";
 export const ContatoContainer = styled(Grid)({
     width: "100%", 
     backgroundColor: "#eceeef", 
-    height: "auto", 
     paddingTop: theme.spacing(1.5),
-    paddingBottom: theme.spacing(2),
+    paddingBottom: theme.spacing(3.5),
     marginTop: theme.spacing(1),
-    display: "flex",
-    flexDirection: "column"
 });
 
 export const FormContainer = styled(Grid)({
@@ -21,9 +18,51 @@ export const FormContainer = styled(Grid)({
     marginRight: "auto", 
     display: "flex", 
     flexDirection: "row",
-    border: "1px solid #ccc", 
     borderRadius: "8px", 
-    marginTop: theme.spacing(1), 
+    marginTop: theme.spacing(1.5), 
+    boxShadow: "0px 3px 15px 0px #00000022"
+});
+
+export const TextArea = styled("textarea")({
+    borderRadius: "6px",
+    border: "1px solid #c9c9c9",
+    font: "inherit",
+    fontSize: "14px",
+    color: "#2b2d2e",
+    letterSpacing: "inherit",
+    padding: "8px 12px 8px 12px",
+    marginBottom: theme.spacing(2),
+    ":focus": {
+        outline: "none !important",
+        border: "2px solid #469ED6"
+    },
+    "::-webkit-input-placeholder": {
+        color: "#2b2d2e",
+        opacity: 1
+    }
+});
+
+export const CardInfos = styled(Grid)({
+    backgroundColor: theme.palette.primary.main,
+    borderRadius: "8px", 
+    alignItems: "center",
+    width: "100%",
+    display: "flex",
+    flexDirection: "row",
+    height: "6.875em",
+    padding: theme.spacing(1)
+});
+
+export const DivIcon = styled("div")({
+    borderRadius: "100%", 
+    backgroundColor: "#8ad1fb", 
+    justifyContent: "center", 
+    alignItems: "center", 
+    padding: "8px", 
+    display: "flex", 
+    width: theme.spacing(3.125), 
+    height: theme.spacing(3.125),
+    transition: ".3s ease-in",
 });
 
 export const DivTitulo = styled("div")({

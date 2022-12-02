@@ -81,7 +81,6 @@ export const Brands = styled(Grid)({
     flexDirection: "row", 
     marginLeft: "auto", 
     marginRight: "auto",
-    justifyContent: "space-between",
     transform: "translateY(-25%)",
 });
 
