@@ -7,6 +7,8 @@ import Larissa from "../../../assets/img/larissa.jpg";
 import Kevyn from "../../../assets/img/kevyn.jpg";
 import Mateus from "../../../assets/img/mateus.jpg";
 import Lucas from "../../../assets/img/lucas.jpg";
+import Kaio from "../../../assets/img/kaio.jpg";
+import Lele from "../../../assets/img/lele.jpg";
 import { AiFillGithub, AiOutlineLinkedin } from "react-icons/ai";
 
 export const Equipe: React.FC = () => {
@@ -129,7 +131,7 @@ export const Equipe: React.FC = () => {
                     <Styled.CardEquipe xs={4} className="team-member">
 
                         <div style={{ overflow: "hidden", borderRadius: "8px", alignItems: "center", display: "flex" }}>
-                            <Styled.ImgTime src={Larissa} alt="" />
+                            <Styled.ImgTime src={Kaio} alt="" />
                         </div>
 
                         <Styled.Info>
@@ -153,7 +155,7 @@ export const Equipe: React.FC = () => {
                     <Styled.CardEquipe xs={4} className="team-member">
 
                         <div style={{ overflow: "hidden", borderRadius: "8px", alignItems: "center", display: "flex" }}>
-                            <Styled.ImgTime src={Larissa} alt="" />
+                            <Styled.ImgTime src={Lele} alt="" />
                         </div>
 
                         <Styled.Info>
