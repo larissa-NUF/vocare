@@ -9,9 +9,13 @@ import { MdModeEditOutline } from 'react-icons/md';
 import { RiLogoutBoxLine } from 'react-icons/ri'
 import { useNavigate } from 'react-router-dom';
 import { theme } from '../../styles/theme';
+import { logout } from '../../reducers/authentication';
+import { useDispatch } from 'react-redux';
 
 export const SideBar: React.FC = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+
+    const dispatch = useDispatch();
     return (
         <>
             <Styled.SideBar>
@@ -59,7 +63,7 @@ export const SideBar: React.FC = () => {
                     </Grid>
                 </Styled.Layout>
                 <Styled.GridBotao xs={12}>
-                    <Styled.BotaoSair size='medium'>
+                    <Styled.BotaoSair onClick={() => dispatch(logout())} size='medium'>
                         <RiLogoutBoxLine size={16} />
                         <p>Sair</p>
                     </Styled.BotaoSair>

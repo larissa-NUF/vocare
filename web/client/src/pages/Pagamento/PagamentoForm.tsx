@@ -9,12 +9,6 @@ import * as Styled from './Pagamento.styled';
 
 const PagamentoForm: React.FC = () => {
 
-    const navigate = useNavigate();
-
-    useEffect(() => {
-        navigate("/");
-    })
-
     return (
         <div>
             <form>

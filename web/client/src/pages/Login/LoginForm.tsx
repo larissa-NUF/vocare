@@ -1,10 +1,13 @@
 import { FormControl } from "@mui/material";
 import { useFormik } from "formik";
-import * as React from "react";
 import { useLogin } from "../../api/controllers/autenticacao";
 import { MainButton } from "../../components/MainButton";
 import * as Styled from './Login.styled';
 import * as Yup from 'yup'; //lib de validação
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { setToken } from "../../reducers/authentication";
+import { useNavigate } from "react-router-dom";
 
 const validationSchema = Yup.object().shape({
     login: Yup.string().required("Campo obrigatório"),
@@ -17,12 +20,21 @@ type FormValues = {
   }
 
 const LoginForm: React.FC = () => {
-    const {data, mutate} = useLogin();
+    const { data, mutateAsync } = useLogin();
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     async function onSubmit(values: FormValues) {
-        console.log(values);
-        mutate({login: values.login, senha: values.senha});
+        await mutateAsync({login: values.login, senha: values.senha});
     }
+
+    useEffect(() => {
+        if (data) {
+            dispatch(setToken(data));
+            navigate("/dashboard");
+        }
+    }, [data]);
     
     const initialValues: FormValues = {
         login: "", 

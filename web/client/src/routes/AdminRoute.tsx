@@ -1,10 +1,10 @@
 import { Route, Routes as RoutesWrapper } from "react-router-dom";
-import { ListaAlunos } from "../pages/Lista-Alunos";
+import { ListarUsuarios } from "../pages/ListarUsuarios";
 
 export function AdminRoute() {
     return(
         <RoutesWrapper>
-            <Route path="/lista-alunos" element={<ListaAlunos />}></Route>
+            <Route path="/lista-usuarios" element={<ListarUsuarios />}></Route>
         </RoutesWrapper>
     );
 }

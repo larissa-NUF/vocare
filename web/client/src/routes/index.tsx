@@ -5,6 +5,7 @@ import { AlunoRoute } from "./AlunoRoute";
 import { DeslogadoRoute } from "./DeslogadoRoute";
 import { Route, Routes as RoutesDOM } from "react-router-dom";
 import { Home } from "../pages/Home/Index";
+import { PsicologoRoute } from "./PsicologoRoute";
 
 export function Routes() {
     const usuario = useSelector(perfil);
@@ -15,15 +16,11 @@ export function Routes() {
 
     if (usuario === "Admin") return <AdminRoute />;
 
+    if (usuario === "Psicologo") return <PsicologoRoute />
+
     return (
-        <RoutesWrapper>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/cadastro" element={<Cadastro />}></Route>
-            <Route path="/login" element={<Login />}></Route>
-            <Route path="/dashboard" element={<Dashboard />}></Route>
-            <Route path="/pagamento" element={<Pagamento />}></Route>
-            <Route path="/clientes" element={<ListarUsuarios />}></Route>
-            <Route path="/consulta" element={<Consulta />}></Route>
-        </RoutesWrapper>
+        <RoutesDOM>
+            <Route path="*" element={<Home />}></Route>
+        </RoutesDOM>
     );
 }
