@@ -9,13 +9,14 @@ import { MdModeEditOutline } from 'react-icons/md';
 import { RiLogoutBoxLine } from 'react-icons/ri'
 import { useNavigate } from 'react-router-dom';
 import { theme } from '../../styles/theme';
-import { logout } from '../../reducers/authentication';
-import { useDispatch } from 'react-redux';
+import { getUser, logout } from '../../reducers/authentication';
+import { useDispatch, useSelector } from 'react-redux';
 
 export const SideBar: React.FC = () => {
     const navigate = useNavigate();
-
     const dispatch = useDispatch();
+
+    const { nome } = useSelector(getUser);
     return (
         <>
             <Styled.SideBar>
@@ -23,7 +24,7 @@ export const SideBar: React.FC = () => {
                     <Grid xs={12} style={{ display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "35px", padding: "5px" }}>
                         <img src={imagem} alt="Logo Vocare" width="150px" />
                     </Grid>
-                    <Grid  container>
+                    <Grid container>
                         <Styled.Itens xs={12} onClick={() => navigate("/")} style={{ cursor: 'pointer' }}>
                             <Styled.MenuItem container>
                                 <SiGoogleanalytics color="white" />
@@ -39,31 +40,31 @@ export const SideBar: React.FC = () => {
                         <Styled.Itens xs={12} onClick={() => navigate("/faculdades")} style={{ cursor: 'pointer' }}>
                             <Styled.MenuItem container>
                                 <FaUserGraduate color="white" />
-                                Faculdades
+                                Consulta
                             </Styled.MenuItem>
                         </Styled.Itens>
                         <Styled.Itens xs={12} onClick={() => navigate("/lista-alunos")} style={{ cursor: 'pointer' }}>
-                            <Styled.MenuItem container style={{fontWeight: "bold"}}>
+                            <Styled.MenuItem container style={{ fontWeight: "bold" }}>
                                 <FaUserAlt color="white" />
-                                Alunos       
+                                Alunos
                             </Styled.MenuItem>
                         </Styled.Itens>
-                        <Styled.Itens xs={12} onClick={() => navigate("/")} style={{borderBottom:"1px solid #8EB9D4", paddingBottom:"25px", cursor: "pointer"}}>
+                        <Styled.Itens xs={12} onClick={() => navigate("/")} style={{ borderBottom: "1px solid #8EB9D4", paddingBottom: "25px", cursor: "pointer" }}>
                             <Styled.MenuItem container>
                                 <BiHelpCircle color="white" />
-                                Ajuda       
+                                Ajuda
                             </Styled.MenuItem>
                         </Styled.Itens>
                         <Styled.Itens xs={12} onClick={() => navigate("/lista-alunos")}>
-                            <Styled.MenuItem container style={{fontSize:"20px", fontWeight:"700", gap: theme.spacing(1.4) }}>
-                                Larissa Nunes       
+                            <Styled.MenuItem container style={{ fontSize: "20px", fontWeight: "700", gap: theme.spacing(1.4) }}>
+                                {nome}
                                 <MdModeEditOutline color="white" style={{ cursor: 'pointer' }} />
                             </Styled.MenuItem>
                         </Styled.Itens>
                     </Grid>
                 </Styled.Layout>
                 <Styled.GridBotao xs={12}>
-                    <Styled.BotaoSair onClick={() => dispatch(logout())} size='medium'>
+                    <Styled.BotaoSair onClick={() => { dispatch(logout()); navigate("/") }} size='medium'>
                         <RiLogoutBoxLine size={16} />
                         <p>Sair</p>
                     </Styled.BotaoSair>

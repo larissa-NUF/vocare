@@ -1,7 +1,6 @@
 import { Grid } from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
-import { Dashboard } from "../../pages/Dashboard"
-import { perfil, setPerfil } from "../../reducers/authentication";
+import { useSelector } from "react-redux";
+import { perfil } from "../../reducers/authentication";
 import { SideBar } from "../SideBar"
 import { LayoutProps } from "./Layout.types"
 
@@ -10,7 +9,7 @@ export const Layout = ({ children }: LayoutProps) => {
 
     return (
         <div style={{ height:"100vh" }}>
-            {usuario === "Aluno" && 
+            {usuario === "Cliente" && 
                 <Grid container>
                     <Grid xs={2}>
                         <SideBar />

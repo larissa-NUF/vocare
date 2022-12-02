@@ -47,7 +47,7 @@ const slice = createSlice({
                 state.perfil = "Admin";
 
             if (payload.perfis === "2")
-                state.perfil = "Aluno";
+                state.perfil = "Cliente";
             
             if (payload.perfis === "3")
                 state.perfil = "Psicologo";
@@ -70,3 +70,4 @@ export default slice.reducer;
 
 export const perfil = (state: RootState) => state.authentication.perfil;
 export const getToken = (state: RootState) => state.authentication.token;
+export const getUser = (state: RootState) => state.authentication.user;
