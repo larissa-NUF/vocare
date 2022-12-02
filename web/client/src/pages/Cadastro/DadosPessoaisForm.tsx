@@ -14,6 +14,9 @@ import * as Yup from 'yup';
 import { useFormik } from "formik";
 import { useCadastro } from "../../api/controllers/usuario";
 import { useEffect } from "react";
+import { useLogin } from "../../api/controllers/autenticacao";
+import { useDispatch } from "react-redux";
+import { setToken } from "../../reducers/authentication";
 
 const validationSchema = Yup.object().shape({
   checkbox: Yup.boolean().required().oneOf([true], "Aceite nossos termos!"),
@@ -36,20 +39,36 @@ type FormValues = {
 const DadosPessoais: React.FC = () => {
 
   const navigate = useNavigate();
+
+  const dispatch = useDispatch();
   
-  const { mutateAsync,error } = useCadastro();
+  const { mutateAsync, error } = useCadastro();
+
+  const { data, mutateAsync: loginAsync } = useLogin();
 
   async function onSubmit(valuesSubmit: FormValues) {
     await mutateAsync({
       nome: valuesSubmit.nome,
       senha: valuesSubmit.senha,
       login: valuesSubmit.email,
-      tipo: ""
+      perfis: "2",
+      email: valuesSubmit.email 
+    });
+
+    await loginAsync({
+      login: valuesSubmit.email,
+      senha: valuesSubmit.email
     });
 
     resetForm();
-    navigate("/pagamento");
   }
+
+  useEffect(() => {
+    if (data) {
+      dispatch(setToken(data));
+      navigate("/dashboard");
+    }
+  }, [data]);
 
   useEffect(() => {
     console.log(error?.message)

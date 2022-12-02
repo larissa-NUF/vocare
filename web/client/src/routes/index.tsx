@@ -1,20 +1,26 @@
-import { Route, Routes as RoutesWrapper } from "react-router-dom";
-import Cadastro from '../pages/Cadastro';
-import { Dashboard } from "../pages/Dashboard";
+import { useSelector } from "react-redux";
+import { perfil } from "../reducers/authentication";
+import { AdminRoute } from "./AdminRoute";
+import { AlunoRoute } from "./AlunoRoute";
+import { DeslogadoRoute } from "./DeslogadoRoute";
+import { Route, Routes as RoutesDOM } from "react-router-dom";
 import { Home } from "../pages/Home/Index";
-import { ListaAlunos } from "../pages/Lista-Alunos";
-import Login from '../pages/Login';
-import Pagamento from "../pages/Pagamento";
+import { PsicologoRoute } from "./PsicologoRoute";
 
 export function Routes() {
+    const usuario = useSelector(perfil);
+
+    if (usuario === "Deslogado") return <DeslogadoRoute />;
+
+    if (usuario === "Aluno") return <AlunoRoute />;
+
+    if (usuario === "Admin") return <AdminRoute />;
+
+    if (usuario === "Psicologo") return <PsicologoRoute />
+
     return (
-        <RoutesWrapper>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/cadastro" element={<Cadastro />}></Route>
-            <Route path="/login" element={<Login />}></Route>
-            <Route path="/dashboard" element={<Dashboard />}></Route>
-            <Route path="/pagamento" element={<Pagamento />}></Route>
-            <Route path="/lista-alunos" element={<ListaAlunos />}></Route>
-        </RoutesWrapper>
+        <RoutesDOM>
+            <Route path="*" element={<Home />}></Route>
+        </RoutesDOM>
     );
 }

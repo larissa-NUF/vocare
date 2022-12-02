@@ -8,12 +8,6 @@ import { LayoutProps } from "./Layout.types"
 export const Layout = ({ children }: LayoutProps) => {
     const usuario = useSelector(perfil);
 
-    const dispatch = useDispatch();
-
-    const change = () => {
-        dispatch(setPerfil("Aluno"));
-    }
-
     return (
         <div style={{ height:"100vh" }}>
             {usuario === "Aluno" && 
@@ -28,7 +22,6 @@ export const Layout = ({ children }: LayoutProps) => {
             }
             {usuario === "Deslogado" &&
                 <Grid>
-                    <button onClick={change}>MUDAR PERFIL</button>
                     {children}
                 </Grid>
             }
