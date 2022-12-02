@@ -2,6 +2,7 @@ import { Route, Routes as RoutesWrapper } from "react-router-dom";
 import Consulta from "../pages/Consulta";
 import { Dashboard } from "../pages/Dashboard"
 import { Home } from "../pages/Home/Index"
+import { Teste } from "../pages/Teste";
 
 export function AlunoRoute() {
     return (
@@ -9,6 +10,7 @@ export function AlunoRoute() {
             <Route path="/" element={<Home />}></Route>
             <Route path="/dashboard" element={<Dashboard />}></Route>
             <Route path="/consulta" element={<Consulta />}></Route>
+            <Route path="/teste" element={<Teste />}></Route>
         </RoutesWrapper>
     );
 }
