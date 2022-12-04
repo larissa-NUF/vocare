@@ -3,16 +3,19 @@ import { theme } from "../../../styles/theme";
 
 export const BsCard = styled(Card)({
     color:theme.palette.primary.dark,
-    border: "1px solid #DEDEDE",
+    backgroundColor: "#fcfcfc",
+    width: 'auto',
+    height: '100%',
     padding: theme.spacing(1.2),
-    margin:"auto",
-    boxShadow: "none"
+    boxShadow: "0px 4px 30px rgba(0,0,0,0.15)",
+    margin:"auto"
     
 });
 
 export const Titulo = styled(Typography)({
     color:theme.palette.secondary.main,
-    fontSize: theme.spacing(1.625)
+    fontSize: theme.spacing(1.625),
+    marginBottom: theme.spacing(1.2)
     
 });
 

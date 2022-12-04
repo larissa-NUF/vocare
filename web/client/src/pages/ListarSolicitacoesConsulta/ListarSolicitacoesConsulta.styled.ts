@@ -1,8 +1,8 @@
 import { Box, Button, ButtonBase, Grid, styled } from "@mui/material";
 import { theme } from "../../styles/theme";
 import { FaUserAlt as Fa } from 'react-icons/fa';
+import { BtnAceitarProps } from "./ListarSolicitacoesConsulta.types";
 import { BsCheck2 } from "react-icons/bs";
-import Calendar from "react-calendar";
 
 export const Titulo = styled("h2")({
     marginTop: theme.spacing(1),
@@ -29,8 +29,7 @@ export const Icon = styled(Fa)({
 
 export const Container = styled(Grid)({
     height: "100vh",
-    backgroundColor: theme.palette.primary.light,
-    width: '100%'
+    backgroundColor: theme.palette.primary.light
 });
 
 export const TabelaContainer = styled("div")({
@@ -38,10 +37,6 @@ export const TabelaContainer = styled("div")({
     marginLeft: "auto",
     marginRight: "auto",
 });
-export const Tabela = styled("div")({
-    width: "40vw",
-});
-
 
 export const Lista = styled(Box)({
     backgroundColor: theme.palette.primary.main,
@@ -65,3 +60,24 @@ export const Pesquisa = styled(Grid)({
     gap: "8px",
     paddingLeft: "12px"
 });
+
+export const BtnSala = styled(ButtonBase)<BtnAceitarProps>(
+    ({ theme, status }) => ({
+        padding: theme.spacing(0.5),
+        borderRadius: theme.spacing(0.3),
+        color: theme.palette.primary.light,
+
+        ...(status === "criar" && {
+            backgroundColor: theme.palette.primary.main,
+            ":hover": {
+                backgroundColor: theme.palette.secondary.main,
+            },
+        }),
+        ...(status === "entrar" && {
+            backgroundColor: "#6BC941",
+            ":hover": {
+                backgroundColor: "#5EB039",
+            },
+        }),
+    }));
+

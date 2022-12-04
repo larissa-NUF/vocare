@@ -1,0 +1,1 @@
+export { ListarSolicitacoesConsulta } from "./ListarSolicitacoesConsulta";

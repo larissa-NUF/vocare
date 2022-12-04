@@ -1,6 +1,8 @@
 import { Route, Routes as RoutesWrapper } from "react-router-dom"
-import Cadastro from "../pages/Cadastro"
-import { Home } from "../pages/Home/Index"
+import Cadastro from "../pages/Cadastro";
+import Consulta from "../pages/Consulta";
+import { Home } from "../pages/Home/Index";
+
 import Login from "../pages/Login"
 import Pagamento from "../pages/Pagamento";
 
@@ -11,6 +13,7 @@ export function DeslogadoRoute() {
             <Route path="/cadastro" element={<Cadastro />}></Route>
             <Route path="/login" element={<Login />}></Route>
             <Route path="/pagamento" element={<Pagamento />}></Route>
+            <Route path="/consulta" element={<Consulta />}></Route>
         </RoutesWrapper>
     );
 }
