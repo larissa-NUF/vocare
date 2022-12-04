@@ -28,7 +28,7 @@ export const useGetById = (id: number) => {
 
 export const useGetByPerfil = (perfil: string) => {
     return useQuery<Usuario[], CustomError>(
-        ["usuariosPerfil"],
+        ["usuariosPerfil" , perfil],
         async () => {
             const { data } = await api.get(`/usuario/perfil/${perfil}`);
             return data;            

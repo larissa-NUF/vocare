@@ -19,7 +19,7 @@ export function Routes() {
 
     return (
         <RoutesDOM>
-            <Route path="*" element={<Home />}></Route>
+         
         </RoutesDOM>
     );
 }

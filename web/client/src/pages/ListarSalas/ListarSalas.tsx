@@ -2,18 +2,21 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import * as Styled from "./ListarSalas.styled"
 import { DataGrid, GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
-import { theme } from '../../../styles/theme';
-import { useGetAll } from '../../../api/controllers/usuario';
-import { ModalEntrarSala } from '../../../components/ModalEntrarSala';
-import { Usuario } from '../../../api/models/usuario';
+import { theme } from '../../styles/theme';
+import { useGetAll } from '../../api/controllers/usuario';
+import { ModalEntrarSala } from '../../components/ModalEntrarSala';
+import { Usuario } from '../../api/models/usuario';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { getPerfil } from '../../../reducers/authentication';
+import { getPerfil, getUser } from '../../reducers/authentication';
+import { BiSearchAlt } from 'react-icons/bi';
+import { useGetConsultasByPsicologo } from '../../api/controllers/consulta';
 
 export const ListarSalas: React.FC = () => {
     const [open, setOpen] = useState(false);
     const [id, setId] = useState(0);
     const perfil = useSelector(getPerfil);
+    const user = useSelector(getUser);
   const handleOpen = (params?: Usuario) => {
     setOpen(true);
     if(params)
@@ -22,7 +25,7 @@ export const ListarSalas: React.FC = () => {
   };
   const handleClose = () => setOpen(false);
 
-    const { data } = useGetAll();
+    const { data } = useGetConsultasByPsicologo(user.id || 0);
 
     const columns: GridColDef[] = [
         {
@@ -68,7 +71,7 @@ export const ListarSalas: React.FC = () => {
             type: 'boolean',
             flex: 1,
             renderCell: (params: GridRenderCellParams<number | null, Usuario>) => (
-                <Styled.BtnSala status="entrar" onClick={() => handleOpen(params.row)}>Criar sala</Styled.BtnSala>
+                <Styled.BtnSala status="entrar" onClick={() => handleOpen(params.row)}>Entrar</Styled.BtnSala>
             ),
         },
     
@@ -76,6 +79,11 @@ export const ListarSalas: React.FC = () => {
     ];
     return (
         <div>
+            <Styled.Container>
+            <Styled.Fundo></Styled.Fundo>
+            <Styled.TabelaContainer>
+                <Styled.Titulo><Styled.Icon />Alunos</Styled.Titulo>
+                <Styled.Pesquisa><BiSearchAlt />Pesquisar</Styled.Pesquisa>
             <ModalEntrarSala open={open} handleClose={handleClose} id={id} tipo={perfil}/>
 
                 <Box sx={{
@@ -98,6 +106,8 @@ export const ListarSalas: React.FC = () => {
                         />}
 
                 </Box>
+                </Styled.TabelaContainer>
+        </Styled.Container>
         </div>
 
     )

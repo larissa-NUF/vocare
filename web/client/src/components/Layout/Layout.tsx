@@ -29,6 +29,16 @@ export const Layout = ({ children }: LayoutProps) => {
                     </Grid>
                 </Grid>
             }
+            {usuario === "Psicologo" && 
+                <Grid container>
+                    <Grid xs={2}>
+                        <SideBar />
+                    </Grid>
+                    <Grid xs={10}>
+                        {children}
+                    </Grid>
+                </Grid>
+            }
             {usuario === "Deslogado" &&
                 <Grid>
                     {children}

@@ -77,6 +77,41 @@ export const SideBar: React.FC = () => {
                             </>
                         }
 
+                        {usuario === "Psicologo" && 
+                            <>
+                            <Styled.Itens xs={12} onClick={() => navigate("/")} style={{ cursor: 'pointer' }}>
+                                    <Styled.MenuItem container>
+                                        <BiHelpCircle color="white" />
+                                        Dashboard
+                                    </Styled.MenuItem>
+                                </Styled.Itens>
+                                <Styled.Itens xs={12} onClick={() => navigate("/solicitacoes-consulta")} style={{ cursor: 'pointer' }}>
+                                    <Styled.MenuItem container>
+                                        <BiHelpCircle color="white" />
+                                        Solicitações
+                                    </Styled.MenuItem>
+                                </Styled.Itens>
+                                <Styled.Itens xs={12} onClick={() => navigate("/consultas")} style={{ cursor: 'pointer' }}>
+                                    <Styled.MenuItem container>
+                                        <BiHelpCircle color="white" />
+                                        Consultas
+                                    </Styled.MenuItem>
+                                </Styled.Itens>
+                                <Styled.Itens xs={12} onClick={() => navigate("/clientes")} style={{ cursor: 'pointer' }}>
+                                    <Styled.MenuItem container>
+                                        <BiHelpCircle color="white" />
+                                        Testes
+                                    </Styled.MenuItem>
+                                </Styled.Itens>
+                                <Styled.Itens xs={12} onClick={() => navigate("/psicologos")} style={{ borderBottom: "1px solid #8EB9D4", paddingBottom: "25px", cursor: "pointer" }}>
+                                    <Styled.MenuItem container>
+                                        <BiHelpCircle color="white" />
+                                        Piscólogos
+                                    </Styled.MenuItem>
+                                </Styled.Itens>
+                            </>
+                        }
+
                         <Styled.Itens xs={12} onClick={() => navigate("/lista-alunos")}>
                             <Styled.MenuItem container style={{ fontSize: "20px", fontWeight: "700", gap: theme.spacing(1.4) }}>
                                 {nome}
