@@ -1,38 +1,15 @@
 import { IconButton } from '@mui/material';
-import firebase from 'firebase/app';
-import 'firebase/firestore';
 import { useEffect, useRef, useState } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useConsultaUpdate } from '../../api/controllers/consulta';
+import { firestore } from '../../api/services/firebase';
 import { Controles } from '../../components/Controles';
+import { ModalEntrarSala } from '../../components/ModalEntrarSala';
 import * as styled from './Consulta.styled';
 
 
 const Consulta: React.FC = () => {
-    const firebaseConfig = {
-        apiKey: "AIzaSyDxe35e5EOKk5vLAFVf9fg4yE2TcZZPmRg",
-        authDomain: "vocare-366615.firebaseapp.com",
-        projectId: "vocare-366615",
-        storageBucket: "vocare-366615.appspot.com",
-        messagingSenderId: "461111192210",
-        appId: "1:461111192210:web:d73859e4faa75dc795d44b",
-        measurementId: "G-B2WNY94KD9"
-    };
 
-    if (!firebase.apps.length) {
-        firebase.initializeApp(firebaseConfig);
-    }
-    const firestore = firebase.firestore();
-
-    const servers = {
-        iceServers: [
-            {
-                urls: ['stun:stun.l.google.com:19302', 'stun:stun1.l.google.com:19302', 'stun:stun2.l.google.com:19302'],
-            },
-        ],
-        iceCandidatePoolSize: 10,
-    };
-
-    const pc = new RTCPeerConnection(servers);
     //let localStream: MediaStream;
     //let remoteStream: MediaStream;
     
@@ -46,9 +23,22 @@ const Consulta: React.FC = () => {
     const [camera, setCamera] = useState(sala?.cam);
     const [microfone, setMicrofone] = useState(sala?.mic);
     const [input, setInput] = useState("");
+    const { mutateAsync } = useConsultaUpdate();
+    const [open, setOpen] = useState(true);
+    const handleClose = () => setOpen(false);
+    const navigate = useNavigate();
 
     
-
+    const servers = {
+        iceServers: [
+            {
+                urls: ['stun:stun.l.google.com:19302', 'stun:stun1.l.google.com:19302', 'stun:stun2.l.google.com:19302'],
+            },
+        ],
+        iceCandidatePoolSize: 10,
+    };
+    
+    const pc = new RTCPeerConnection(servers);
 
 
     useEffect(() => {
@@ -100,13 +90,33 @@ const Consulta: React.FC = () => {
         }
         setMicrofone(!microfone);
     }
+    function entrar(){
+        setOpen(false);
+        btnSala();
+    }
+
+    function desligar(){
+        if(localStream){
+            var local = localStream;
+            local.getTracks().forEach(function(track) {
+                track.stop();
+                navigate('/');
+              });
+              
+        } ;
+        
+    }
 
     async function btnSala() {
         const callDoc = firestore.collection('calls').doc();
-        const offerCandidates = callDoc.collection('offerCandidates');
         const answerCandidates = callDoc.collection('answerCandidates');
-
+        const offerCandidates = callDoc.collection('offerCandidates');
         console.log(callDoc.id);
+
+        sala.consulta.idSala = callDoc.id;
+        await mutateAsync({
+            ...sala.consulta
+        });
 
         // Get candidates for caller, save to db
         pc.onicecandidate = (event) => {
@@ -187,6 +197,7 @@ const Consulta: React.FC = () => {
     return (
 
         <styled.videos className="videos">
+            <ModalEntrarSala open={open} handleClose={handleClose} entrarSala={entrar}/>
             <div>
                     <styled.videoLocal>
                         <styled.CameraLocal id="webcamVideo" autoPlay playsInline ref={webcamVideo}></styled.CameraLocal>
@@ -196,10 +207,9 @@ const Consulta: React.FC = () => {
                     <styled.videoRemoto id="remoteVideo" autoPlay playsInline ref={remoteVideo}></styled.videoRemoto>
           
             </div>
-            <Controles Cam={camera} Mic={microfone} OnclickCam={btnCamera} OnclickMic={btnMicrofone} btnDesligar={true}/>
+            <Controles Cam={camera} Mic={microfone} OnclickCam={btnCamera} OnclickMic={btnMicrofone} btnDesligar={true} onClickOff={desligar}/>
              <div>
-                    <IconButton onClick={btnCamera}>camera</IconButton>
-                    <IconButton onClick={btnSala}>criar sala</IconButton>
+                    <IconButton onClick={btnSala}>camera</IconButton>
                     <IconButton onClick={entrarSala}>entrar</IconButton>
                     <input type='text' onChange={(e) => setInput(e.target.value)} />
                 </div> 

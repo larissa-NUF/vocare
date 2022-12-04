@@ -6,26 +6,30 @@ import { theme } from '../../styles/theme';
 import { useGetAll } from '../../api/controllers/usuario';
 import { ModalEntrarSala } from '../../components/ModalEntrarSala';
 import { Usuario } from '../../api/models/usuario';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { getPerfil, getUser } from '../../reducers/authentication';
 import { BiSearchAlt } from 'react-icons/bi';
 import { useGetConsultasByPsicologo } from '../../api/controllers/consulta';
+import { Consulta } from '../../api/models/consulta';
+import { useNavigate } from 'react-router-dom';
 
 export const ListarSalas: React.FC = () => {
-    const [open, setOpen] = useState(false);
-    const [id, setId] = useState(0);
+    const [consulta, setConsulta] = useState<Consulta>();
     const perfil = useSelector(getPerfil);
     const user = useSelector(getUser);
-  const handleOpen = (params?: Usuario) => {
-    setOpen(true);
-    if(params)
-    if (params.id != null)
-    setId(params.id);
+    const navigate = useNavigate();
+    
+    const handleOpen = (params?: Consulta) => {
+    if (params != null)
+        navigate('/consulta', { state: { consulta: params, tipo: perfil} });
   };
-  const handleClose = () => setOpen(false);
+  
 
-    const { data } = useGetConsultasByPsicologo(user.id || 0);
+    const { data, refetch } = useGetConsultasByPsicologo(user.id || 0);
+    useEffect(() => {
+        refetch();
+    }, []);
 
     const columns: GridColDef[] = [
         {
@@ -70,7 +74,7 @@ export const ListarSalas: React.FC = () => {
             headerName: 'Consulta',
             type: 'boolean',
             flex: 1,
-            renderCell: (params: GridRenderCellParams<number | null, Usuario>) => (
+            renderCell: (params: GridRenderCellParams<number | null, Consulta>) => (
                 <Styled.BtnSala status="entrar" onClick={() => handleOpen(params.row)}>Entrar</Styled.BtnSala>
             ),
         },
@@ -82,9 +86,8 @@ export const ListarSalas: React.FC = () => {
             <Styled.Container>
             <Styled.Fundo></Styled.Fundo>
             <Styled.TabelaContainer>
-                <Styled.Titulo><Styled.Icon />Alunos</Styled.Titulo>
+                <Styled.Titulo><Styled.Icon />Consultas agendadas</Styled.Titulo>
                 <Styled.Pesquisa><BiSearchAlt />Pesquisar</Styled.Pesquisa>
-            <ModalEntrarSala open={open} handleClose={handleClose} id={id} tipo={perfil}/>
 
                 <Box sx={{
                     height: 440,

@@ -1,18 +1,19 @@
 import { Modal, Typography } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Consulta } from '../../api/models/consulta';
 import { Controles } from '../Controles';
 import { MainButton } from '../MainButton';
 import * as Styled from './ModalEntrarSala.styled';
 import { ModalEntrarSalaProps } from './ModalEntrarSala.types';
 
-export function ModalEntrarSala({ open, handleClose, id, tipo }: ModalEntrarSalaProps) {
+export function ModalEntrarSala({ open, handleClose, entrarSala }: ModalEntrarSalaProps) {
     const [localStream, setLocalStream] = useState<MediaStream | null>(null);
     const webcamVideo = useRef<HTMLVideoElement | null>(null);
     const [camera, setCamera] = useState(true);
     const [microfone, setMicrofone] = useState(true);
 
-    const navigate = useNavigate();
+    
 
     useEffect(() => {
         if (!open) {
@@ -55,10 +56,6 @@ export function ModalEntrarSala({ open, handleClose, id, tipo }: ModalEntrarSala
         setMicrofone(!microfone);
     }
 
-    const entrarSala = (id: number, tipo: string) => {
-        navigate('/consulta', { state: { id: id, tipo: tipo, mic: microfone, cam: camera } });
-    };
-
     return (
         <div>
 
@@ -72,7 +69,7 @@ export function ModalEntrarSala({ open, handleClose, id, tipo }: ModalEntrarSala
                     <Styled.WebCam id="webcamVideo" autoPlay playsInline ref={webcamVideo}></Styled.WebCam>
 
                     <Controles Cam={camera} Mic={microfone} OnclickCam={btnCamera} OnclickMic={btnMicrofone} />
-                    <Styled.btnEntrar onClick={() => entrarSala(id, tipo)}>Entrar na chamada</Styled.btnEntrar>
+                    <Styled.btnEntrar onClick={entrarSala}>Entrar na chamada</Styled.btnEntrar>
                 </Styled.ModalSala>
             </Modal>
         </div>

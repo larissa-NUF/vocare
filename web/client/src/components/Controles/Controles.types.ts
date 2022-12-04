@@ -6,4 +6,5 @@ export interface ControlesProps {
     OnclickCam?: ()=> void;
     OnclickMic?: ()=> void;
     btnDesligar?: boolean;
+    onClickOff?: () => void;
 }
