@@ -23,8 +23,7 @@ const initialState: Auth = {
         login: "",
         nome: "",
         perfis: "",
-        senha: "",
-        id: 0
+        senha: ""
     }
 }
 

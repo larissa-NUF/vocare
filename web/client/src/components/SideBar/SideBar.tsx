@@ -120,12 +120,12 @@ export const SideBar: React.FC = () => {
                         </Styled.Itens>
                     </Grid>
                 </Styled.Layout>
-                <Styled.GridBotao xs={12}>
+               
                     <Styled.BotaoSair onClick={() => { dispatch(logout()); navigate("/") }} size='medium'>
                         <RiLogoutBoxLine size={16} />
                         <p>Sair</p>
                     </Styled.BotaoSair>
-                </Styled.GridBotao>
+        
             </Styled.SideBar>
         </>
     )
