@@ -1,7 +1,8 @@
 import {
   Checkbox,
   FormControl,
-  Grid
+  Grid,
+  Link
 } from "@mui/material";
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
@@ -158,10 +159,12 @@ const DadosPessoais: React.FC = () => {
       </BasicCard>
       <Styled.Btn container alignItems="center" justifyContent="center" spacing={2}>
         <Grid item>
-          <SecundaryButton>
-            <Styled.ArrowLeft />
-            <Styled.TxtBtnVoltar>Voltar</Styled.TxtBtnVoltar>
-          </SecundaryButton>
+          <Link href="/login" style={{textDecoration: "none"}}>
+            <SecundaryButton>
+              <Styled.ArrowLeft />
+              <Styled.TxtBtnVoltar>Voltar</Styled.TxtBtnVoltar>
+            </SecundaryButton>
+          </Link>
         </Grid>
 
         <Grid item>
