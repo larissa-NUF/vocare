@@ -58,7 +58,7 @@ const DadosPessoais: React.FC = () => {
 
     await loginAsync({
       login: valuesSubmit.email,
-      senha: valuesSubmit.email
+      senha: valuesSubmit.senha
     });
 
     resetForm();

@@ -18,6 +18,7 @@ const initialState: Auth = {
         refreshToken: localStorage.getItem("refreshToken") || ""
     },
     user: {
+        id: 0,
         email: "",
         login: "",
         nome: "",
@@ -68,6 +69,6 @@ export const { setPerfil, setToken, setUser, logout } = slice.actions;
 
 export default slice.reducer;
 
-export const perfil = (state: RootState) => state.authentication.perfil;
+export const getPerfil = (state: RootState) => state.authentication.perfil;
 export const getToken = (state: RootState) => state.authentication.token;
 export const getUser = (state: RootState) => state.authentication.user;

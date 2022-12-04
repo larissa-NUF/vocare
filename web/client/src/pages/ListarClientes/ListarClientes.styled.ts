@@ -25,11 +25,6 @@ export const Titulo = styled("h2")({
     alignItems: "center"
 });
 
-export const Icon = styled(Fa)({
-    marginRight: theme.spacing(1.125),
-    height: theme.spacing(3.125)
-});
-
 
 export const Fundo = styled("div")({
     width: "100%",
@@ -52,3 +47,9 @@ export const Pesquisa = styled(Grid)({
     gap: "8px",
     paddingLeft: "12px"
 });
+
+export const Icon = styled(Fa)({
+    marginRight: theme.spacing(1.125),
+    height: theme.spacing(3.125)
+});
+
