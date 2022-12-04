@@ -22,7 +22,8 @@ const initialState: Auth = {
         login: "",
         nome: "",
         perfis: "",
-        senha: ""
+        senha: "",
+        id: 0
     }
 }
 

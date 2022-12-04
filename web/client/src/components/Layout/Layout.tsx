@@ -14,7 +14,7 @@ export const Layout = ({ children }: LayoutProps) => {
                     <Grid xs={2}>
                         <SideBar />
                     </Grid>
-                    <Grid xs={10}>
+                    <Grid style={{ backgroundColor: "#F7F7F7" }} xs={10}>
                         {children}
                     </Grid>
                 </Grid>
