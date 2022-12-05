@@ -5,6 +5,9 @@ import { MainButton } from "../MainButton";
 export const SideBar = styled(Grid)({
     width: "100%",
     height: "100vh",
+    display: "flex",
+    flexDirection: 'column',
+    justifyContent: 'center',
     background: theme.palette.background.default,
 });
 
@@ -32,7 +35,7 @@ export const BotaoSair = styled(MainButton)({
     justifyContent: "center",
     textAlign: "center",
     display: "flex",
-    margin: "auto",
+    margin: "auto auto 2em auto",
     backgroundColor: "#BE1106",
     gap: "12px",
     "&:hover":{
@@ -41,10 +44,5 @@ export const BotaoSair = styled(MainButton)({
 });
 
 export const GridBotao = styled(Grid)({
-    display: "flex", 
-    marginBottom: 0, 
-    height:"100%",
-    marginTop: "auto",
-    width:"100%",
-    alignItems: "normal"
+    
 });

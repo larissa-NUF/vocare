@@ -7,11 +7,9 @@ import { MainButton } from '../MainButton';
 import * as Styled from './ModalEntrarSala.styled';
 import { ModalEntrarSalaProps } from './ModalEntrarSala.types';
 
-export function ModalEntrarSala({ open, handleClose, entrarSala }: ModalEntrarSalaProps) {
+export function ModalEntrarSala({ open, handleClose, entrarSala, camera, microfone, setCamera, setMicrofone }: ModalEntrarSalaProps) {
     const [localStream, setLocalStream] = useState<MediaStream | null>(null);
     const webcamVideo = useRef<HTMLVideoElement | null>(null);
-    const [camera, setCamera] = useState(true);
-    const [microfone, setMicrofone] = useState(true);
 
     
 
@@ -44,7 +42,7 @@ export function ModalEntrarSala({ open, handleClose, entrarSala }: ModalEntrarSa
             local.getVideoTracks()[0].enabled = !camera;
             setLocalStream(local);
         }
-        setCamera(!camera);
+        setCamera();
     }
 
     function btnMicrofone() {
@@ -53,7 +51,7 @@ export function ModalEntrarSala({ open, handleClose, entrarSala }: ModalEntrarSa
             local.getAudioTracks()[0].enabled = !microfone;
             setLocalStream(local);
         }
-        setMicrofone(!microfone);
+        setMicrofone();
     }
 
     return (

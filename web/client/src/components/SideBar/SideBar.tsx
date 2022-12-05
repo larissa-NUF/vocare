@@ -40,7 +40,7 @@ export const SideBar: React.FC = () => {
                                         Setores
                                     </Styled.MenuItem>
                                 </Styled.Itens>
-                                <Styled.Itens xs={12} onClick={() => navigate("/faculdades")} style={{ cursor: 'pointer' }}>
+                                <Styled.Itens xs={12} onClick={() => navigate("/consultas")} style={{ cursor: 'pointer' }}>
                                     <Styled.MenuItem container>
                                         <FaUserGraduate color="white" />
                                         Consulta
@@ -120,12 +120,12 @@ export const SideBar: React.FC = () => {
                         </Styled.Itens>
                     </Grid>
                 </Styled.Layout>
-                <Styled.GridBotao xs={12}>
+               
                     <Styled.BotaoSair onClick={() => { dispatch(logout()); navigate("/") }} size='medium'>
                         <RiLogoutBoxLine size={16} />
                         <p>Sair</p>
                     </Styled.BotaoSair>
-                </Styled.GridBotao>
+        
             </Styled.SideBar>
         </>
     )

@@ -1,20 +1,17 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import * as Styled from "./ListarSalas.styled"
+import * as Styled from "./ListarSalasClientes.styled"
 import { DataGrid, GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
 import { theme } from '../../styles/theme';
-import { useGetAll } from '../../api/controllers/usuario';
-import { ModalEntrarSala } from '../../components/ModalEntrarSala';
-import { Usuario } from '../../api/models/usuario';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { getPerfil, getUser } from '../../reducers/authentication';
 import { BiSearchAlt } from 'react-icons/bi';
-import { useGetConsultasByPsicologo } from '../../api/controllers/consulta';
+import { useGetConsultasByClienteAceito } from '../../api/controllers/consulta';
 import { Consulta } from '../../api/models/consulta';
 import { useNavigate } from 'react-router-dom';
 
-export const ListarSalas: React.FC = () => {
+export const ListarSalasClientes: React.FC = () => {
     const perfil = useSelector(getPerfil);
     const user = useSelector(getUser);
     const navigate = useNavigate();
@@ -24,9 +21,8 @@ export const ListarSalas: React.FC = () => {
         navigate('/consulta', { state: { consulta: params, tipo: perfil} });
   };
   
-const dateFormat = (data: Date) => data.toLocaleDateString("pt-BR");
 
-    const { data, refetch } = useGetConsultasByPsicologo(user.id || 0);
+    const { data, refetch } = useGetConsultasByClienteAceito(user.id || 0);
     useEffect(() => {
         refetch();
     }, []);
@@ -59,8 +55,7 @@ const dateFormat = (data: Date) => data.toLocaleDateString("pt-BR");
             headerName: 'Data Cadastro',
             type: 'date',
             editable: false,
-            flex: 1,
-            renderCell: (params) => dateFormat(new Date(params.row.dataCadastro))
+            flex: 1
         },
         {
             field: 'avaliacao',

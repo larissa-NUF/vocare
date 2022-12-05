@@ -20,9 +20,8 @@ const Consulta: React.FC = () => {
     const [remoteStream, setRemoteStream] = useState<MediaStream | null>(null);
     const webcamVideo = useRef<HTMLVideoElement>(null);
     const remoteVideo = useRef<HTMLVideoElement>(null);
-    const [camera, setCamera] = useState(sala?.cam);
-    const [microfone, setMicrofone] = useState(sala?.mic);
-    const [input, setInput] = useState("");
+    const [camera, setCamera] = useState(true);
+    const [microfone, setMicrofone] = useState(true);
     const { mutateAsync } = useConsultaUpdate();
     const [open, setOpen] = useState(true);
     const handleClose = () => setOpen(false);
@@ -92,7 +91,11 @@ const Consulta: React.FC = () => {
     }
     function entrar(){
         setOpen(false);
+        if (sala.tipo == "Psicologo")
         btnSala();
+        else{
+            entrarSala(sala.consulta.idSala)
+        }
     }
 
     function desligar(){
@@ -153,8 +156,7 @@ const Consulta: React.FC = () => {
         });
     }
 
-    async function entrarSala() {
-        const callId = input;
+    async function entrarSala(callId: string) {
         const callDoc = firestore.collection('calls').doc(callId);
         const answerCandidates = callDoc.collection('answerCandidates');
         const offerCandidates = callDoc.collection('offerCandidates');
@@ -197,7 +199,7 @@ const Consulta: React.FC = () => {
     return (
 
         <styled.videos className="videos">
-            <ModalEntrarSala open={open} handleClose={handleClose} entrarSala={entrar}/>
+            <ModalEntrarSala open={open} handleClose={handleClose} entrarSala={entrar} camera={camera} microfone={microfone} setCamera={() => setCamera(!camera)} setMicrofone={() => setMicrofone(!microfone)}/>
             <div>
                     <styled.videoLocal>
                         <styled.CameraLocal id="webcamVideo" autoPlay playsInline ref={webcamVideo}></styled.CameraLocal>
@@ -208,11 +210,7 @@ const Consulta: React.FC = () => {
           
             </div>
             <Controles Cam={camera} Mic={microfone} OnclickCam={btnCamera} OnclickMic={btnMicrofone} btnDesligar={true} onClickOff={desligar}/>
-             <div>
-                    <IconButton onClick={btnSala}>camera</IconButton>
-                    <IconButton onClick={entrarSala}>entrar</IconButton>
-                    <input type='text' onChange={(e) => setInput(e.target.value)} />
-                </div> 
+           
         </styled.videos>
 
     );
