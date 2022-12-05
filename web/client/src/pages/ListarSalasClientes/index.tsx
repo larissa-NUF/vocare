@@ -1,0 +1,1 @@
+export { ListarSalasClientes } from "./ListarSalasClientes";
