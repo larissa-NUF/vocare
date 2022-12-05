@@ -24,10 +24,22 @@ export const useConsultaUpdate = () => {
 
 export const useGetConsultasByPsicologo = (id: number) => {
     return useQuery<Consulta[], CustomError>(
-        ["usuarios"],
+        ["consulta", id],
         async () => {
             if(id != 0){
             const { data } = await api.get(`/consulta/${id}`);
+            return data;
+            }
+            
+        }
+    )
+};
+
+export const useGetConsultasByData = () => {
+    return useMutation<Consulta[], CustomError, {id: number, date: Date}>(
+        async (obj) => {
+            if(obj.id != 0){
+            const { data } = await api.post(`/consulta/data`, {Id: obj.id, DataConsulta: obj.date});
             return data;
             }
             

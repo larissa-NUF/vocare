@@ -15,7 +15,6 @@ import { Consulta } from '../../api/models/consulta';
 import { useNavigate } from 'react-router-dom';
 
 export const ListarSalas: React.FC = () => {
-    const [consulta, setConsulta] = useState<Consulta>();
     const perfil = useSelector(getPerfil);
     const user = useSelector(getUser);
     const navigate = useNavigate();
