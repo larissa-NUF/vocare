@@ -9,7 +9,6 @@ export function AdminRoute() {
             <Route path="/" element={<Dashboard />}></Route>
             <Route path="/clientes" element={<ListarClientes />}></Route>
             <Route path="/psicologos" element={<ListarPsicologos />}></Route>
-           
         </RoutesWrapper>
     );
 }

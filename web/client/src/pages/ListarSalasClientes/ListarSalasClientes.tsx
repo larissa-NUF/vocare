@@ -4,8 +4,8 @@ import * as Styled from "./ListarSalasClientes.styled"
 import { DataGrid, GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
 import { theme } from '../../styles/theme';
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { getPerfil, getUser } from '../../reducers/authentication';
+import { useDispatch, useSelector } from 'react-redux';
+import { getPerfil, getUser, setHeader } from '../../reducers/authentication';
 import { BiSearchAlt } from 'react-icons/bi';
 import { useGetConsultasByClienteAceito } from '../../api/controllers/consulta';
 import { Consulta } from '../../api/models/consulta';
@@ -15,6 +15,12 @@ export const ListarSalasClientes: React.FC = () => {
     const perfil = useSelector(getPerfil);
     const user = useSelector(getUser);
     const navigate = useNavigate();
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(setHeader(true))
+    }, [])
     
     const handleOpen = (params?: Consulta) => {
     if (params != null)

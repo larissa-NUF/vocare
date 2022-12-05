@@ -1,7 +1,14 @@
+import { useEffect } from "react";
 import { BiSearchAlt } from "react-icons/bi";
+import { useDispatch } from "react-redux";
+import { setHeader } from "../../reducers/authentication";
 import * as Styled from './ListarSolicitacoesConsulta.styled';
 import { Tabela } from "./Tabela";
 export const ListarSolicitacoesConsulta: React.FC = () => {
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(setHeader(true))
+    }, [])
 
     return (
         <div>

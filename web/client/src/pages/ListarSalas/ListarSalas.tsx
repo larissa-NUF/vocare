@@ -7,8 +7,8 @@ import { useGetAll } from '../../api/controllers/usuario';
 import { ModalEntrarSala } from '../../components/ModalEntrarSala';
 import { Usuario } from '../../api/models/usuario';
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { getPerfil, getUser } from '../../reducers/authentication';
+import { useDispatch, useSelector } from 'react-redux';
+import { getPerfil, getUser, setHeader } from '../../reducers/authentication';
 import { BiSearchAlt } from 'react-icons/bi';
 import { useGetConsultasByPsicologo } from '../../api/controllers/consulta';
 import { Consulta } from '../../api/models/consulta';
@@ -18,6 +18,11 @@ export const ListarSalas: React.FC = () => {
     const perfil = useSelector(getPerfil);
     const user = useSelector(getUser);
     const navigate = useNavigate();
+
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(setHeader(true))
+    }, [])
     
     const handleOpen = (params?: Consulta) => {
     if (params != null)

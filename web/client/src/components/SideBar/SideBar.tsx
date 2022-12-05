@@ -3,14 +3,16 @@ import imagem from './../../assets/img/logo-branco.png';
 import { Grid } from '@mui/material';
 import { SiGoogleanalytics } from "react-icons/si";
 import { IoAnalytics } from "react-icons/io5";
-import { FaUserGraduate, FaUserAlt } from "react-icons/fa";
+import { FaUserGraduate, FaUserAlt, FaBrain } from "react-icons/fa";
 import { BiHelpCircle } from "react-icons/bi"
-import { MdModeEditOutline } from 'react-icons/md';
+import { MdModeEditOutline, MdVideoCall } from 'react-icons/md';
 import { RiLogoutBoxLine } from 'react-icons/ri'
 import { useNavigate } from 'react-router-dom';
 import { theme } from '../../styles/theme';
 import { getPerfil, getUser, logout } from '../../reducers/authentication';
 import { useDispatch, useSelector } from 'react-redux';
+import { AiFillCheckCircle } from 'react-icons/ai';
+import { BsFillPeopleFill } from 'react-icons/bs';
 
 export const SideBar: React.FC = () => {
     const navigate = useNavigate();
@@ -28,31 +30,25 @@ export const SideBar: React.FC = () => {
                     <Grid container>
                         {usuario === "Cliente" &&
                             <>
-                                <Styled.Itens xs={12} onClick={() => navigate("/")} style={{ cursor: 'pointer' }}>
+                                <Styled.Itens xs={12} onClick={() => navigate("/dashboard")} style={{ cursor: 'pointer' }}>
                                     <Styled.MenuItem container>
                                         <SiGoogleanalytics color="white" />
-                                        Análise
+                                        Dashboard
                                     </Styled.MenuItem>
                                 </Styled.Itens>
-                                <Styled.Itens xs={12} onClick={() => navigate("/")} style={{ cursor: 'pointer' }}>
+                                <Styled.Itens xs={12} onClick={() => navigate("/teste-projetivo")} style={{ cursor: 'pointer' }}>
                                     <Styled.MenuItem container>
                                         <IoAnalytics color="white" />
-                                        Setores
+                                        Testes Projetivos
                                     </Styled.MenuItem>
                                 </Styled.Itens>
-                                <Styled.Itens xs={12} onClick={() => navigate("/consultas")} style={{ cursor: 'pointer' }}>
+                                <Styled.Itens xs={12} onClick={() => navigate("/minhas-consultas")} style={{ cursor: 'pointer' }}>
                                     <Styled.MenuItem container>
-                                        <FaUserGraduate color="white" />
+                                        <AiFillCheckCircle color="white" />
                                         Consulta
                                     </Styled.MenuItem>
                                 </Styled.Itens>
-                                <Styled.Itens xs={12} onClick={() => navigate("/lista-alunos")} style={{ cursor: 'pointer' }}>
-                                    <Styled.MenuItem container style={{ fontWeight: "bold" }}>
-                                        <FaUserAlt color="white" />
-                                        Alunos
-                                    </Styled.MenuItem>
-                                </Styled.Itens>
-                                <Styled.Itens xs={12} onClick={() => navigate("/")} style={{ borderBottom: "1px solid #8EB9D4", paddingBottom: "25px", cursor: "pointer" }}>
+                                <Styled.Itens xs={12} onClick={() => navigate("/") } style={{ borderBottom: "1px solid #8EB9D4", paddingBottom: "25px", cursor: "pointer" }}>
                                     <Styled.MenuItem container>
                                         <BiHelpCircle color="white" />
                                         Ajuda
@@ -64,13 +60,13 @@ export const SideBar: React.FC = () => {
                             <>
                             <Styled.Itens xs={12} onClick={() => navigate("/clientes")} style={{ cursor: 'pointer' }}>
                                     <Styled.MenuItem container>
-                                        <BiHelpCircle color="white" />
+                                        <BsFillPeopleFill color="white" />
                                         Clientes
                                     </Styled.MenuItem>
                                 </Styled.Itens>
                                 <Styled.Itens xs={12} onClick={() => navigate("/psicologos")} style={{ borderBottom: "1px solid #8EB9D4", paddingBottom: "25px", cursor: "pointer" }}>
                                     <Styled.MenuItem container>
-                                        <BiHelpCircle color="white" />
+                                        <FaBrain color="white" />
                                         Piscólogos
                                     </Styled.MenuItem>
                                 </Styled.Itens>
@@ -79,40 +75,34 @@ export const SideBar: React.FC = () => {
 
                         {usuario === "Psicologo" && 
                             <>
-                            <Styled.Itens xs={12} onClick={() => navigate("/")} style={{ cursor: 'pointer' }}>
+                            <Styled.Itens xs={12} onClick={() => navigate("/dashboard")} style={{ cursor: 'pointer' }}>
                                     <Styled.MenuItem container>
-                                        <BiHelpCircle color="white" />
+                                        <SiGoogleanalytics color="white" />
                                         Dashboard
                                     </Styled.MenuItem>
                                 </Styled.Itens>
                                 <Styled.Itens xs={12} onClick={() => navigate("/solicitacoes-consulta")} style={{ cursor: 'pointer' }}>
                                     <Styled.MenuItem container>
-                                        <BiHelpCircle color="white" />
+                                        <MdVideoCall color="white" />
                                         Solicitações
                                     </Styled.MenuItem>
                                 </Styled.Itens>
                                 <Styled.Itens xs={12} onClick={() => navigate("/consultas")} style={{ cursor: 'pointer' }}>
                                     <Styled.MenuItem container>
-                                        <BiHelpCircle color="white" />
+                                        <AiFillCheckCircle color="white" />
                                         Consultas
                                     </Styled.MenuItem>
                                 </Styled.Itens>
-                                <Styled.Itens xs={12} onClick={() => navigate("/clientes")} style={{ cursor: 'pointer' }}>
+                                <Styled.Itens xs={12} onClick={() => navigate("/") } style={{ borderBottom: "1px solid #8EB9D4", paddingBottom: "25px", cursor: "pointer" }}>
                                     <Styled.MenuItem container>
                                         <BiHelpCircle color="white" />
-                                        Testes
-                                    </Styled.MenuItem>
-                                </Styled.Itens>
-                                <Styled.Itens xs={12} onClick={() => navigate("/psicologos")} style={{ borderBottom: "1px solid #8EB9D4", paddingBottom: "25px", cursor: "pointer" }}>
-                                    <Styled.MenuItem container>
-                                        <BiHelpCircle color="white" />
-                                        Piscólogos
+                                        Ajuda
                                     </Styled.MenuItem>
                                 </Styled.Itens>
                             </>
                         }
 
-                        <Styled.Itens xs={12} onClick={() => navigate("/lista-alunos")}>
+                        <Styled.Itens xs={12} onClick={() => navigate("/dashboard")}>
                             <Styled.MenuItem container style={{ fontSize: "20px", fontWeight: "700", gap: theme.spacing(1.4) }}>
                                 {nome}
                                 <MdModeEditOutline color="white" style={{ cursor: 'pointer' }} />

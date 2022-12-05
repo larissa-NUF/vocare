@@ -1,7 +1,7 @@
 import { Grid, Typography } from "@mui/material";
-import { getUser } from "../../../reducers/authentication";
-import { useSelector } from "react-redux";
-import { useState } from "react";
+import { getUser, setHeader } from "../../../reducers/authentication";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 import { SiPhabricator } from "react-icons/si";
 import * as Styled from "./Omega.styled";
 import lamina1 from "./../../../assets/img/lamina1.png";
@@ -17,6 +17,11 @@ export const Omega = () => {
     const [lamina, setLamina] = useState(1);
 
     const navigate = useNavigate();
+
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(setHeader(true))
+    }, [])
 
     const { id } = useSelector(getUser);
 

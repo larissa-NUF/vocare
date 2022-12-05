@@ -1,15 +1,21 @@
 import { Button, Grid, Typography } from "@mui/material";
+import { useEffect } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { FaImages } from "react-icons/fa";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getUser } from "../../reducers/authentication";
+import { getUser, setHeader } from "../../reducers/authentication";
 import tpo from "./../../assets/img/profissao.jpg";
 import * as Styled from "./Teste.styled";
 
 export const Teste = () => {
 
     const navigate = useNavigate();
+
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(setHeader(true))
+    }, [])
 
     return (
         <Styled.ContainerDiv>

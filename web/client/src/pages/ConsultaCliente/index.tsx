@@ -1,9 +1,9 @@
 import { Box, Button, Typography } from "@mui/material"
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useInsertConsulta, useMinhasConsultas } from "../../api/controllers/consulta"
-import { getPerfil, getUser } from "../../reducers/authentication";
+import { getPerfil, getUser, setHeader } from "../../reducers/authentication";
 import { theme } from "../../styles/theme";
 import { FormValues, ModalAddConsulta } from "./Modal/ModalAddConsulta";
 import * as Styled from "./ConsultaCliente.styled";
@@ -19,6 +19,8 @@ export const ConsultaCliente = () => {
 
     const [modalAdd, setModalAdd] = useState(false);
     const handleClose = () => setModalAdd(false);
+
+    const dispatch = useDispatch();
 
     const onSubmit = (values: FormValues) => {
         let separado = values.dataConsulta.split("/")
@@ -42,6 +44,7 @@ export const ConsultaCliente = () => {
 
     useEffect(() => {
         refetch();
+        dispatch(setHeader(true))
     }, []);
 
     const columns: GridColDef[] = [

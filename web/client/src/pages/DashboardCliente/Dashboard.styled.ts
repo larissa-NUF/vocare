@@ -4,6 +4,7 @@ import { FaUserAlt as Fa } from 'react-icons/fa';
 import { BsCheck2 } from "react-icons/bs";
 import Calendar from "react-calendar";
 import { SecundaryButton } from "../../components/SecundaryButton";
+import { BtnSalaProps } from "../ListarSalas/ListarSalas.types";
 
 export const Titulo = styled("h2")({
     marginTop: theme.spacing(1),
@@ -26,15 +27,30 @@ export const Icon = styled(Fa)({
     height: theme.spacing(3.125)
 });
 
+export const BtnSala = styled(ButtonBase)<BtnSalaProps>(
+    ({ status }) => ({
+        padding: theme.spacing(0.5),
+        borderRadius: theme.spacing(0.3),
+        color: theme.palette.primary.light,
 
+        ...(status === "criar" && {
+            backgroundColor: theme.palette.primary.main,
+            ":hover": {
+                backgroundColor: theme.palette.secondary.main,
+            },
+        }),
+        ...(status === "entrar" && {
+            backgroundColor: "#6BC941",
+            ":hover": {
+                backgroundColor: "#5EB039",
+            },
+        }),
+    }));
 
 export const Container = styled(Grid)({
     height: "100vh",
     backgroundColor: theme.palette.primary.light,
-    width: '100%',
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center"
+    width: '100%'
 });
 
 export const TabelaContainer = styled("div")({

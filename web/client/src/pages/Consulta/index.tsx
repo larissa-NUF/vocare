@@ -1,10 +1,13 @@
 import { IconButton } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useDarkMode } from 'usehooks-ts';
 import { useConsultaUpdate } from '../../api/controllers/consulta';
 import { firestore } from '../../api/services/firebase';
 import { Controles } from '../../components/Controles';
 import { ModalEntrarSala } from '../../components/ModalEntrarSala';
+import { setHeader } from '../../reducers/authentication';
 import * as styled from './Consulta.styled';
 
 
@@ -26,6 +29,11 @@ const Consulta: React.FC = () => {
     const [open, setOpen] = useState(true);
     const handleClose = () => setOpen(false);
     const navigate = useNavigate();
+
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(setHeader(true))
+    }, [])
 
     
     const servers = {

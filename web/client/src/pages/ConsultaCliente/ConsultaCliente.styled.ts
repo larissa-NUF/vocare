@@ -2,9 +2,9 @@ import styled from "@emotion/styled";
 import { Box, ButtonBase, Grid } from "@mui/material";
 import { IoMdAdd } from "react-icons/io";
 import { MainButton } from "../../components/MainButton";
-import { theme } from "../../styles/theme";
 import { FaUserAlt as Fa } from 'react-icons/fa';
 import { BtnSalaProps } from "../ListarSalas/ListarSalas.types";
+import { theme } from "./../../styles/theme";
 
 export const Btn = styled(Grid)({
     textAlign: 'end',
@@ -24,7 +24,7 @@ export const Btn = styled(Grid)({
 });
 
 export const BtnSala = styled(ButtonBase)<BtnSalaProps>(
-    ({ theme, status }) => ({
+    ({ status }) => ({
         padding: theme.spacing(0.5),
         borderRadius: theme.spacing(0.3),
         color: theme.palette.primary.light,

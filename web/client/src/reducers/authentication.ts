@@ -6,6 +6,7 @@ import { Usuario } from '../api/models/usuario';
 type Auth = {
     perfil: string,
     isLogado: boolean,
+    header: boolean,
     token: Token,
     user: Usuario
 }
@@ -13,6 +14,7 @@ type Auth = {
 const initialState: Auth = {
     perfil: "Deslogado",
     isLogado: false,
+    header: true,
     token: {
         accessToken: localStorage.getItem("token") || "",
         refreshToken: localStorage.getItem("refreshToken") || ""
@@ -61,14 +63,18 @@ const slice = createSlice({
             state.user = initialState.user;
 
             localStorage.clear();
+        },
+        setHeader: (state, { payload }: PayloadAction<boolean>) => {
+            state.header = payload;
         }
     }
 });
 
-export const { setPerfil, setToken, setUser, logout } = slice.actions;
+export const { setPerfil, setToken, setUser, logout, setHeader } = slice.actions;
 
 export default slice.reducer;
 
 export const getPerfil = (state: RootState) => state.authentication.perfil;
 export const getToken = (state: RootState) => state.authentication.token;
 export const getUser = (state: RootState) => state.authentication.user;
+export const getHeader = (state: RootState) => state.authentication.header;
