@@ -25,6 +25,7 @@ export const ListarSalas: React.FC = () => {
         navigate('/consulta', { state: { consulta: params, tipo: perfil} });
   };
   
+const dateFormat = (data: Date) => data.toLocaleDateString("pt-BR");
 
     const { data, refetch } = useGetConsultasByPsicologo(user.id || 0);
     useEffect(() => {
@@ -59,7 +60,8 @@ export const ListarSalas: React.FC = () => {
             headerName: 'Data Cadastro',
             type: 'date',
             editable: false,
-            flex: 1
+            flex: 1,
+            renderCell: (params) => dateFormat(new Date(params.row.dataCadastro))
         },
         {
             field: 'avaliacao',

@@ -14,8 +14,8 @@ const initialState: Auth = {
     perfil: "Deslogado",
     isLogado: false,
     token: {
-        accessToken: sessionStorage.getItem("token") || "",
-        refreshToken: sessionStorage.getItem("refreshToken") || ""
+        accessToken: localStorage.getItem("token") || "",
+        refreshToken: localStorage.getItem("refreshToken") || ""
     },
     user: {
         id: 0,
@@ -23,8 +23,7 @@ const initialState: Auth = {
         login: "",
         nome: "",
         perfis: "",
-        senha: "",
-        id: 0
+        senha: ""
     }
 }
 
@@ -40,8 +39,8 @@ const slice = createSlice({
             state.token.refreshToken = payload.refreshToken;
             state.isLogado = true;
 
-            sessionStorage.setItem("token", payload.accessToken);
-            sessionStorage.setItem("refreshToken", payload.refreshToken);
+            localStorage.setItem("token", payload.accessToken);
+            localStorage.setItem("refreshToken", payload.refreshToken);
         },
         setUser: (state, { payload }: PayloadAction<Usuario>) => {
             state.user = payload;

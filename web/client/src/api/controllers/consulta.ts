@@ -1,8 +1,9 @@
 import { useMutation, useQuery } from '@tanstack/react-query';
-import { Consulta } from '../models/consulta';
+import { Consulta, ConsultaResponse } from '../models/consulta';
 import { CustomError } from '../models/customError';
 import { Usuario } from '../models/usuario';
 import { api } from '../services/axios';
+import { queryClient } from '../services/queryClient';
 
 export const UseGetSolicitacoes = () => {
     return useQuery<Consulta[], CustomError>(
@@ -23,7 +24,7 @@ export const useConsultaUpdate = () => {
 };
 
 export const useGetConsultasByPsicologo = (id: number) => {
-    return useQuery<Consulta[], CustomError>(
+    return useQuery<ConsultaResponse[], CustomError>(
         ["usuarios"],
         async () => {
             if(id != 0){
@@ -34,3 +35,29 @@ export const useGetConsultasByPsicologo = (id: number) => {
         }
     )
 };
+
+export const useInsertConsulta = () => {
+    return useMutation<Consulta, CustomError, Consulta>(
+        async (consulta) => {
+            return await api.post(`/consulta`, consulta)
+        },
+        {
+            onSuccess: () => {
+                queryClient.invalidateQueries(["minhas-consultas"])
+            }
+        }
+    )
+}
+
+export const useMinhasConsultas = (idCliente: number) => {
+    return useQuery<Consulta[], CustomError>(
+        ["minhas-consultas"],
+        async () => {
+            if(idCliente != 0){
+                const { data } = await api.get(`/minhas-consultas/${idCliente}`);
+
+                return data;
+            }
+        }
+    )
+}

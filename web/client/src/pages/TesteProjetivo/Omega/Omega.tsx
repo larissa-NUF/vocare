@@ -10,9 +10,13 @@ import lamina3 from "./../../../assets/img/lamina3.png";
 import lamina4 from "./../../../assets/img/lamina4.png";
 import { useEnviarTeste } from "../../../api/controllers/teste";
 import { TesteReposta } from "../../../api/models/teste";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 export const Omega = () => {
     const [lamina, setLamina] = useState(1);
+
+    const navigate = useNavigate();
 
     const { id } = useSelector(getUser);
 
@@ -52,6 +56,9 @@ export const Omega = () => {
             },
             respostas: listaResposta
         });
+
+        toast.success("Respostas salvas com sucesso!");
+        navigate("/dashboard");
     }
 
     return (

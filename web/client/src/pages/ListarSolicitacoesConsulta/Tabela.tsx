@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { DataGrid, GridColDef, GridRenderCellParams } from "@mui/x-data-grid";
+import { DataGrid, GridColDef, GridRenderCellParams, GridValueFormatterParams } from "@mui/x-data-grid";
 import { BiSearchAlt } from "react-icons/bi";
 import { useConsultaUpdate, UseGetSolicitacoes } from "../../api/controllers/consulta";
 import { theme } from "../../styles/theme";
@@ -22,6 +22,8 @@ export const Tabela: React.FC = () => {
         refetch();
     }
 
+    const dateFormat = (data: Date) => data.toLocaleDateString("pt-BR")
+
     const columns: GridColDef[] = [
         {
             field: 'nome',
@@ -35,6 +37,7 @@ export const Tabela: React.FC = () => {
             headerClassName: 'super-app-theme--header',
             headerName: 'Data Solicitação',
             type: 'date',
+            renderCell: (params) => dateFormat(new Date(params.row.dataCadastro)),
             editable: false,
             flex: 1
         },
@@ -43,6 +46,7 @@ export const Tabela: React.FC = () => {
             headerClassName: 'super-app-theme--header',
             headerName: 'Data Consulta',
             type: 'date',
+            renderCell: (params) => dateFormat(new Date(params.row.dataConsulta)),
             editable: false,
             flex: 1
         },
